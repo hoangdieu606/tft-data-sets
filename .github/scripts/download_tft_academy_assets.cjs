@@ -15,7 +15,7 @@ async function getCurrentSet() {
 }
 
 async function saveCurrentSet(set) {
-  await fs.writeFile('set-revival.json', JSON.stringify({ set }));
+  await fs.writeFile('set-revival.json', JSON.stringify({ set }, null, 2)); // Định dạng JSON nhất quán
 }
 
 async function downloadImageWithRetry(imageUrl, savePath, retries = 3, delay = 10000) {
