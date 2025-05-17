@@ -5,7 +5,6 @@ on:
     - cron: '0 00 * * *' # Chạy lúc 00:00 UTC (07:00 +7)
   workflow_dispatch:
 
-# Thêm quyền GITHUB_TOKEN cho toàn bộ workflow
 permissions:
   contents: write # Quyền đọc và ghi nội dung repository
 
@@ -78,7 +77,7 @@ jobs:
           const path = require('path');
           const { default: PQueue } = require('p-queue');
 
-          const SET_NUMBER = 11;
+          const SET_NUMBER = 10;
 
           async function getCurrentSet() {
             try {
@@ -270,16 +269,16 @@ jobs:
       - name: Kiểm tra số lượng ảnh và kích thước thư mục
         run: |
           echo "Số lượng ảnh tải được trong mỗi thư mục:"
-          for dir in public/assets/images/set${{ env.SET_NUMBER }}/champions public/assets/images/set${{ env.SET_NUMBER }}/traits public/assets/images/set${{ env.SET_NUMBER }}/augments public/assets/images/set${{ env.SET_NUMBER }}/items; do
+          for dir in public/assets/images/set${{ env.SET }}/champions public/assets/images/set${{ env.SET }}/traits public/assets/images/set${{ env.SET }}/augments public/assets/images/set${{ env.SET }}/items; do
             if [ -d "$dir" ]; then
               count=$(find "$dir" -type f | wc -l)
               echo "$dir: $count ảnh"
             fi
           done
           echo "Tổng số ảnh tải được:"
-          find public/assets/images/set${{ env.SET_NUMBER }} -type f | wc -l
+          find public/assets/images/set${{ env.SET }} -type f | wc -l
           echo "Kích thước thư mục:"
-          du -sh public/assets/images/set${{ env.SET_NUMBER }}
+          du -sh public/assets/images/set${{ env.SET }}
 
       - name: Commit và push thay đổi
         run: |
