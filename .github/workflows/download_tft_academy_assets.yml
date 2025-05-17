@@ -77,7 +77,7 @@ jobs:
           const path = require('path');
           const { default: PQueue } = require('p-queue');
 
-          const SET_NUMBER = 11;
+          const SET_NUMBER = 12;
 
           async function getCurrentSet() {
             try {
