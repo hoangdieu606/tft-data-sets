@@ -107,11 +107,14 @@ async function main() {
   const currentSet = await getCurrentSet();
   const newSet = `${SET_NUMBER}`;
 
-  // Kiểm tra set ngay đầu để tối ưu
+  // Kiểm tra set và thoát nếu không thay đổi
   if (newSet === currentSet) {
     console.log('Set không thay đổi, bỏ qua tải assets');
-    return;
+    process.exit(0); // Thoát workflow thành công
   }
+
+  // Ghi SET vào GITHUB_ENV nếu set thay đổi
+  require('fs').appendFileSync(process.env.GITHUB_ENV, `SET=${newSet}\n`);
 
   const apiConfigs = [
     {
@@ -176,9 +179,6 @@ async function main() {
 
   console.log(`Tổng kết: ${totalSuccess} ảnh tải thành công, ${totalFail} ảnh thất bại`);
   await saveCurrentSet(newSet);
-
-  // Xuất newSet vào GITHUB_ENV để sử dụng trong bước commit
-  require('fs').appendFileSync(process.env.GITHUB_ENV, `SET=${newSet}\n`);
 }
 
 main().catch(error => {
