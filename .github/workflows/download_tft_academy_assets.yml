@@ -181,11 +181,14 @@ jobs:
             const currentSet = await getCurrentSet();
             const newSet = `${SET_NUMBER}`;
 
-            // Kiểm tra set ngay đầu để tối ưu
+            // Kiểm tra set và thoát nếu không thay đổi
             if (newSet === currentSet) {
               console.log('Set không thay đổi, bỏ qua tải assets');
               process.exit(0); // Thoát workflow thành công
             }
+
+            // Ghi SET vào GITHUB_ENV nếu set thay đổi
+            require('fs').appendFileSync(process.env.GITHUB_ENV, `SET=${newSet}\n`);
 
             const apiConfigs = [
               {
@@ -250,9 +253,6 @@ jobs:
 
             console.log(`Tổng kết: ${totalSuccess} ảnh tải thành công, ${totalFail} ảnh thất bại`);
             await saveCurrentSet(newSet);
-
-            // Xuất newSet vào GITHUB_ENV để sử dụng trong bước commit
-            require('fs').appendFileSync(process.env.GITHUB_ENV, `SET=${newSet}\n`);
           }
 
           main().catch(error => {
@@ -269,16 +269,21 @@ jobs:
       - name: Kiểm tra số lượng ảnh và kích thước thư mục
         run: |
           echo "Số lượng ảnh tải được trong mỗi thư mục:"
-          for dir in public/assets/images/set${{ env.SET }}/champions public/assets/images/set${{ env.SET }}/traits public/assets/images/set${{ env.SET }}/augments public/assets/images/set${{ env.SET }}/items; do
-            if [ -d "$dir" ]; then
-              count=$(find "$dir" -type f | wc -l)
-              echo "$dir: $count ảnh"
-            fi
-          done
-          echo "Tổng số ảnh tải được:"
-          find public/assets/images/set${{ env.SET }} -type f | wc -l
-          echo "Kích thước thư mục:"
-          du -sh public/assets/images/set${{ env.SET }}
+          base_dir="public/assets/images/set${{ env.SET }}"
+          if [ -d "$base_dir" ]; then
+            for dir in "$base_dir/champions" "$base_dir/traits" "$base_dir/augments" "$base_dir/items"; do
+              if [ -d "$dir" ]; then
+                count=$(find "$dir" -type f | wc -l)
+                echo "$dir: $count ảnh"
+              fi
+            done
+            echo "Tổng số ảnh tải được:"
+            find "$base_dir" -type f | wc -l
+            echo "Kích thước thư mục:"
+            du -sh "$base_dir"
+          else
+            echo "Thư mục $base_dir không tồn tại, có thể do set không thay đổi hoặc chưa tải lần nào."
+          fi
 
       - name: Commit và push thay đổi
         run: |
