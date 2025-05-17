@@ -107,14 +107,15 @@ async function main() {
   const currentSet = await getCurrentSet();
   const newSet = `${SET_NUMBER}`;
 
-  // Kiểm tra set và thoát nếu không thay đổi
   if (newSet === currentSet) {
     console.log('Set không thay đổi, bỏ qua tải assets');
-    process.exit(0); // Thoát workflow thành công
+    return; // Thoát sớm, không ghi đè set-revival.json
   }
 
-  // Ghi SET vào GITHUB_ENV và lưu set nếu thay đổi
-  require('fs').appendFileSync(process.env.GITHUB_ENV, `SET=${newSet}\n`);
+  console.log(`Phát hiện set: ${newSet}. Bắt đầu tải assets...`);
+  const baseDir = `public/assets/images/set${SET_NUMBER}`;
+  await fs.rm(baseDir, { recursive: true, force: true }).catch(() => {});
+  await fs.mkdir(baseDir, { recursive: true });
 
   const apiConfigs = [
     {
@@ -163,12 +164,6 @@ async function main() {
   });
   if (!response) return;
 
-  console.log(`Bắt đầu tải assets cho set ${SET_NUMBER}...`);
-  const baseDir = `public/assets/images/set${SET_NUMBER}`;
-  // Chỉ xóa thư mục của SET_NUMBER hiện tại nếu tồn tại
-  await fs.rm(baseDir, { recursive: true, force: true }).catch(() => {});
-  await fs.mkdir(baseDir, { recursive: true });
-
   let totalSuccess = 0;
   let totalFail = 0;
   for (const config of apiConfigs) {
@@ -179,6 +174,9 @@ async function main() {
 
   console.log(`Tổng kết: ${totalSuccess} ảnh tải thành công, ${totalFail} ảnh thất bại`);
   await saveCurrentSet(newSet);
+
+  // Xuất newSet vào GITHUB_ENV để sử dụng trong bước commit
+  require('fs').appendFileSync(process.env.GITHUB_ENV, `SET=${newSet}\n`);
 }
 
 main().catch(error => {
