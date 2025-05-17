@@ -5,7 +5,9 @@ on:
     - cron: '0 00 * * *' # Chạy lúc 00:00 UTC (07:00 +7)
   workflow_dispatch:
 
-permissions: read-all
+# Thêm quyền GITHUB_TOKEN cho toàn bộ workflow
+permissions:
+  contents: write # Quyền đọc và ghi nội dung repository
 
 concurrency:
   group: tft-academy-assets-${{ github.ref }}
@@ -76,7 +78,7 @@ jobs:
           const path = require('path');
           const { default: PQueue } = require('p-queue');
 
-          const SET_NUMBER = 11; // Cập nhật set theo yêu cầu ví dụ
+          const SET_NUMBER = 11;
 
           async function getCurrentSet() {
             try {
