@@ -184,7 +184,7 @@ jobs:
             // Kiểm tra set ngay đầu để tối ưu
             if (newSet === currentSet) {
               console.log('Set không thay đổi, bỏ qua tải assets');
-              return;
+              process.exit(0); // Thoát workflow thành công
             }
 
             const apiConfigs = [
