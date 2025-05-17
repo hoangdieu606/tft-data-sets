@@ -113,7 +113,7 @@ async function main() {
     process.exit(0); // Thoát workflow thành công
   }
 
-  // Ghi SET vào GITHUB_ENV nếu set thay đổi
+  // Ghi SET vào GITHUB_ENV và lưu set nếu thay đổi
   require('fs').appendFileSync(process.env.GITHUB_ENV, `SET=${newSet}\n`);
 
   const apiConfigs = [
