@@ -1,10 +1,5 @@
 import Image from "next/image";
 import { Champion, Trait } from "@/lib/types";
-import {
-  dataMapping,
-  DataMappingKeys,
-  DataMappingValue,
-} from "@/lib/dataFilter";
 
 interface ChampionCardProps {
   champion: Champion;
@@ -98,7 +93,7 @@ function ChampionCard({ champion, traitMap }: ChampionCardProps) {
           </div>
         </div>
         <div>
-          <p dangerouslySetInnerHTML={{ __html: ability }} />
+          <div dangerouslySetInnerHTML={{ __html: ability }} />
         </div>
       </div>
     </div>
@@ -108,23 +103,9 @@ function ChampionCard({ champion, traitMap }: ChampionCardProps) {
 interface ChampionListProps {
   champions: Champion[];
   traits: Trait[] | null;
-  filterType: string;
 }
 
-export default function ChampionList({
-  champions,
-  traits,
-  filterType,
-}: ChampionListProps) {
-  const typeFilter: DataMappingValue | string =
-    filterType in dataMapping
-      ? dataMapping[filterType as DataMappingKeys]
-      : filterType;
-  const championList =
-    filterType === "Show All"
-      ? champions
-      : champions.filter((c) => c.cost === typeFilter);
-
+export default function ChampionList({ champions, traits }: ChampionListProps) {
   const traitMap = new Map<string, { name: string; icon: string }>(
     traits?.map((trait) => [
       trait.id,
@@ -134,7 +115,7 @@ export default function ChampionList({
 
   return (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(270px,1fr))] gap-4 mt-4">
-      {championList.map((champion) => (
+      {champions.map((champion) => (
         <ChampionCard
           key={champion.apiName}
           champion={champion}

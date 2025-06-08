@@ -1,10 +1,5 @@
 import Image from "next/image";
 import { Augment } from "@/lib/types";
-import {
-  dataMapping,
-  DataMappingKeys,
-  DataMappingValue,
-} from "@/lib/dataFilter";
 
 interface AugmentCardProps {
   augment: Augment;
@@ -23,31 +18,21 @@ function AugmentCard({augment}: AugmentCardProps) {
       </div>
       <div className="flex flex-col gap-2">
         <h3>{name}</h3>
-        <p dangerouslySetInnerHTML={{ __html: description }} />
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
   );
 }
 
 interface AugsListProps {
-  augments: Augment[];
-  filterType: string;
+  augments: Augment[]; 
 }
 
-export default function AugsList({ augments, filterType }: AugsListProps) {
-  const typeFilter: DataMappingValue | string =
-    filterType in dataMapping
-      ? dataMapping[filterType as DataMappingKeys]
-      : filterType;
-
-  const augmentsList =
-    filterType === "Show All"
-      ? augments
-      : augments.filter((augment) => augment.tier === typeFilter);
-
+export default function AugsList({ augments }: AugsListProps) {
+  // Bỏ logic lọc
   return (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-5 mt-5">
-      {augmentsList.map((augment) => (
+      {augments.map((augment) => (
         <AugmentCard key={augment.id} augment={augment} />
       ))}
     </div>

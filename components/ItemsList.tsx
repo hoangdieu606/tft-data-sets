@@ -1,12 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx";
 import { Item } from "@/lib/types";
-import {
-  dataMapping,
-  DataMappingKeys,
-  DataMappingValue,
-} from "@/lib/dataFilter";
-
 
 interface ItemCardProps {
   item: Item;
@@ -66,7 +60,7 @@ function ItemCard({ item, items }: ItemCardProps) {
           </div>
           <span className="flex items-center flex-wrap gap-1">stats</span>
         </div>
-        <p dangerouslySetInnerHTML={{ __html: description }} />
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
   );
@@ -74,24 +68,14 @@ function ItemCard({ item, items }: ItemCardProps) {
 
 interface ItemListProps {
   items: Item[];
-  filterType: string;
+  allItems: Item[];
 }
 
-export default function ItemsList({ items, filterType }: ItemListProps) {
-  const typeFilter: DataMappingValue | string =
-    filterType in dataMapping
-      ? dataMapping[filterType as DataMappingKeys]
-      : filterType;
-
-  const itemsList =
-    filterType === "Show All"
-      ? items
-      : items.filter((item) => item.type === typeFilter);
-
+export default function ItemsList({ items, allItems }: ItemListProps) {
   return (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-5 mt-5">
-      {itemsList.map((item) => (
-        <ItemCard key={item.id} item={item} items={items} />
+      {items.map((item) => (
+        <ItemCard key={item.id} item={item} items={allItems} />
       ))}
     </div>
   );

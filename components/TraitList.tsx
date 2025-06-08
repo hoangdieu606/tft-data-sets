@@ -2,12 +2,6 @@ import Image from "next/image";
 import clsx from "clsx";
 import { Champion, Trait } from "@/lib/types";
 
-import {
-  dataMapping,
-  DataMappingKeys,
-  DataMappingValue,
-} from "@/lib/dataFilter";
-
 interface TraitCardProps {
   trait: Trait;
   champions: Champion[];
@@ -71,29 +65,14 @@ function TraitCard({ trait, champions }: TraitCardProps) {
 }
 
 interface TraitListProps {
-  champions: Champion[];
   traits: Trait[];
-  filterType: string;
+  champions: Champion[];
 }
 
-export default function TraitList({
-  traits,
-  champions,
-  filterType,
-}: TraitListProps) {
-  const typeFilter: DataMappingValue | string =
-    filterType in dataMapping
-      ? dataMapping[filterType as DataMappingKeys]
-      : filterType;
-
-  const traitList =
-    filterType === "Show All"
-      ? traits
-      : traits.filter((trait) => trait.type === typeFilter);
-
+export default function TraitList({ traits, champions }: TraitListProps) {
   return (
     <div className="grid grid-cols-[repeat(auto-fill,minmax(288px,1fr))] gap-5 mt-5">
-      {traitList.map((trait) => (
+      {traits.map((trait) => (
         <TraitCard key={trait.id} trait={trait} champions={champions} />
       ))}
     </div>

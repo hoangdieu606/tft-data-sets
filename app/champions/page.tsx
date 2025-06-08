@@ -1,22 +1,26 @@
-import PageMenu from "@/components/PageMenu";
-import ChampionList from "@/components/ChampionList";
 import { DataFetcher } from "@/lib/data";
 import Title from "@/components/Title";
 import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
+import ChampionsDisplay from "@/components/ChampionsDisplay";
+import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const data = await DataFetcher("champions");
 
   if (!data || !("set" in data) || !("version" in data)) {
-    return metadata
+    return metadata;
   }
 
   const set = data.set;
-  const patch = data.version ;
-  const { title, desc } = getMetadataContent("champions" as DataPageKeys, set, patch);
+  const patch = data.version;
+  const { title, desc } = getMetadataContent(
+    "champions" as DataPageKeys,
+    set,
+    patch
+  );
 
   return {
     title,
@@ -24,11 +28,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ChampionsPage({ searchParams }: { searchParams: Promise<{ type?: string }> }) {
+export default async function ChampionsPage() {
   const dataChampions = await DataFetcher("champions");
   const dataTraits = await DataFetcher("traits");
-  const resolvedSearchParams = await searchParams;
-  const type = resolvedSearchParams.type ?? "Show All";
 
   if (
     !dataChampions ||
@@ -53,8 +55,9 @@ export default async function ChampionsPage({ searchParams }: { searchParams: Pr
         set={dataChampions.set}
         patch={dataChampions.version}
       />
-      <PageMenu page="champions" filterType={type} />
-      <ChampionList champions={champions} traits={traits} filterType = {type} />
+      <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
+        <ChampionsDisplay champions={champions} traits={traits} />
+      </Suspense>
     </div>
   );
 }
