@@ -1,0 +1,2831 @@
+{
+  "set": "14",
+  "version": "14.5",
+  "data": [
+    {
+      "apiName": "TFT_Item_RedBuff",
+      "name": "Áo Choàng Lửa",
+      "id": "9mfx2n7adu8l24e",
+      "icon": "/assets/images/set14/items/TFT_Item_RedBuff.webp",
+      "description": "Nhận 8% Máu tối đa. <br><br>Sau mỗi 2 giây, gây 1% <span class='tftkeyword'>Thiêu Đốt</span> và 33% <span class='tftkeyword'>Vết Thương Sâu</span> lên kẻ địch trong phạm vi 2 ô trong 10 giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]<br><tftbold>Thiêu Đốt</tftbold>: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu<br><tftbold>Vết Thương Sâu</tftbold>: Giảm hồi máu nhận được</span>",
+      "composition": ["TFT_Item_ChainVest", "TFT_Item_GiantsBelt"],
+      "rules": [
+        "[Unique - only 1 per champion]<br><tftbold>Burn</tftbold>: Deals a percent of the target's max Health as true damage every second<br><tftbold>Wound</tftbold>: Reduces healing received"
+      ],
+      "stats": {
+        "ar": 20,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_RapidFireCannon",
+      "name": "Bùa Đỏ",
+      "id": "dzslp596hqjdi32",
+      "icon": "/assets/images/set14/items/TFT_Item_RapidFireCannon.webp",
+      "description": "Đòn Đánh và Kỹ Năng gây 1% <span class='tftkeyword'>Thiêu Đốt</span> và 33% <span class='tftkeyword'>Vết Thương Sâu</span> lên kẻ địch trong 5 giây.<br><br><span class='tftitemrules'><tftbold>Thiêu Đốt</tftbold>: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu<br><tftbold>Vết Thương Sâu</tftbold>: Giảm hồi máu nhận được</span>",
+      "composition": ["TFT_Item_RecurveBow", "TFT_Item_RecurveBow"],
+      "rules": [
+        "<tftbold>Burn</tftbold>: Deals a percent of the target's max Health as true damage every second<br><tftbold>Wound</tftbold>: Reduces healing received"
+      ],
+      "stats": {
+        "as": 35,
+        "da": 6
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_BlueBuff",
+      "name": "Bùa Xanh",
+      "id": "9q3v4r8u8nizeor",
+      "icon": "/assets/images/set14/items/TFT_Item_BlueBuff.webp",
+      "description": "Nhận 10 Năng Lượng sau khi tung chiêu. <br><br>Khi chủ sở hữu tham gia hạ gục, họ sẽ gây thêm 5% sát thương trong 8 giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": ["TFT_Item_TearOfTheGoddess", "TFT_Item_TearOfTheGoddess"],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ad": 15,
+        "ap": 15,
+        "mana": 30
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_GuinsoosRageblade",
+      "name": "Cuồng Đao Guinsoo",
+      "id": "37op9ibszcj7i5u",
+      "icon": "/assets/images/set14/items/TFT_Item_GuinsoosRageblade.webp",
+      "description": "Nhận 7% Tốc Độ Đánh cộng dồn mỗi giây.",
+      "composition": ["TFT_Item_RecurveBow", "TFT_Item_NeedlesslyLargeRod"],
+      "rules": [],
+      "stats": {
+        "ap": 10,
+        "as": 10
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_SpectralGauntlet",
+      "name": "Giáp Vai Nguyệt Thần",
+      "id": "e4avp1hskjs95hu",
+      "icon": "/assets/images/set14/items/TFT_Item_SpectralGauntlet.webp",
+      "description": "30% <span class='tftkeyword'>Phân Tách</span> kẻ địch trong vòng 2 ô. Tăng 25 Giáp và Kháng Phép trong 15 giây đầu giao tranh.<br><br><span class='tftitemrules'><tftbold>Phân Tách</tftbold>: Giảm Giáp</span>",
+      "composition": ["TFT_Item_NegatronCloak", "TFT_Item_GiantsBelt"],
+      "rules": ["<tftbold>Sunder</tftbold>: Reduce Armor"],
+      "stats": {
+        "hp": 150,
+        "mr": 20
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_FrozenHeart",
+      "name": "Lời Thề Hộ Vệ",
+      "id": "y71qsccozc7b7qb",
+      "icon": "/assets/images/set14/items/TFT_Item_FrozenHeart.webp",
+      "description": "Một lần mỗi giao tranh, khi còn 40% Máu, nhận một lá chắn tương đương 25% Máu tối đa, tồn tại trong 5 giây, đồng thời nhận 20 Giáp và 20 Kháng Phép.",
+      "composition": ["TFT_Item_TearOfTheGoddess", "TFT_Item_ChainVest"],
+      "rules": [],
+      "stats": {
+        "ar": 20,
+        "mana": 30
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_SpearOfShojin",
+      "name": "Ngọn Giáo Shojin",
+      "id": "oh918ngmm9d8sik",
+      "icon": "/assets/images/set14/items/TFT_Item_SpearOfShojin.webp",
+      "description": "Các đòn đánh giúp hồi lại 5 Năng Lượng.",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_TearOfTheGoddess"],
+      "rules": [],
+      "stats": {
+        "ad": 15,
+        "ap": 15,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_Morellonomicon",
+      "name": "Quỷ Thư Morello",
+      "id": "clv1j19laqgct0y",
+      "icon": "/assets/images/set14/items/TFT_Item_Morellonomicon.webp",
+      "description": "Đòn Đánh và Kỹ Năng gây 1% <span class='tftkeyword'>Thiêu Đốt</span> và 33% <span class='tftkeyword'>Vết Thương Sâu</span> lên kẻ địch trong 10 giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]<br><tftbold>Thiêu Đốt</tftbold>: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu<br><tftbold>Vết Thương Sâu</tftbold>: Giảm hồi máu nhận được</span>",
+      "composition": ["TFT_Item_NeedlesslyLargeRod", "TFT_Item_GiantsBelt"],
+      "rules": [
+        "[Unique - only 1 per champion]<br><tftbold>Burn</tftbold>: Deals a percent of the target's max Health as true damage every second<br><tftbold>Wound</tftbold>: Reduces healing received"
+      ],
+      "stats": {
+        "ap": 25,
+        "as": 10,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_StatikkShiv",
+      "name": "Trượng Hư Vô",
+      "id": "kfszvxg2xst7t8q",
+      "icon": "/assets/images/set14/items/TFT_Item_StatikkShiv.webp",
+      "description": "Đòn đánh và Sát Thương Kỹ Năng sẽ gây 30% <span class='tftkeyword'>Cào Xé</span> lên mục tiêu trong 3 giây. Hiệu ứng này không cộng dồn.<br><br><span class='tftitemrules'><tftbold>Cào Xé</tftbold>: Giảm Kháng Phép</span>",
+      "composition": ["TFT_Item_RecurveBow", "TFT_Item_TearOfTheGoddess"],
+      "rules": ["<tftbold>Shred</tftbold>: Reduce Magic Resist"],
+      "stats": {
+        "ap": 15,
+        "as": 15,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_InfinityEdge",
+      "name": "Vô Cực Kiếm",
+      "id": "se23jz3de64xnze",
+      "icon": "/assets/images/set14/items/TFT_Item_InfinityEdge.webp",
+      "description": "Kỹ năng có thể gây chí mạng.<br><br>Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng.",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_SparringGloves"],
+      "rules": [],
+      "stats": {
+        "ad": 35,
+        "crit": 35
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_PowerGauntlet",
+      "name": "Chùy Đoản Côn",
+      "id": "62rghdchhcxc35f",
+      "icon": "/assets/images/set14/items/TFT_Item_PowerGauntlet.webp",
+      "description": "Đòn Chí Mạng sẽ cho 5% Khuếch Đại Sát Thương trong 5 giây, cộng dồn tối đa 4 lần.",
+      "composition": ["TFT_Item_GiantsBelt", "TFT_Item_SparringGloves"],
+      "rules": [],
+      "stats": {
+        "ap": 10,
+        "as": 20,
+        "crit": 20,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_LastWhisper",
+      "name": "Cung Xanh",
+      "id": "rwo82gf45eds9ni",
+      "icon": "/assets/images/set14/items/TFT_Item_LastWhisper.webp",
+      "description": "Gây sát thương vật lý sẽ khiến kẻ địch phải chịu 30% <span class='tftkeyword'>Phân Tách</span> trong 3 giây. Hiệu ứng này không cộng dồn.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]<br><tftbold>Phân Tách</tftbold>: giảm Giáp</span>",
+      "composition": ["TFT_Item_RecurveBow", "TFT_Item_SparringGloves"],
+      "rules": [
+        "[Unique - only 1 per champion]<br><tftbold>Sunder</tftbold>: Reduce Armor"
+      ],
+      "stats": {
+        "ad": 15,
+        "as": 20,
+        "crit": 20
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_MadredsBloodrazor",
+      "name": "Diệt Khổng Lồ",
+      "id": "om6bkqvy7atjp2g",
+      "icon": "/assets/images/set14/items/TFT_Item_MadredsBloodrazor.webp",
+      "description": "Nhận thêm 20% Khuếch Đại Sát Thương trước những kẻ địch có nhiều hơn 1750 Máu tối đa.",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_RecurveBow"],
+      "rules": [],
+      "stats": {
+        "ad": 25,
+        "ap": 25,
+        "as": 10
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_JeweledGauntlet",
+      "name": "Găng Bảo Thạch",
+      "id": "ak6d9gnmawd2qr3",
+      "icon": "/assets/images/set14/items/TFT_Item_JeweledGauntlet.webp",
+      "description": "Kỹ năng có thể gây chí mạng.<br><br>Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng.",
+      "composition": ["TFT_Item_NeedlesslyLargeRod", "TFT_Item_SparringGloves"],
+      "rules": [],
+      "stats": {
+        "ap": 35,
+        "crit": 35
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_ThiefsGloves",
+      "name": "Găng Đạo Tặc",
+      "id": "pfwrhn77uzt0iab",
+      "icon": "/assets/images/set14/items/TFT_Item_ThiefsGloves.webp",
+      "description": "Mỗi vòng: Mang 2 trang bị ngẫu nhiên.<br><br><span class='tftitemrules'>[Tốn 3 ô trang bị.]</span><br>",
+      "composition": ["TFT_Item_SparringGloves", "TFT_Item_SparringGloves"],
+      "rules": ["[Consumes 3 item slots.]"],
+      "stats": {
+        "crit": 20,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_WarmogsArmor",
+      "name": "Giáp Máu Warmog",
+      "id": "jdfe1kr7p6yghx3",
+      "icon": "/assets/images/set14/items/TFT_Item_WarmogsArmor.webp",
+      "description": "Nhận 12% máu tối đa.",
+      "composition": ["TFT_Item_GiantsBelt", "TFT_Item_GiantsBelt"],
+      "rules": [],
+      "stats": {
+        "hp": 600
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_HextechGunblade",
+      "name": "Kiếm Súng Hextech",
+      "id": "g85aj1fz8prg26q",
+      "icon": "/assets/images/set14/items/TFT_Item_HextechGunblade.webp",
+      "description": "Hồi máu cho đồng minh thấp Máu nhất bằng 20% lượng sát thương gây ra.<br><br><span class='tfttrackerlabel'>Hồi Máu Đồng Minh:</span> <span class='tfthighlight'></span>",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_NeedlesslyLargeRod"],
+      "rules": [],
+      "stats": {
+        "ad": 20,
+        "ap": 20,
+        "ov": 18
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_Deathblade",
+      "name": "Kiếm Tử Thần",
+      "id": "eg9afw305o6jfck",
+      "icon": "/assets/images/set14/items/TFT_Item_Deathblade.webp",
+      "description": "<span class='tftitemrules'>Đem tới sự yên bình vĩnh hằng cho người mang - và cả những kẻ phải đối đầu với nó.</span>",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_BFSword"],
+      "rules": ["Perfect peace and calm for the holder - and all who face it."],
+      "stats": {
+        "ad": 55,
+        "da": 10
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_RabadonsDeathcap",
+      "name": "Mũ Phù Thủy Rabadon",
+      "id": "90hw0a53867idsy",
+      "icon": "/assets/images/set14/items/TFT_Item_RabadonsDeathcap.webp",
+      "description": "<span class='tftitemrules'>Chiếc mũ này có thể giúp bạn xoay chuyển cả thế giới.</span>",
+      "composition": [
+        "TFT_Item_NeedlesslyLargeRod",
+        "TFT_Item_NeedlesslyLargeRod"
+      ],
+      "rules": [
+        "This humble hat can help you make, or unmake, the world itself."
+      ],
+      "stats": {
+        "ap": 50,
+        "da": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_AdaptiveHelm",
+      "name": "Mũ Thích Nghi",
+      "id": "eg8t42bqw65zcc3",
+      "icon": "/assets/images/set14/items/TFT_Item_AdaptiveHelm.webp",
+      "description": "Bắt đầu giao tranh: Nhận thêm các chỉ số khác nhau tùy thuộc vào vị trí khởi đầu.<br><br>Hai Hàng Đầu: 40 Giáp và Kháng Phép. Nhận 1 Năng Lượng khi bị tấn công.<br><br>Hai Hàng Sau: 15 Sức Mạnh Phép Thuật. Hồi 10 Năng Lượng mỗi 3 giây.<br>",
+      "composition": ["TFT_Item_NegatronCloak", "TFT_Item_TearOfTheGoddess"],
+      "rules": [],
+      "stats": {
+        "ap": 10,
+        "mr": 20,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_IonicSpark",
+      "name": "Nỏ Sét",
+      "id": "uy0oe4uujg0ql71",
+      "icon": "/assets/images/set14/items/TFT_Item_IonicSpark.webp",
+      "description": "30% <span class='tftkeyword'>Cào Xé</span> kẻ địch trong vòng 2 ô. Khi kẻ địch sử dụng Kỹ Năng, gây sát thương phép tương đương 160% Năng Lượng đã tiêu hao.<br><br><span class='tftitemrules'><tftbold>Cào Xé</tftbold>: Giảm Kháng Phép</span>",
+      "composition": ["TFT_Item_NeedlesslyLargeRod", "TFT_Item_NegatronCloak"],
+      "rules": ["<tftbold>Shred</tftbold>: Reduce Magic Resist"],
+      "stats": {
+        "ap": 15,
+        "hp": 150,
+        "mr": 25
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_GargoyleStoneplate",
+      "name": "Thú Tượng Thạch Giáp",
+      "id": "muphpamcm6e5t3d",
+      "icon": "/assets/images/set14/items/TFT_Item_GargoyleStoneplate.webp",
+      "description": "Tăng 10 Giáp và 10 Kháng Phép với mỗi kẻ địch đang nhắm vào chủ sở hữu.",
+      "composition": ["TFT_Item_ChainVest", "TFT_Item_NegatronCloak"],
+      "rules": [],
+      "stats": {
+        "ar": 25,
+        "hp": 100,
+        "mr": 25
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_NightHarvester",
+      "name": "Trái Tim Kiên Định",
+      "id": "4wt7tou2dwq4gmt",
+      "icon": "/assets/images/set14/items/TFT_Item_NightHarvester.webp",
+      "description": "Nhận 10% Chống Chịu. Khi còn hơn 50% Máu, thay vào đó nhận 18% Chống Chịu.",
+      "composition": ["TFT_Item_ChainVest", "TFT_Item_SparringGloves"],
+      "rules": [],
+      "stats": {
+        "ar": 20,
+        "crit": 20,
+        "hp": 250
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_Crownguard",
+      "name": "Vương Miện Hoàng Gia",
+      "id": "0o70palppr3no0w",
+      "icon": "/assets/images/set14/items/TFT_Item_Crownguard.webp",
+      "description": "Bắt Đầu Giao Tranh: Nhận một lá chắn bằng 25% Máu tối đa trong 8 giây.<br>Khi lá chắn hết hiệu lực, nhận thêm 25 Sức Mạnh Phép Thuật.<br>",
+      "composition": ["TFT_Item_NeedlesslyLargeRod", "TFT_Item_ChainVest"],
+      "rules": [],
+      "stats": {
+        "ap": 20,
+        "ar": 20,
+        "hp": 100
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_DragonsClaw",
+      "name": "Vuốt Rồng",
+      "id": "wyndutvzi8ke486",
+      "icon": "/assets/images/set14/items/TFT_Item_DragonsClaw.webp",
+      "description": "Nhận 9% máu tối đa.<br><br>Sau mỗi 2 giây, hồi lại 2.5% Máu tối đa.",
+      "composition": ["TFT_Item_NegatronCloak", "TFT_Item_NegatronCloak"],
+      "rules": [],
+      "stats": {
+        "mr": 75
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_BrambleVest",
+      "name": "Áo Choàng Gai",
+      "id": "svsvjpf20mhorqm",
+      "icon": "/assets/images/set14/items/TFT_Item_BrambleVest.webp",
+      "description": "Nhận 7% máu tối đa.<br><br>Giảm 8% sát thương từ đòn đánh. Khi bị trúng đòn đánh bất kỳ, gây <span class='magicdamage'>100 sát thương phép</span> lên tất cả kẻ địch liền kề.<br><br><span class='tftitemrules'>Hồi chiêu: 2 giây</span>",
+      "composition": ["TFT_Item_ChainVest", "TFT_Item_ChainVest"],
+      "rules": ["Cooldown: 2 seconds"],
+      "stats": {
+        "ar": 65
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Quicksilver",
+      "name": "Áo Choàng Thủy Ngân",
+      "id": "11elsr6qmfdqn05",
+      "icon": "/assets/images/set14/items/TFT_Item_Quicksilver.webp",
+      "description": "Bắt Đầu Giao Tranh: Miễn nhiễm hiệu ứng khống chế trong 18 giây. Trong thời gian hiệu ứng, nhận 3% Tốc Độ Đánh mỗi 2 giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": ["TFT_Item_SparringGloves", "TFT_Item_NegatronCloak"],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "as": 30,
+        "crit": 20,
+        "mr": 20
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_UnstableConcoction",
+      "name": "Bàn Tay Công Lý",
+      "id": "laj18o380in5imv",
+      "icon": "/assets/images/set14/items/TFT_Item_UnstableConcoction.webp",
+      "description": "Nhận 2 hiệu ứng:<li>15% Sức Mạnh Công Kích và 15 Sức Mạnh Phép Thuật.<li>12% Hút Máu Toàn Phần.<br><br>Khi còn trên 50% Máu, gấp đôi lượng Sức Mạnh Công Kích và Sức Mạnh Phép Thuật. Khi còn dưới 50% Máu, nhận gấp đôi lượng Hút Máu Toàn Phần.",
+      "composition": ["TFT_Item_TearOfTheGoddess", "TFT_Item_SparringGloves"],
+      "rules": [],
+      "stats": {
+        "crit": 20,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Redemption",
+      "name": "Giáp Tâm Linh",
+      "id": "7qrjw4g49waomto",
+      "icon": "/assets/images/set14/items/TFT_Item_Redemption.webp",
+      "description": "Hồi lại 3% Máu đã mất mỗi giây.",
+      "composition": ["TFT_Item_TearOfTheGoddess", "TFT_Item_GiantsBelt"],
+      "rules": [],
+      "stats": {
+        "hp": 150,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Bloodthirster",
+      "name": "Huyết Kiếm",
+      "id": "kid541dek2jmt66",
+      "icon": "/assets/images/set14/items/TFT_Item_Bloodthirster.webp",
+      "description": "Một lần mỗi giao tranh khi còn 40% Máu, nhận Lá Chắn bằng 25% Máu tối đa, duy trì trong 5 giây.",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_NegatronCloak"],
+      "rules": [],
+      "stats": {
+        "ad": 15,
+        "ap": 15,
+        "mr": 20,
+        "ov": 20
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Leviathan",
+      "name": "Nanh Nashor",
+      "id": "hgq321kzj034tii",
+      "icon": "/assets/images/set14/items/TFT_Item_Leviathan.webp",
+      "description": "Sau khi sử dụng một Kỹ Năng, nhận thêm 60% Tốc Độ Đánh trong 5 giây.",
+      "composition": ["TFT_Item_RecurveBow", "TFT_Item_GiantsBelt"],
+      "rules": [],
+      "stats": {
+        "ap": 10,
+        "as": 10,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_ArchangelsStaff",
+      "name": "Quyền Trượng Thiên Thần ",
+      "id": "p3uc24cp4azsc5c",
+      "icon": "/assets/images/set14/items/TFT_Item_ArchangelsStaff.webp",
+      "description": "Bắt Đầu Giao Tranh: Nhận 30 Sức Mạnh Phép Thuật sau mỗi 5 giây trong giao tranh.",
+      "composition": [
+        "TFT_Item_NeedlesslyLargeRod",
+        "TFT_Item_TearOfTheGoddess"
+      ],
+      "rules": [],
+      "stats": {
+        "ap": 20,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_RunaansHurricane",
+      "name": "Thịnh Nộ Thủy Quái",
+      "id": "83jgv2d15xvuhxk",
+      "icon": "/assets/images/set14/items/TFT_Item_RunaansHurricane.webp",
+      "description": "Đòn đánh cho 3% Sức Mạnh Công Kích cộng dồn.",
+      "composition": ["TFT_Item_NegatronCloak", "TFT_Item_RecurveBow"],
+      "rules": [],
+      "stats": {
+        "ad": 20,
+        "as": 10,
+        "mr": 20
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_GuardianAngel",
+      "name": "Áo Choàng Bóng Tối",
+      "id": "53lrz9ycvgr66mf",
+      "icon": "/assets/images/set14/items/TFT_Item_GuardianAngel.webp",
+      "description": "Một lần mỗi giao tranh: Khi còn 60% Máu, trở nên không thể chỉ định trong thoáng chốc và loại bỏ mọi hiệu ứng bất lợi. Sau đó nhận thêm 15% Tốc Độ Đánh.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_ChainVest"],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ad": 10,
+        "ar": 20,
+        "as": 15
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": true,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_SteraksGage",
+      "name": "Móng Vuốt Sterak",
+      "id": "bfq4ryeie1ev9ma",
+      "icon": "/assets/images/set14/items/TFT_Item_SteraksGage.webp",
+      "description": "Khi còn 60% Máu, nhận một Lá Chắn bằng 60% Máu tối đa của chủ sở hữu, giảm dần trong vòng 6 giây.",
+      "composition": ["TFT_Item_BFSword", "TFT_Item_GiantsBelt"],
+      "rules": [],
+      "stats": {
+        "ad": 15,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_TitansResolve",
+      "name": "Quyền Năng Khổng Lồ",
+      "id": "i7ebkp2q4es29je",
+      "icon": "/assets/images/set14/items/TFT_Item_TitansResolve.webp",
+      "description": "Nhận 2% Sức Mạnh Công Kích và 2 Sức Mạnh Phép Thuật khi tấn công hoặc nhận sát thương, cộng dồn tối đa 25 lần.  <br><br>Khi đạt tối đa cộng dồn, tăng 20 Giáp và 20 Kháng Phép.",
+      "composition": ["TFT_Item_ChainVest", "TFT_Item_RecurveBow"],
+      "rules": [],
+      "stats": {
+        "as": 10,
+        "ar": 20
+      },
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_TacticiansRing",
+      "name": "Áo Choàng Chiến Thuật",
+      "id": "x1zjfcsjcbdhuzp",
+      "icon": "/assets/images/set14/items/TFT_Item_TacticiansRing.webp",
+      "description": "Đội của bạn được +1 giới hạn tướng tối đa.<br><br>10% cơ hội rớt ra 1 vàng sau khi giao tranh 10 giây.<br><br><span class='tftitemrules'>\"...và một chút may mắn.\"</span>",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_FryingPan"],
+      "rules": ["\"...and a bit of Luck.\""],
+      "stats": {},
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_TacticiansScepter",
+      "name": "Lá Chắn Chiến Thuật",
+      "id": "6njm26hwt9287am",
+      "icon": "/assets/images/set14/items/TFT_Item_TacticiansScepter.webp",
+      "description": "Đội của bạn được +1 giới hạn tướng tối đa.<br><br>10% cơ hội rớt ra 1 vàng khi chủ sở hữu tử trận.<br><br><span class='tftitemrules'>\"Chứa đầy tri thức của một Hiền Triết...\"</span>",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_FryingPan"],
+      "rules": ["\"Imbued with a Philosopher's wisdom...\""],
+      "stats": {},
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_ForceOfNature",
+      "name": "Vương Miện Chiến Thuật ",
+      "id": "7ljyji8afda9mwa",
+      "icon": "/assets/images/set14/items/TFT_Item_ForceOfNature.webp",
+      "description": "Đội của bạn được +1 giới hạn tướng tối đa.<br><br>10% cơ hội rớt ra 1 vàng khi chiến thắng giao tranh.<br><br><span class='tftitemrules'>\"...trái tim của một anh hùng...\"</span>",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_Spatula"],
+      "rules": ["\"...the Heart of a hero...\""],
+      "stats": {},
+      "trait": "",
+      "type": "craftables",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT5_Item_SunfireCapeRadiant",
+      "name": "Áo Choàng Thái Dương",
+      "id": "vt3ddij5cg82s6d",
+      "icon": "/assets/images/set14/items/TFT5_Item_SunfireCapeRadiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>12%</span> Máu tối đa.<br><br>Sau mỗi <span class='tftradiantitembonus'>1.5</span> giây, gây <span class='tftradiantitembonus'>2%</span> <span class='tftkeyword'>Thiêu Đốt</span> và 33% <span class='tftkeyword'>Vết Thương Sâu</span> lên kẻ địch trong phạm vi <span class='tftradiantitembonus'>3</span> ô trong <span class='tftradiantitembonus'>8</span> giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]<br><tftbold>Thiêu Đốt</tftbold>: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu<br><tftbold>Vết Thương Sâu</tftbold>: Giảm hồi máu nhận được</span>",
+      "composition": [],
+      "rules": [
+        "[Unique - only 1 per champion]<br><tftbold>Burn</tftbold>: Deals a percent of the target's max Health as true damage every second<br><tftbold>Wound</tftbold>: reduces healing received"
+      ],
+      "stats": {
+        "ar": 40,
+        "hp": 300
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_StatikkShivRadiant",
+      "name": "Dao Phục Hận Icathia",
+      "id": "widppk9u83q3gah",
+      "icon": "/assets/images/set14/items/TFT5_Item_StatikkShivRadiant.webp",
+      "description": "Đòn đánh và Sát Thương Kỹ Năng sẽ gây 30% <span class='tftkeyword'>Cào Xé</span> lên mục tiêu <span class='tftradiantitembonus'>cho đến hết giao tranh</span>. Hiệu ứng này không cộng dồn.<br><br><span class='tftitemrules'><tftbold>Cào Xé</tftbold>: Giảm Kháng Phép</span>",
+      "composition": [],
+      "rules": ["<tftbold>Shred</tftbold>: Reduce Magic Resist"],
+      "stats": {
+        "ap": 50,
+        "as": 20,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_NightHarvesterRadiant",
+      "name": "Di Sản Khổng Nhân",
+      "id": "xlzgk2pfnznrxkq",
+      "icon": "/assets/images/set14/items/TFT5_Item_NightHarvesterRadiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>16%</span> chống chịu. Khi còn hơn <span class='tftradiantitembonus'>40%</span> Máu, thay vào đó nhận <span class='tftradiantitembonus'>30%</span> Chống Chịu.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 40,
+        "dr": 16,
+        "crit": 20,
+        "hp": 500
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_SpectralGauntletRadiant",
+      "name": "Giáp Phân Cực",
+      "id": "7733ul7qwsqz1ve",
+      "icon": "/assets/images/set14/items/TFT5_Item_SpectralGauntletRadiant.webp",
+      "description": "30% <span class='tftkeyword'>Phân Tách</span> kẻ địch trong vòng 3 ô. Nhận <span class='tftradiantitembonus'>70 Giáp và Kháng Phép</span> trong <span class='tftradiantitembonus'>20 giây</span> đầu tiên của giao tranh.<br><br><span class='tftitemrules'><tftbold>Phân Tách</tftbold>: Giảm Giáp</span>",
+      "composition": [],
+      "rules": ["<tftbold>Sunder</tftbold>: Reduce Armor"],
+      "stats": {
+        "hp": 500,
+        "mr": 30
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_RedemptionRadiant",
+      "name": "Giáp Thánh Linh",
+      "id": "xjjz5m1rdohhhwj",
+      "icon": "/assets/images/set14/items/TFT5_Item_RedemptionRadiant.webp",
+      "description": "Hồi lại <span class='tftradiantitembonus'>5%</span> Máu đã mất mỗi giây.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "hp": 400,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_HextechGunbladeRadiant",
+      "name": "Thánh Kiếm Hextech",
+      "id": "7k0oxwamkneccep",
+      "icon": "/assets/images/set14/items/TFT5_Item_HextechGunbladeRadiant.webp",
+      "description": "Hồi máu cho đồng minh thấp Máu nhất bằng <span class='tftradiantitembonus'>40%</span> lượng sát thương gây ra.<br><br><span class='tfttrackerlabel'>Hồi Máu Đồng Minh:</span> <span class='tfthighlight'></span>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 40,
+        "ap": 40,
+        "ov": 30
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_InfinityEdgeRadiant",
+      "name": "Thiên Cực Kiếm",
+      "id": "ljuwawh7ewsa6pt",
+      "icon": "/assets/images/set14/items/TFT5_Item_InfinityEdgeRadiant.webp",
+      "description": "Kỹ năng có thể gây chí mạng.<br><br>Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 70,
+        "crit": 75
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_GargoyleStoneplateRadiant",
+      "name": "Vệ Thần Thạch Giáp",
+      "id": "0klp3oy6urkphu3",
+      "icon": "/assets/images/set14/items/TFT5_Item_GargoyleStoneplateRadiant.webp",
+      "description": "Tăng <span class='tftradiantitembonus'>15</span> Giáp và <span class='tftradiantitembonus'>15</span> Kháng Phép với mỗi kẻ địch đang nhắm vào chủ sở hữu.<br><br><span class='tftradiantitembonus'>Đồng thời, hồi lại 1.5% Máu tối đa mỗi giây.</span>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 50,
+        "hp": 250,
+        "mr": 50
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT5_Item_QuicksilverRadiant",
+      "name": "Áo Choàng Giả Kim",
+      "id": "4atxj6rmujcrosr",
+      "icon": "/assets/images/set14/items/TFT5_Item_QuicksilverRadiant.webp",
+      "description": "Bắt Đầu Giao Tranh: Miễn nhiễm hiệu ứng khống chế trong <span class='tftradiantitembonus'>45</span> giây. <span class='tftradiantitembonus'>Trong 18 giây, nhận 7% Tốc Độ Đánh mỗi 2 giây.</span><br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "as": 50,
+        "crit": 40,
+        "mr": 30
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_RapidFirecannonRadiant",
+      "name": "Bùa Tro Tàn",
+      "id": "660pdpqz2v80fjg",
+      "icon": "/assets/images/set14/items/TFT5_Item_RapidFirecannonRadiant.webp",
+      "description": "Đòn đánh và Kỹ Năng gây <span class='tftradiantitembonus'>2%</span> <span class='tftkeyword'>Thiêu Đốt</span> và 33% <span class='tftkeyword'>Vết Thương Sâu</span> lên kẻ địch trong 5 giây.<br><br><span class='tftitemrules'><tftbold>Thiêu Đốt</tftbold>: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu<br><tftbold>Vết Thương Sâu</tftbold>: Giảm hồi máu nhận được</span><br>",
+      "composition": [],
+      "rules": [
+        "<tftbold>Burn</tftbold>: Deals a percent of the target's max Health as true damage every second<br><tftbold>Wound</tftbold>: Reduces healing received"
+      ],
+      "stats": {
+        "as": 60,
+        "da": 10
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_RunaansHurricaneRadiant",
+      "name": "Cung Cuồng Phong",
+      "id": "hkxvxkp47nzi2dk",
+      "icon": "/assets/images/set14/items/TFT5_Item_RunaansHurricaneRadiant.webp",
+      "description": "Đòn đánh cho <span class='tftradiantitembonus'>6%</span> Sức Mạnh Công Kích cộng dồn.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 40,
+        "as": 20,
+        "mr": 20
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_LastWhisperRadiant",
+      "name": "Cung Xanh Vĩnh Hằng",
+      "id": "5crzhraxtd9ueka",
+      "icon": "/assets/images/set14/items/TFT5_Item_LastWhisperRadiant.webp",
+      "description": "Sát thương vật lý gây 30% <span class='tftkeyword'>Phân Tách</span> lên mục tiêu <span class='tftradiantitembonus'>cho đến hết giao tranh</span>. Hiệu ứng này không cộng dồn.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]<br><tftbold>Phân Tách</tftbold>: giảm Giáp</span>",
+      "composition": [],
+      "rules": [
+        "[Unique - only 1 per champion]<br><tftbold>Sunder</tftbold>: Reduce Armor"
+      ],
+      "stats": {
+        "ad": 45,
+        "as": 25,
+        "crit": 55
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_GiantSlayerRadiant",
+      "name": "Diệt Ác Quỷ",
+      "id": "0v76dg56y09eul9",
+      "icon": "/assets/images/set14/items/TFT5_Item_GiantSlayerRadiant.webp",
+      "description": "Nhận thêm <span class='tftradiantitembonus'>30%</span> Khuếch Đại Sát Thương trước những kẻ địch có nhiều hơn 1750 Máu tối đa.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 50,
+        "ap": 50,
+        "as": 10
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_HandOfJusticeRadiant",
+      "name": "Găng Tay Thần Thánh",
+      "id": "rdcfb5kvn05icjp",
+      "icon": "/assets/images/set14/items/TFT5_Item_HandOfJusticeRadiant.webp",
+      "description": "Nhận 2 hiệu ứng:<li><span class='tftradiantitembonus'>35%</span> Sức Mạnh Công Kích và <span class='tftradiantitembonus'>35</span> Sức Mạnh Phép Thuật.<li><span class='tftradiantitembonus'>20%</span> Hút Máu Toàn Phần.<br><br>Khi còn trên 50% Máu, gấp đôi lượng Sức Mạnh Công Kích và Sức Mạnh Phép Thuật. Khi còn dưới 50% Máu, nhận gấp đôi lượng Hút Máu Toàn Phần.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "crit": 40,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_ThiefsGlovesRadiant",
+      "name": "Găng Tinh Xảo",
+      "id": "hzvv2qo4q3eytms",
+      "icon": "/assets/images/set14/items/TFT5_Item_ThiefsGlovesRadiant.webp",
+      "description": "Mỗi vòng: Mang 2 trang bị <span class='tftradiantitembonus'>Ánh Sáng</span> ngẫu nhiên.<br><br><span class='tftitemrules'>[Tốn 3 ô trang bị.]</span><br>",
+      "composition": [],
+      "rules": ["[Consumes 3 item slots.]"],
+      "stats": {
+        "crit": 20,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_BrambleVestRadiant",
+      "name": "Giáp Gai Hồng Hoa",
+      "id": "heq6ui5xxm9nol1",
+      "icon": "/assets/images/set14/items/TFT5_Item_BrambleVestRadiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>15%</span> máu tối đa. Giảm <span class='tftradiantitembonus'>25%</span> sát thương từ đòn đánh. Khi bị trúng đòn đánh bất kỳ, gây <span class='tftradiantitembonus'>175</span> sát thương phép lên tất cả kẻ địch liền kề. <span class='tftitemrules'>Hồi chiêu: 2 giây</span>",
+      "composition": [],
+      "rules": ["Cooldown: 2 seconds"],
+      "stats": {
+        "ar": 100
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_WarmogsArmorRadiant",
+      "name": "Giáp Vinh Quang Warmog",
+      "id": "sjvg08uxeq9fhj9",
+      "icon": "/assets/images/set14/items/TFT5_Item_WarmogsArmorRadiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>20%</span> máu tối đa.<br><br><span class='tftradiantitembonus'>Hồi lại 1.5% Máu tối đa mỗi giây.</span>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "hp": 1000
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_BloodthirsterRadiant",
+      "name": "Huyết Thần Kiếm",
+      "id": "gqtyphxplx423h1",
+      "icon": "/assets/images/set14/items/TFT5_Item_BloodthirsterRadiant.webp",
+      "description": "Một lần mỗi giao tranh: Khi còn 40% Máu, nhận Lá Chắn bằng <span class='tftradiantitembonus'>40%</span> Máu tối đa, duy trì trong 5 giây.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 40,
+        "ap": 40,
+        "mr": 20,
+        "ov": 40
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_CrownguardRadiant",
+      "name": "Khiên Chắn Hoàng Gia",
+      "id": "wr6yo6qyp44u2g4",
+      "icon": "/assets/images/set14/items/TFT5_Item_CrownguardRadiant.webp",
+      "description": "Bắt Đầu Giao Tranh: Nhận một lá chắn bằng <span class='tftradiantitembonus'>50%</span> Máu tối đa trong 8 giây. <br>Khi lá chắn hết hiệu lực, nhận thêm <span class='tftradiantitembonus'>50 Sức Mạnh Phép Thuật</span>.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 40,
+        "ar": 40,
+        "hp": 200
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_SpearOfShojinRadiant",
+      "name": "Ngọn Giáo Hirana",
+      "id": "p2jvbqtr5tvu98p",
+      "icon": "/assets/images/set14/items/TFT5_Item_SpearOfShojinRadiant.webp",
+      "description": "Các đòn đánh giúp hồi lại <span class='tftradiantitembonus'>10 Năng Lượng</span>.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 35,
+        "ap": 35,
+        "mana": 20
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_IonicSparkRadiant",
+      "name": "Nỏ Sét Ánh Sáng",
+      "id": "vetb5j1521qhcnf",
+      "icon": "/assets/images/set14/items/TFT5_Item_IonicSparkRadiant.webp",
+      "description": "30% <span class='tftkeyword'>Cào Xé</span> kẻ địch trong vòng <span class='tftradiantitembonus'>3</span> ô. Khi kẻ địch sử dụng Kỹ Năng, gây sát thương phép bằng <span class='tftradiantitembonus'>200%</span> Năng Lượng đã tiêu hao.<br><br><span class='tftradiantitembonus'>Ngoài ra, hồi lại 1.5% Máu tối đa mỗi giây.</span><br><br><span class='tftitemrules'>[Trang bị sát thương trực tiếp]<br><tftbold>Cào Xé</tftbold>: giảm Kháng Phép.</span>",
+      "composition": [],
+      "rules": [
+        "[Direct damage item]<br><tftbold>Shred</tftbold>: Reduce Magic Resist"
+      ],
+      "stats": {
+        "ap": 15,
+        "hp": 200,
+        "mr": 40
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_GuinsoosRagebladeRadiant",
+      "name": "Phán Quyết Đao Guinsoo",
+      "id": "a31ji6tk31g0vhk",
+      "icon": "/assets/images/set14/items/TFT5_Item_GuinsoosRagebladeRadiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>14%</span> Tốc Độ Đánh cộng dồn mỗi giây.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 10,
+        "as": 20
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_DeathbladeRadiant",
+      "name": "Quang Kiếm Tử Thần ",
+      "id": "2teiyixvgr86b1k",
+      "icon": "/assets/images/set14/items/TFT5_Item_DeathbladeRadiant.webp",
+      "description": "<span class='tftitemrules'>Nó rực sáng khi đối mặt với kẻ thù. Hay đồng đội. Hay bất kỳ thứ gì, miễn là còn sống.</span>",
+      "composition": [],
+      "rules": [
+        "It glows in the presence of enemies. Or friends. Or anything alive, really."
+      ],
+      "stats": {
+        "ad": 105,
+        "da": 20
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_MorellonomiconRadiant",
+      "name": "Thần Thư Morello",
+      "id": "tqcgci5tgauosre",
+      "icon": "/assets/images/set14/items/TFT5_Item_MorellonomiconRadiant.webp",
+      "description": "Đòn Đánh và Kỹ Năng gây <span class='tftradiantitembonus'>2%</span> <span class='tftkeyword'>Thiêu Đốt</span> và 33% <span class='tftkeyword'>Vết Thương Sâu</span> lên kẻ địch trong <span class='tftradiantitembonus'>8</span> giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]<br><tftbold>Thiêu Đốt</tftbold>: Gây sát thương chuẩn mỗi giây theo Máu tối đa của mục tiêu<br><tftbold>Vết Thương Sâu</tftbold>: Giảm hồi máu nhận được</span>",
+      "composition": [],
+      "rules": [
+        "[Unique - only 1 per champion]<br><tftbold>Burn</tftbold>: Deals a percent of the target's max Health as true damage every second<br><tftbold>Wound</tftbold>: Reduces healing received"
+      ],
+      "stats": {
+        "ap": 50,
+        "as": 25,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_FrozenHeartRadiant",
+      "name": "Thệ Ước Bảo Hộ",
+      "id": "j6imhthnrty9pt4",
+      "icon": "/assets/images/set14/items/TFT5_Item_FrozenHeartRadiant.webp",
+      "description": "Một lần mỗi giao tranh, khi còn 40% Máu, nhận một Lá Chắn tương đương <span class='tftradiantitembonus'>50%</span> Máu tối đa, tồn tại trong <span class='tftradiantitembonus'>10</span> giây, đồng thời nhận <span class='tftradiantitembonus'>60</span> Giáp và <span class='tftradiantitembonus'>60</span> Kháng Phép.<br>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 40,
+        "mana": 30
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT5_Item_GuardianAngelRadiant",
+      "name": "Áo Choàng Hừng Đông",
+      "id": "0ukhq4oge3hes63",
+      "icon": "/assets/images/set14/items/TFT5_Item_GuardianAngelRadiant.webp",
+      "description": "Một lần mỗi giao tranh: Khi còn 60% Máu, trở nên không thể chỉ định trong thoáng chốc và loại bỏ mọi hiệu ứng bất lợi. Sau đó, <span class='tftradiantitembonus'>hồi lại 100% lượng máu đã mất và nhận thêm 85% Tốc Độ Đánh</span>. <br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ad": 30,
+        "ar": 30,
+        "as": 85
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT5_Item_BlueBuffRadiant",
+      "name": "Bùa Xanh Mát Lành",
+      "id": "mq8153ojsylajgh",
+      "icon": "/assets/images/set14/items/TFT5_Item_BlueBuffRadiant.webp",
+      "description": "Nhận 10 Năng Lượng sau khi tung chiêu. <br><br>Khi chủ sở hữu tham gia hạ gục, họ sẽ gây thêm <span class='tftradiantitembonus'>20%</span> sát thương trong <span class='tftradiantitembonus'>12</span> giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span><br><br>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ad": 60,
+        "ap": 60,
+        "mana": 30
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT5_Item_TrapClawRadiant",
+      "name": "Liên Xích Thủ",
+      "id": "cc8r0lui7nfm7t5",
+      "icon": "/assets/images/set14/items/TFT5_Item_TrapClawRadiant.webp",
+      "description": "Đòn Chí Mạng sẽ cho <span class='tftradiantitembonus'>10%</span> Khuếch Đại Sát Thương trong <span class='tftradiantitembonus'>8 giây</span>, cộng dồn tối đa 4 lần.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 30,
+        "as": 30,
+        "crit": 20,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT5_Item_DragonsClawRadiant",
+      "name": "Vuốt Thần Long",
+      "id": "f6qmo50tdsyo27z",
+      "icon": "/assets/images/set14/items/TFT5_Item_DragonsClawRadiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>15%</span> Máu tối đa.<br><br>Sau mỗi 2 giây, hồi lại <span class='tftradiantitembonus'>10%</span> Máu tối đa.<br>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "mr": 115
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT5_Item_JeweledGauntletRadiant",
+      "name": "Găng Ngọc Thạch",
+      "id": "18gojrg1sn3kfxk",
+      "icon": "/assets/images/set14/items/TFT5_Item_JeweledGauntletRadiant.webp",
+      "description": "Kỹ năng có thể gây chí mạng.<br><br>Nếu kỹ năng của tướng sở hữu đã có thể chí mạng, nhận 10% Sát Thương Chí Mạng.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 70,
+        "crit": 75
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT5_Item_AdaptiveHelmRadiant",
+      "name": "Jak'Sho Vỏ Bọc Thích Nghi",
+      "id": "q22lrzy4rm0f08o",
+      "icon": "/assets/images/set14/items/TFT5_Item_AdaptiveHelmRadiant.webp",
+      "description": "Bắt đầu giao tranh: Nhận thêm các chỉ số khác nhau tùy thuộc vào vị trí khởi đầu.<br><br>Hai Hàng Đầu: <span class='tftradiantitembonus'>60</span> Giáp và Kháng Phép. Nhận <span class='tftradiantitembonus'>2</span> Năng Lượng khi bị tấn công.<br><br>Hai Hàng Sau: <span class='tftradiantitembonus'>40</span> Sức Mạnh Phép Thuật. Hồi <span class='tftradiantitembonus'>20</span> Năng Lượng mỗi 3 giây.<br>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 25,
+        "mr": 30,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT5_Item_LeviathanRadiant",
+      "name": "Món Quà Của Baron",
+      "id": "0epg34olzz3b816",
+      "icon": "/assets/images/set14/items/TFT5_Item_LeviathanRadiant.webp",
+      "description": "Sau khi sử dụng một Kỹ Năng, nhận thêm <span class='tftradiantitembonus'>120% Tốc Độ Đánh</span> trong <span class='tftradiantitembonus'>8 giây</span>.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 30,
+        "as": 20,
+        "hp": 200
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT5_Item_RabadonsDeathcapRadiant",
+      "name": "Mũ Thăng Hoa Rabadon",
+      "id": "u18d9n16i56fuql",
+      "icon": "/assets/images/set14/items/TFT5_Item_RabadonsDeathcapRadiant.webp",
+      "description": "<span class='tftitemrules'>Nó đã từng chứng kiến và tạo ra vô số phép màu... và cả thảm họa nữa.</span>",
+      "composition": [],
+      "rules": [
+        "It's witnessed - and unleashed - miracles and calamities both."
+      ],
+      "stats": {
+        "ap": 80,
+        "da": 50
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT5_Item_TitansResolveRadiant",
+      "name": "Quyền Năng Khổng Thần",
+      "id": "2wkccarx6dgb3wr",
+      "icon": "/assets/images/set14/items/TFT5_Item_TitansResolveRadiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>3%</span> SMCK và <span class='tftradiantitembonus'>3</span> SMPT khi tấn công hoặc nhận sát thương, cộng dồn tối đa 25 lần.<br><br>Khi đạt tối đa cộng dồn, tăng <span class='tftradiantitembonus'>50</span> Giáp và <span class='tftradiantitembonus'>50</span> Kháng Phép.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "as": 30,
+        "ar": 35
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT5_Item_ArchangelsStaffRadiant",
+      "name": "Quyền Trượng Thần URF",
+      "id": "yfnb8110zwny4se",
+      "icon": "/assets/images/set14/items/TFT5_Item_ArchangelsStaffRadiant.webp",
+      "description": "Bắt Đầu Giao Tranh: Nhận <span class='tftradiantitembonus'>40</span> Sức Mạnh Phép Thuật sau mỗi <span class='tftradiantitembonus'>4</span> giây trong giao tranh.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 60,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT5_Item_SteraksGageRadiant",
+      "name": "Vuốt Ngạ Quỷ",
+      "id": "2doblcewpy2t9ym",
+      "icon": "/assets/images/set14/items/TFT5_Item_SteraksGageRadiant.webp",
+      "description": "Khi còn 60% Máu, nhận một Lá Chắn bằng <span class='tftradiantitembonus'>100%</span> Máu tối đa của chủ sở hữu, giảm dần trong vòng <span class='tftradiantitembonus'>8</span> giây.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 30,
+        "hp": 400
+      },
+      "trait": "",
+      "type": "radiants",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnAnimaVisage",
+      "name": "Anima Visage",
+      "id": "dnld2f6m3waiw4i",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnAnimaVisage.webp",
+      "description": "Heal 3.5% max Health every second.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 20,
+        "hp": 400,
+        "mr": 20
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_UnendingDespair",
+      "name": "Áo Choàng Diệt Vong",
+      "id": "kmrn3p6qd0k2zg1",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_UnendingDespair.webp",
+      "description": "Mỗi khi Lá Chắn của chủ sở hữu bị phá, gây sát thương phép bằng 150% giá trị ban đầu của Lá Chắn đó lên kẻ địch gần nhất.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 40,
+        "hp": 350
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT9_Item_OrnnTrickstersGlass",
+      "name": "Gương Lừa Gạt",
+      "id": "sr38bbubvojv5qe",
+      "icon": "/assets/images/set14/items/TFT9_Item_OrnnTrickstersGlass.webp",
+      "description": "Triệu hồi 1 bản sao với 70% Máu Cơ Bản và +10% Năng Lượng tối đa. Bạn không thể lắp trang bị cho tướng nhân bản.<br><br><span class='tftitemrules'>Tướng nhân bản sẽ hưởng lợi từ các tộc hệ được kích hoạt</span><br><br><span class='tftitemrules'>[Duy Nhất - chỉ 1 mỗi tướng]</span><br>",
+      "composition": [],
+      "rules": [
+        "The clone benefits from active traits",
+        "[Unique - only 1 per champion]"
+      ],
+      "stats": {
+        "as": 10,
+        "ar": 10,
+        "crit": 15,
+        "mr": 10
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_LightshieldCrest",
+      "name": "Huy Hiệu Lightshield",
+      "id": "09cpxiqyoinldfw",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_LightshieldCrest.webp",
+      "description": "Mỗi 3 giây, tạo Lá Chắn cho đồng minh có phần trăm Máu thấp nhất, giá trị lá chắn bằng 70% tổng Giáp và Kháng Phép của chủ sở hữu trong 5 giây.<br><br>Khi bị hạ gục, trao lá chắn này cho tất cả đồng minh.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 55,
+        "mr": 55
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnZhonyasParadox",
+      "name": "Lưỡng Cực Zhonya",
+      "id": "zsub64s7sikf1e1",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnZhonyasParadox.webp",
+      "description": "Một lần mỗi giao tranh: Khi còn dưới 40% Máu, trở nên bất tử và không thể chỉ định trong 3 giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ap": 40,
+        "ar": 30,
+        "mr": 30
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnMuramana",
+      "name": "Thánh Kiếm Manazane",
+      "id": "k2g7zx107legjup",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnMuramana.webp",
+      "description": "Sau khi tung kỹ năng lần đầu tiên trong giao tranh, hồi lại 120 Năng Lượng trong vòng 5 giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ad": 10,
+        "ap": 10,
+        "as": 10,
+        "mana": 5
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT9_Item_OrnnDeathfireGrasp",
+      "name": "Bùa Đầu Lâu",
+      "id": "qhem114od50pzzv",
+      "icon": "/assets/images/set14/items/TFT9_Item_OrnnDeathfireGrasp.webp",
+      "description": "Bắt đầu giao tranh: Phóng lửa vào mục tiêu hiện tại, gây sát thương phép tương đương 40% Máu tối đa của kẻ đó. Lặp lại hiệu ứng này mỗi 13 giây.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 30,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_TalismanOfAscension",
+      "name": "Bùa Thăng Hoa",
+      "id": "1y15w3cx8q01g2n",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_TalismanOfAscension.webp",
+      "description": "Sau 22 giây, tăng 100% Máu tối đa và 120% Khuếch Đại Sát Thương cho đến hết giao tranh.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 20,
+        "ap": 20,
+        "hp": 300
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnTheCollector",
+      "name": "Đại Bác Hải Tặc",
+      "id": "o2litw592w336p7",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnTheCollector.webp",
+      "description": "Các đòn đánh và kỹ năng sẽ hành quyết những kẻ địch còn dưới 12% Máu tối đa. Khi hành quyết có 33% xác suất rơi ra 🪙 vàng.<br><br><span class='tfttrackerlabel'>Vàng Đã Thu Được:</span> <span class='tfthighlight'>v</span><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ad": 25,
+        "crit": 30
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_InnervatingLocket",
+      "name": "Dây Chuyền Tự Lực",
+      "id": "wxwexz1moedxdra",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_InnervatingLocket.webp",
+      "description": "Chủ sở hữu tăng 2% tổng Năng Lượng mỗi khi bị trúng một đòn đánh.<br><br>Mỗi lần thi triển kỹ năng hồi 20% Máu tối đa của chủ sở hữu trong 3 giây.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "hp": 150,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_Mittens",
+      "name": "Găng Đấu Sĩ",
+      "id": "q5rl63tv3ltn9hx",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_Mittens.webp",
+      "description": "Thu nhỏ chủ sở hữu, cho tốc độ di chuyển và miễn nhiễm <span class='tftkeyword'>Tê Tái</span>.<br><br><span class='tftitemrules'><tftbold>Tê Tái</tftbold>: giảm Tốc Độ Đánh</span>",
+      "composition": [],
+      "rules": ["<tftbold>Chill</tftbold>: reduce Attack Speed"],
+      "stats": {
+        "as": 60
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_SpectralCutlass",
+      "name": "Gươm Biến Ảnh",
+      "id": "27u1hev6v99yc3m",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_SpectralCutlass.webp",
+      "description": "Bắt đầu giao tranh: Dịch chuyển chủ sở hữu đến ô đối xứng trên bàn đấu của đối thủ. Sau 8 giây, chủ sở hữu sẽ trở lại vị trí ban đầu.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 40,
+        "ar": 40,
+        "crit": 20,
+        "mr": 40
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT9_Item_OrnnHorizonFocus",
+      "name": "Kính Nhắm Thiện Xạ",
+      "id": "tgfqn4lhqg7uf7b",
+      "icon": "/assets/images/set14/items/TFT9_Item_OrnnHorizonFocus.webp",
+      "description": "Tăng <img src='/assets/images/Range.webp' class='icon-stat'> 2 Tầm Đánh. Nhận 9% Khuếch Đại Sát Thương với mỗi ô khoảng cách từ chủ sở hữu đến mục tiêu.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 15,
+        "ap": 15,
+        "as": 15
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnDeathsDefiance",
+      "name": "Vũ Khúc Tử Thần",
+      "id": "nbzy736fv0kqf6c",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnDeathsDefiance.webp",
+      "description": "50% lượng sát thương chủ sở hữu nhận vào sẽ được gây ra theo dạng sát thương theo thời gian trong 4 giây.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ad": 10,
+        "as": 25,
+        "ar": 30,
+        "ov": 25
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_LudensTempest",
+      "name": "Bão Tố Luden",
+      "id": "bsukuzd85l01ncm",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_LudensTempest.webp",
+      "description": "Gây sát thương phép bằng 100% sát thương hạ gục vượt trội + 100 lên 3 kẻ địch gần mục tiêu nhất.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 45,
+        "ap": 45
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_SilvermereDawn",
+      "name": "Chùy Bạch Ngân",
+      "id": "0t993pl64wf89dw",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_SilvermereDawn.webp",
+      "description": "Trao miễn nhiễm Làm Choáng và đòn đánh của chủ sở hữu sẽ Làm Choáng kẻ địch trong 0.800000011920929 giây.<br><br><span class='tftshadowitembonus'>Tốc Độ Đánh của chủ sở hữu được đặt cố định là 0.5.</span>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 120,
+        "ar": 50,
+        "mr": 50
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_BlightingJewel",
+      "name": "Đá Hắc Hóa",
+      "id": "b3lxyn8rdmsnze7",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_BlightingJewel.webp",
+      "description": "Gây sát thương phép sẽ giảm Kháng Phép của mục tiêu đi 4. Nếu Kháng Phép của mục tiêu là 0, thay vào đó, tăng 5 Năng Lượng cho chủ sở hữu.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 40,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_WitsEnd",
+      "name": "Đao Tím",
+      "id": "s0ikbp9s39zewxx",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_WitsEnd.webp",
+      "description": "Đòn đánh gây thêm 42~100 sát thương phép.<br><br>Hồi máu cho chủ sở hữu bằng 35% tổng lượng sát thương phép đã gây ra.<br><br><span class='tftitemrules'>Sát thương tăng dựa theo Giai Đoạn.</span>",
+      "composition": [],
+      "rules": ["Damage increases based on Stage"],
+      "stats": {
+        "as": 30,
+        "mr": 30
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT7_Item_ShimmerscaleGamblersBlade",
+      "name": "Kiếm của Tay Bạc",
+      "id": "vjnnng5mya1vqjl",
+      "icon": "/assets/images/set14/items/TFT7_Item_ShimmerscaleGamblersBlade.webp",
+      "description": "Cho <img src='/assets/images/AS.webp' class='icon-stat'> 1% Tốc Độ Đánh cộng thêm với mỗi 🪙 vàng đang sở hữu (tối đa 🪙 30 vàng).<br><br>Mỗi đòn đánh có 5% tỉ lệ rơi ra 🪙 1 vàng.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span><br><span class='tftitemrules'>Số vàng đã tạo ra trong trận này: 0</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "ap": 10,
+        "as": 35
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_LichBane",
+      "name": "Kiếm Tai Ương",
+      "id": "aov3t1obt0g1xfl",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_LichBane.webp",
+      "description": "Đòn đánh đầu tiên của chủ sở hữu sau mỗi lần thi triển Kỹ Năng sẽ gây thêm 200~480 sát thương phép.<br><br><span class='tftitemrules'>Sát thương tăng lên theo Giai Đoạn</span>",
+      "composition": [],
+      "rules": ["Damage increases based on Stage"],
+      "stats": {
+        "ap": 30,
+        "as": 30
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_HorizonFocus",
+      "name": "Kính Nhắm Ma Pháp",
+      "id": "z720xos5hbda7jv",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_HorizonFocus.webp",
+      "description": "Làm choáng kẻ địch sẽ triệu hồi sấm sét tấn công chúng, gây sát thương phép bằng 30% Máu tối đa của chúng.<br>",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 20,
+        "hp": 250,
+        "mr": 20,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_ProwlersClaw",
+      "name": "Móng Vuốt Ám Muội",
+      "id": "adg90u0clyuk9o8",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_ProwlersClaw.webp",
+      "description": "Sau khi hạ gục mục tiêu, loại bỏ hiệu ứng bất lợi và lướt tới mục tiêu xa nhất trong vòng 4 ô. 2 đòn đánh chí mạng tiếp theo gây thêm 60% Sát Thương Chí Mạng.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 30,
+        "crit": 50,
+        "hp": 200
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnInfinityForce",
+      "name": "Tam Luyện Kiếm",
+      "id": "o1vqapmgy1ep0gn",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnInfinityForce.webp",
+      "description": "<span class='tftitemrules'>Tăng MỌI CHỈ SỐ!</span>",
+      "composition": [],
+      "rules": ["Tons of EVERYTHING!"],
+      "stats": {
+        "ad": 25,
+        "ap": 25,
+        "as": 25,
+        "ar": 25,
+        "hp": 250,
+        "mr": 25,
+        "mana": 25
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT9_Item_OrnnHullbreaker",
+      "name": "Thần Búa Tiến Công",
+      "id": "173bjjswbltl22k",
+      "icon": "/assets/images/set14/items/TFT9_Item_OrnnHullbreaker.webp",
+      "description": "Bắt Đầu Giao Tranh: Nếu không có đồng minh liền kề, được tăng 600 Máu, 20% Sức Mạnh Công Kích và 20 Sức Mạnh Phép Thuật.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 35,
+        "mr": 35
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_SuspiciousTrenchCoat",
+      "name": "Áo Choàng Mờ Ám",
+      "id": "p3agz7rkzl193e1",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_SuspiciousTrenchCoat.webp",
+      "description": "Một lần mỗi giao tranh, khi còn 60% Máu, chủ sở hữu phân thân thành 3 bản sao với 33% Máu tối đa.<br><br><span class='tftitemrules'>[Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "as": 15,
+        "hp": 100
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_RapidFirecannon",
+      "name": "Đại Bác Liên Thanh",
+      "id": "qze7dvk2b6hurt6",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_RapidFirecannon.webp",
+      "description": "Tăng +1 Tầm Đánh, tăng thêm 1 mỗi khi chủ sở hữu hạ gục 1 kẻ địch.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "as": 66
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT7_Item_ShimmerscaleMogulsMail",
+      "name": "Giáp Đại Hãn",
+      "id": "ogbt3j0cn161fa7",
+      "icon": "/assets/images/set14/items/TFT7_Item_ShimmerscaleMogulsMail.webp",
+      "description": "Cho 1 Giáp, 1 Kháng Phép và 10 Máu khi nhận sát thương, cộng dồn tối đa 35 lần.<br><br>Khi đạt cộng dồn tối đa, cho 🪙 1 vàng và tiếp tục nhận 🪙 1 vàng mỗi 8 giây.<br><br><span class='tftitemrules'>Số vàng đã tạo ra trong trận này: 0<br>[Duy Nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Unique - only 1 per champion]"],
+      "stats": {
+        "hp": 100
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": true,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_SeekersArmguard",
+      "name": "Giáp Tay Seeker",
+      "id": "xryx0dk1e7krp29",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_SeekersArmguard.webp",
+      "description": "Tham gia hạ gục sẽ tăng 15 Sức Mạnh Phép Thuật, Giáp và Kháng Phép cho chủ sở hữu, tăng lên thành 20 nếu ra đòn hạ gục.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 30,
+        "ar": 30,
+        "mr": 30
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_Artifact_Fishbones",
+      "name": "Pháo Xương Cá",
+      "id": "jmxm5k5c902fhtc",
+      "icon": "/assets/images/set14/items/TFT_Item_Artifact_Fishbones.webp",
+      "description": "Tăng gấp đôi tầm đánh của chủ sở hữu và khiến mỗi đòn đánh nhắm vào một kẻ địch ngẫu nhiên.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 20,
+        "as": 50
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT9_Item_OrnnPrototypeForge",
+      "name": "Găng Tay Thợ Rèn",
+      "id": "qia397qignrrk7c",
+      "icon": "/assets/images/set14/items/TFT9_Item_OrnnPrototypeForge.webp",
+      "description": "Mỗi vòng: Mang 2 Tạo Tác của Ornn ngẫu nhiên.<br><br><span class='tftitemrules'>[Tốn 3 ô trang bị.]</span><br>",
+      "composition": [],
+      "rules": ["[Consumes 3 item slots.]"],
+      "stats": {
+        "crit": 30,
+        "hp": 200
+      },
+      "trait": "",
+      "type": "ornns",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_Moonstone",
+      "name": "Bùa Nguyệt Thạch",
+      "id": "37djstetnmu1nkx",
+      "icon": "/assets/images/set14/items/TFT_Item_Moonstone.webp",
+      "description": "Mỗi 4 giây, ban 55-325 Lá Chắn (dựa theo Giai Đoạn) cho 2 đồng minh có phần trăm máu thấp nhất bằng trong vòng 4 giây.<br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_Chalice",
+      "name": "Cốc Sức Mạnh",
+      "id": "ctojiuf2zd5789w",
+      "icon": "/assets/images/set14/items/TFT_Item_Chalice.webp",
+      "description": "Bắt đầu giao tranh: Tăng 25 Sức Mạnh Phép Thuật và 10 Năng Lượng cho chủ sở hữu và đồng minh trong phạm vi 2 ô cùng hàng.<br><br>​<span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_LocketOfTheIronSolari",
+      "name": "Dây Chuyền Iron Solari",
+      "id": "i6he17yvwvpqjzn",
+      "icon": "/assets/images/set14/items/TFT_Item_LocketOfTheIronSolari.webp",
+      "description": "Bắt đầu giao tranh: Chủ sở hữu và đồng minh trong phạm vi 2 ô cùng hàng nhận 250 Lá Chắn, 20 Giáp và 20 Kháng Phép trong 20 giây.<br><br>​<span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT7_Item_ShimmerscaleHeartOfGold",
+      "name": "Ngọc Quá Khổ",
+      "id": "j1mj7f30bj8h6y0",
+      "icon": "/assets/images/set14/items/TFT7_Item_ShimmerscaleHeartOfGold.webp",
+      "description": "Đội của bạn nhận 5% Khuếch Đại Sát Thương. Mỗi giây tướng mang trang bị còn sống, đội của bạn nhận thêm 1% Khuếch Đại Sát Thương, tối đa 20%.<br><br>​​<span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT_Item_Shroud",
+      "name": "Áo Choàng Tĩnh Lặng",
+      "id": "0o0erfrx0ckgpjh",
+      "icon": "/assets/images/set14/items/TFT_Item_Shroud.webp",
+      "description": "Bắt đầu giao tranh: Bắn một tia khiến kẻ địch chịu 30% <span class='tftkeyword'>Tăng Năng Lượng</span>.<br><br>Đội của bạn nhận được 60 Máu.<br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ] [Duy Nhất - chỉ 1 mỗi tướng]<br><tftbold>Tăng Năng Lượng</tftbold>: Tăng Năng Lượng tối đa cho tới lần tung chiêu tiếp theo</span><br>",
+      "composition": [],
+      "rules": [
+        "[Support item]<br>[Unique - only 1 per champion]<br><tftbold>Mana Reave</tftbold>: increase maximum Mana until the next cast"
+      ],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_AegisOfTheLegion",
+      "name": "Lá Chắn Quân Đoàn",
+      "id": "bqvzr3ft809d49k",
+      "icon": "/assets/images/set14/items/TFT_Item_AegisOfTheLegion.webp",
+      "description": "Bắt đầu giao tranh: Ban 25% Tốc Độ Đánh cũng như 15 Giáp và Kháng Phép cho chủ sở hữu, các đồng minh liền kề cùng hàng và tất cả đồng minh phía sau họ trong 12 giây.<br><br>​<span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_RadiantVirtue",
+      "name": "Quyền Trượng Thánh Quang",
+      "id": "o0lc1dt5kw6h3lk",
+      "icon": "/assets/images/set14/items/TFT_Item_RadiantVirtue.webp",
+      "description": "Mỗi 5 giây, hồi lại cho đội của bạn 7% Máu tối đa. Khi chủ sở hữu bị hạ gục, lượng hồi máu tăng thành 14% Máu tối đa và được hồi thêm 2 lần.<br><br><span class='tfttrackerlabel'>Hồi Máu:</span> <span class='tfthighlight'></span><br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_ZekesHerald",
+      "name": "Tụ Bão Zeke",
+      "id": "kio2y2c4q53c09h",
+      "icon": "/assets/images/set14/items/TFT_Item_ZekesHerald.webp",
+      "description": "Bắt đầu giao tranh: Tăng <img src='/assets/images/AS.webp' class='icon-stat'> 30% Tốc Độ Đánh cho chủ sở hữu và đồng minh trong phạm vi 2 ô cùng hàng.<br><br>​<span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "as": 30,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT_Item_BansheesVeil",
+      "name": "Dây Chuyền Chữ Thập",
+      "id": "5nefpbg6quzhrhw",
+      "icon": "/assets/images/set14/items/TFT_Item_BansheesVeil.webp",
+      "description": "Bắt đầu giao tranh: Trao cho chủ sở hữu và các đồng minh trong phạm vi 1 ô cùng hàng khả năng miễn nhiễm khống chế và 25% Tốc Độ Đánh trong 18 giây.<br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ] [Duy nhất - chỉ 1 mỗi tướng]</span>",
+      "composition": [],
+      "rules": ["[Support item]<br>[Unique - only 1 per champion]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnRanduinsSanctum",
+      "name": "Khiên Băng Randuin",
+      "id": "bdha1oi0xz914aq",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnRanduinsSanctum.webp",
+      "description": "Bắt đầu giao tranh: Cho chủ sở hữu và tất cả đồng minh liền kề <img src='/assets/images/Armor.webp' class='icon-stat'> 30 Giáp và <img src='/assets/images/MR.webp' class='icon-stat'> 30 Kháng Phép.<br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_SupportKnightsVow",
+      "name": "Lời Thề Hiệp Sĩ",
+      "id": "3p3io83m0meg9ir",
+      "icon": "/assets/images/set14/items/TFT_Item_SupportKnightsVow.webp",
+      "description": "Bắt đầu giao tranh: Tăng 200 Máu và 15% Hút Máu Toàn Phần cho chủ sở hữu và đồng minh trong phạm vi 1 ô cùng hàng.<br><br>​<span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 50
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT4_Item_OrnnObsidianCleaver",
+      "name": "Rìu Nham Tinh",
+      "id": "ju80z4mbq3w29gy",
+      "icon": "/assets/images/set14/items/TFT4_Item_OrnnObsidianCleaver.webp",
+      "description": "Sát thương gây ra sẽ khiến kẻ địch chịu 30% <span class='tftkeyword'>Cào Xé</span> và 30% <span class='tftkeyword'>Phân Tách</span> trong 15 giây.<br><br>Đội của bạn nhận 8% SMCK và 8 SMPT.<br><br><span class='tftitemrules'>​[Trang Bị Hỗ Trợ] [Duy nhất - chỉ 1 mỗi tướng]<br><tftbold>Cào Xé</tftbold>: Giảm Kháng Phép<br><tftbold>Phân Tách</tftbold>: Giảm Giáp</span>",
+      "composition": [],
+      "rules": [
+        "[Support item]<br>[Unique - only 1 per champion]<br><tftbold>Shred</tftbold>: Reduce Magic Resist<br><tftbold>Sunder</tftbold>: Reduce Armor"
+      ],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_UnstableTreasureChest",
+      "name": "Rương Báu Bất Ổn",
+      "id": "bn0lmaeae1i1utt",
+      "icon": "/assets/images/set14/items/TFT_Item_UnstableTreasureChest.webp",
+      "description": "Khi chủ sở hữu bị hạ gục, 4 đồng minh có phần trăm máu cao nhất nhận 1 trang bị hoàn chỉnh tạm thời.<br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ]</span>",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT_Item_EternalFlame",
+      "name": "Ngọn Lửa Vĩnh Hằng",
+      "id": "75v9w4qctbwqz46",
+      "icon": "/assets/images/set14/items/TFT_Item_EternalFlame.webp",
+      "description": "Khi tướng mang trang bị này sống sót, toàn bộ kẻ địch bị nhiễm 33% <span class='tftkeyword'>Vết Thương Sâu</span> và tất cả đồng minh được tăng 8% Khuếch Đại Sát Thương. Hiệu ứng này tái thiết lập sau mỗi 5 giây.<br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ]<br><tftbold>Vết Thương Sâu</tftbold>: Giảm hồi máu nhận được</span>",
+      "composition": [],
+      "rules": [
+        "[Support item]<br><tftbold>Wound</tftbold>: Reduces healing received"
+      ],
+      "stats": {
+        "da": 8,
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_Zephyr",
+      "name": "Phong Kiếm",
+      "id": "0iozeavrjikw03e",
+      "icon": "/assets/images/set14/items/TFT_Item_Zephyr.webp",
+      "description": "Bắt đầu giao tranh: Triệu hồi lốc xoáy ở phía bên kia sân đấu, loại bỏ kẻ địch gần nhất khỏi sân đấu trong 5 giây. <br><br>Đội của bạn nhận được 2% Tốc Độ Đánh.<br><br><span class='tftitemrules'>[Trang Bị Hỗ Trợ]<br>[Bỏ qua khả năng miễn nhiễm khống chế.]<br>[Duy Nhất - chỉ 1 mỗi tướng]</span><br>",
+      "composition": [],
+      "rules": [
+        "[Support item]<br>[Ignores crowd control immunity.]<br>[Unique - only 1 per champion]"
+      ],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": true,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_Spite",
+      "name": "Spite",
+      "id": "lm017r75z1cd1je",
+      "icon": "/assets/images/set14/items/TFT_Item_Spite.webp",
+      "description": "Combat start: The holder and all adjacent allies gain 15% Attack Damage and 20 Ability Power.<br><br>When the holder dies, Stun all enemies within 2-hexes for 2 seconds.",
+      "composition": [],
+      "rules": ["[Support item]"],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "supports",
+      "unique": false,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT14_Item_ImmortalEmblemItem",
+      "name": "Ấn Kim Ngưu",
+      "id": "lzg43chsoxdp8kq",
+      "icon": "/assets/images/set14/items/TFT14_Item_ImmortalEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Kim Ngưu.",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_GiantsBelt"],
+      "rules": [],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "TFT14_Immortal",
+      "type": "emblems",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT14_Item_SwiftEmblemItem",
+      "name": "Ấn Liên Kích",
+      "id": "fqbe24473k5c7eu",
+      "icon": "/assets/images/set14/items/TFT14_Item_SwiftEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Liên Kích và 2 tầm đánh.",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_RecurveBow"],
+      "rules": [],
+      "stats": {
+        "as": 10,
+        "range": 2
+      },
+      "trait": "TFT14_Swift",
+      "type": "emblems",
+      "unique": true,
+      "tier": "S"
+    },
+    {
+      "apiName": "TFT14_Item_MobEmblemItem",
+      "name": "Ấn Băng Đảng",
+      "id": "1i7atndlvqbqq2p",
+      "icon": "/assets/images/set14/items/TFT14_Item_MobEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Băng Đảng.<br><br><scaleLevel enabled=TFT14_Mob_IsActive_T1 alternate=TFTGuildInactive>Thưởng Trùm Sò: <ShowIfNot.TFT14_Mob_IsActive_T3><span class='tftbonus'>+30%</span> Tốc Độ Đánh và nhận Lá Chắn tương đương <span class='tftbonus'>30%</span> Máu tối đa khi bắt đầu giao tranh.</ShowIfNot.TFT14_Mob_IsActive_T3><ShowIf.TFT14_Mob_IsActive_T3><span class='tftbonus'>+50%</span> Tốc Độ Đánh và nhận Lá Chắn tương đương <span class='tftbonus'>50%</span> Máu tối đa khi bắt đầu giao tranh.</ShowIf.TFT14_Mob_IsActive_T3></scaleLevel>",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_NegatronCloak"],
+      "rules": [],
+      "stats": {
+        "mr": 20
+      },
+      "trait": "TFT14_Mob",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_ArmorcladEmblemItem",
+      "name": "Ấn Can Trường",
+      "id": "4saduc3bev37zlj",
+      "icon": "/assets/images/set14/items/TFT14_Item_ArmorcladEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Can Trường.<br>Nhận 20% Giáp và Kháng Phép thành Sức Mạnh Phép Thuật.",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_ChainVest"],
+      "rules": [],
+      "stats": {
+        "ar": 20
+      },
+      "trait": "TFT14_Armorclad",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_ThirstyEmblemItem",
+      "name": "Ấn Cơ Điện",
+      "id": "0hxrgbjpvft0wxt",
+      "icon": "/assets/images/set14/items/TFT14_Item_ThirstyEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Cơ Điện.<br>Khi tung chiêu, nhận 2% Khuếch Đại Sát Thương với mỗi 10 Năng Lượng tiêu hao",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_TearOfTheGoddess"],
+      "rules": [],
+      "stats": {
+        "mana": 15
+      },
+      "trait": "TFT14_Thirsty",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_BruiserEmblemItem",
+      "name": "Ấn Đấu Sĩ",
+      "id": "hkht4r2ocijqc7r",
+      "icon": "/assets/images/set14/items/TFT14_Item_BruiserEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Đấu Sĩ.<br>Với mỗi 240 Máu tối đa, gây thêm 1% sát thương dưới dạng sát thương phép.",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_GiantsBelt"],
+      "rules": [],
+      "stats": {
+        "da": 1,
+        "hp": 150
+      },
+      "trait": "TFT14_Bruiser",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_ControllerEmblemItem",
+      "name": "Ấn Quân Sư",
+      "id": "1k85o5mgbqu2k2v",
+      "icon": "/assets/images/set14/items/TFT14_Item_ControllerEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Quân Sư và nhận 50% thưởng chỉ số của tướng Quân Sư khác.",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_BFSword"],
+      "rules": [],
+      "stats": {
+        "ad": 10
+      },
+      "trait": "TFT14_Controller",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_BallistekEmblemItem",
+      "name": "Ấn Robot Bộc Phá",
+      "id": "dzw94pr5u3h1m8s",
+      "icon": "/assets/images/set14/items/TFT14_Item_BallistekEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Robot Bộc Phá. ",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_ChainVest"],
+      "rules": [],
+      "stats": {
+        "ar": 20
+      },
+      "trait": "TFT14_BallisTek",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_DarkWebEmblemItem",
+      "name": "Ấn Siêu Thú",
+      "id": "6z08ottwh2lu8gi",
+      "icon": "/assets/images/set14/items/TFT14_Item_DarkWebEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Siêu Thú.",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_TearOfTheGoddess"],
+      "rules": [],
+      "stats": {
+        "mana": 15
+      },
+      "trait": "TFT14_AnimaSquad",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_DivinicorpEmblemItem",
+      "name": "Ấn Thần Pháp",
+      "id": "t4w0f7y7irw4xhv",
+      "icon": "/assets/images/set14/items/TFT14_Item_DivinicorpEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Thần Pháp.",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_RecurveBow"],
+      "rules": [],
+      "stats": {
+        "as": 10
+      },
+      "trait": "TFT14_Divinicorp",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_GuardianEmblemItem",
+      "name": "Ấn Tiên Phong",
+      "id": "2s05rej4z0xwpi4",
+      "icon": "/assets/images/set14/items/TFT14_Item_GuardianEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Tiên Phong.<br>Chủ sở hữu nhận thêm 150 Máu tối đa mỗi khi họ nhận một Lá Chắn.",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "TFT14_Vanguard",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_MarksmanEmblemItem",
+      "name": "Ấn Xạ Thủ",
+      "id": "p31151l8jsy103j",
+      "icon": "/assets/images/set14/items/TFT14_Item_MarksmanEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Xạ Thủ.<br>Gây sát thương vật lý lên kẻ địch làm giảm Giáp của chúng đi 3.",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_BFSword"],
+      "rules": [],
+      "stats": {
+        "ad": 10
+      },
+      "trait": "TFT14_Marksman",
+      "type": "emblems",
+      "unique": true,
+      "tier": "A"
+    },
+    {
+      "apiName": "TFT14_Item_TechieEmblemItem",
+      "name": "Ấn Chuyên Viên",
+      "id": "4binpfef7yrovsz",
+      "icon": "/assets/images/set14/items/TFT14_Item_TechieEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Chuyên Viên.<br>Chủ sở hữu nhận thêm 15% Sức Mạnh Phép Thuật từ mọi nguồn.",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_NeedlesslyLargeRod"],
+      "rules": [],
+      "stats": {
+        "ap": 10
+      },
+      "trait": "TFT14_Techie",
+      "type": "emblems",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT14_Item_StrongEmblemItem",
+      "name": "Ấn Đồ Tể",
+      "id": "5xxb2p9ha54xj0r",
+      "icon": "/assets/images/set14/items/TFT14_Item_StrongEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Đồ Tể.<br>Lượng hồi máu nhận được tăng thêm 33%.",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_NegatronCloak"],
+      "rules": [],
+      "stats": {
+        "mr": 20
+      },
+      "trait": "TFT14_Strong",
+      "type": "emblems",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT14_Item_StreetDemonEmblemItem",
+      "name": "Ấn Quỷ Đường Phố",
+      "id": "aszcz3zn78fj32j",
+      "icon": "/assets/images/set14/items/TFT14_Item_StreetDemonEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Quỷ Đường Phố.",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_NeedlesslyLargeRod"],
+      "rules": [],
+      "stats": {
+        "ap": 10
+      },
+      "trait": "TFT14_StreetDemon",
+      "type": "emblems",
+      "unique": true,
+      "tier": "B"
+    },
+    {
+      "apiName": "TFT14_Item_EdgeRunnerEmblemItem",
+      "name": "Ấn Công Nghệ Cao",
+      "id": "wteq7fj2dizmdme",
+      "icon": "/assets/images/set14/items/TFT14_Item_EdgeRunnerEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Công Nghệ Cao.",
+      "composition": ["TFT_Item_Spatula", "TFT_Item_SparringGloves"],
+      "rules": [],
+      "stats": {
+        "crit": 20
+      },
+      "trait": "TFT14_EdgeRunner",
+      "type": "emblems",
+      "unique": true,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT14_Item_CutterEmblemItem",
+      "name": "Ấn Đao Phủ",
+      "id": "ikg4hz9oe0qx8fn",
+      "icon": "/assets/images/set14/items/TFT14_Item_CutterEmblemItem.webp",
+      "description": "Chủ sở hữu nhận thêm tộc/hệ Đao Phủ.<br>Đòn Chí Mạng bỏ qua 40% Giáp và Kháng Phép của mục tiêu.",
+      "composition": ["TFT_Item_FryingPan", "TFT_Item_SparringGloves"],
+      "rules": [],
+      "stats": {
+        "crit": 20
+      },
+      "trait": "TFT14_Cutter",
+      "type": "emblems",
+      "unique": true,
+      "tier": "C"
+    },
+    {
+      "apiName": "TFT_Item_NegatronCloak",
+      "name": "Áo Choàng Bạc",
+      "id": "1lgdqao2b90mgsi",
+      "icon": "/assets/images/set14/items/TFT_Item_NegatronCloak.webp",
+      "description": "<img src='/assets/images/MR.webp' class='icon-stat'> +20 Kháng Phép",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "mr": 20
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_FryingPan",
+      "name": "Chảo Vàng",
+      "id": "93dz4a97osjjdrt",
+      "icon": "/assets/images/set14/items/TFT_Item_FryingPan.webp",
+      "description": "<span class='tftitemrules'>...còn lý do nào khác để nó ở đây nữa?</span>",
+      "composition": [],
+      "rules": ["...why else would it be here?"],
+      "stats": {},
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_RecurveBow",
+      "name": "Cung Gỗ",
+      "id": "yeox8p0z79jftem",
+      "icon": "/assets/images/set14/items/TFT_Item_RecurveBow.webp",
+      "description": "<img src='/assets/images/AS.webp' class='icon-stat'> +10% Tốc Độ Đánh",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "as": 10
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_GiantsBelt",
+      "name": "Đai Khổng Lồ",
+      "id": "dk0ydjo3w5lcxmg",
+      "icon": "/assets/images/set14/items/TFT_Item_GiantsBelt.webp",
+      "description": "<img src='/assets/images/Health.webp' class='icon-stat'> +150 Máu",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "hp": 150
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_SparringGloves",
+      "name": "Găng Đấu Tập",
+      "id": "ucgk4fsyjv9ex63",
+      "icon": "/assets/images/set14/items/TFT_Item_SparringGloves.webp",
+      "description": "+20 Tỉ Lệ Chí Mạng",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "crit": 20
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_NeedlesslyLargeRod",
+      "name": "Gậy Quá Khổ",
+      "id": "vneoqsmytufab35",
+      "icon": "/assets/images/set14/items/TFT_Item_NeedlesslyLargeRod.webp",
+      "description": "<img src='/assets/images/AP.webp' class='icon-stat'> +10 Sức Mạnh Phép Thuật",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ap": 10
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_ChainVest",
+      "name": "Giáp Lưới",
+      "id": "7ct0o56mc6q1nkq",
+      "icon": "/assets/images/set14/items/TFT_Item_ChainVest.webp",
+      "description": "<img src='/assets/images/Armor.webp' class='icon-stat'> +20 Giáp",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ar": 20
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_BFSword",
+      "name": "Kiếm B.F.",
+      "id": "fyhqxvf2ydcjw32",
+      "icon": "/assets/images/set14/items/TFT_Item_BFSword.webp",
+      "description": "<img src='/assets/images/AD.webp' class='icon-stat'> +10% Sức Mạnh Công Kích",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "ad": 10
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_TearOfTheGoddess",
+      "name": "Nước Mắt Nữ Thần",
+      "id": "g0ik4tjeaggr79w",
+      "icon": "/assets/images/set14/items/TFT_Item_TearOfTheGoddess.webp",
+      "description": "<img src='/assets/images/Mana.webp' class='icon-stat'> +15 Năng Lượng",
+      "composition": [],
+      "rules": [],
+      "stats": {
+        "mana": 15
+      },
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Item_Spatula",
+      "name": "Siêu Xẻng",
+      "id": "imkebudlbyd7fpg",
+      "icon": "/assets/images/set14/items/TFT_Item_Spatula.webp",
+      "description": "<span class='tftitemrules'>Nó phải có tác dụng gì đó...</span>",
+      "composition": [],
+      "rules": ["It must do something..."],
+      "stats": {},
+      "trait": "",
+      "type": "components",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_VarusCyberneticItem",
+      "name": "Cung Số 3 Chiều",
+      "id": "zf31b09usxy565n",
+      "icon": "/assets/images/set14/items/TFT14_VarusCyberneticItem.webp",
+      "description": "Các đòn đánh Chí Mạng sẽ cho thêm 2 Năng Lượng. Sau khi thi triển Kỹ Năng, nhận 40% Tỉ Lệ Chí Mạng trong 5 giây. <br><br><span class='rules'>Tướng khuyên dùng: Varus, Jhin và Zeri</span>",
+      "composition": [],
+      "rules": ["Recommended users: Varus, Jhin, and Zeri"],
+      "stats": {
+        "ap": 30,
+        "as": 25,
+        "mana": 15
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_VarusCyberneticItem_Radiant",
+      "name": "Cung Số 3 Chiều Bắn Tỉa",
+      "id": "696q0has0oozlfe",
+      "icon": "/assets/images/set14/items/TFT14_VarusCyberneticItem_Radiant.webp",
+      "description": "Các đòn đánh Chí Mạng sẽ cho thêm <span class='tftradiantitembonus'>10</span> Năng Lượng. Sau khi thi triển Kỹ Năng, nhận <span class='tftradiantitembonus'>100%</span> Tỉ Lệ Chí Mạng trong <span class='tftradiantitembonus'>8</span> giây. <br><br><span class='rules'>Tướng khuyên dùng: Varus, Jhin và Zeri</span>",
+      "composition": [],
+      "rules": ["Recommended users: Varus, Jhin, and Zeri"],
+      "stats": {
+        "ap": 40,
+        "as": 20,
+        "mana": 30
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_SejuaniCyberneticItem",
+      "name": "Cuộn Số Hóa",
+      "id": "4ys2anyx3b1bs8b",
+      "icon": "/assets/images/set14/items/TFT14_SejuaniCyberneticItem.webp",
+      "description": "Kỹ Năng và Đòn Đánh sẽ đánh dấu kẻ địch trong 8 giây. Hồi máu bằng <span class='tftbonus'>12%</span> sát thương gây lên những kẻ địch bị đánh dấu.<br><br><span class='tftpassive'>Tổng Hồi Máu Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Sejuani, Jax và Mordekaiser</span>",
+      "composition": [],
+      "rules": ["Recommended users: Sejuani, Jax, and Mordekaiser"],
+      "stats": {
+        "ar": 65,
+        "mr": 65
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_SejuaniCyberneticItem_Radiant",
+      "name": "Cuộn Số Hóa Trái Phép",
+      "id": "1am1ywzv71mtejy",
+      "icon": "/assets/images/set14/items/TFT14_SejuaniCyberneticItem_Radiant.webp",
+      "description": "Kỹ Năng và Đòn Đánh sẽ đánh dấu kẻ địch trong <span class='tftradiantitembonus'>10</span> giây. Hồi máu bằng <span class='tftradiantitembonus'>75%</span> sát thương gây lên những kẻ địch bị đánh dấu.<br><br><span class='tftpassive'>Tổng Hồi Máu Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Sejuani, Jax và Mordekaiser</span>",
+      "composition": [],
+      "rules": ["Recommended users: Sejuani, Jax, and Mordekaiser"],
+      "stats": {
+        "ar": 100,
+        "mr": 100
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_MordekaiserCyberneticItem_Radiant",
+      "name": "Khung Gầm Hòa Hợp",
+      "id": "v32n160eyl0onwf",
+      "icon": "/assets/images/set14/items/TFT14_MordekaiserCyberneticItem_Radiant.webp",
+      "description": "Chủ sở hữu được tăng <span class='tftradiantitembonus'>100%</span> hiệu lực Lá Chắn trên bản thân. <span class='tftradiantitembonus'>Sau mỗi giây</span>, rút <span class='tftradiantitembonus'>8%</span> Máu tối đa của chủ sở hữu từ <span class='tftradiantitembonus'>3 kẻ địch gần nhất<TFTRadiantItemBonus> và chuyển nó thành một Lá Chắn trong </span>8</TFTRadiantItemBonus> giây.<br><br><span class='tftpassive'>Lá Chắn Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Mordekaiser, Jax và Sejuani</span>",
+      "composition": [],
+      "rules": ["Recommended users: Mordekaiser, Jax, and Sejuani"],
+      "stats": {
+        "hp": 400
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_MordekaiserCyberneticItem",
+      "name": "Khung Gầm Tha Hóa",
+      "id": "w7bj5l030woj4l8",
+      "icon": "/assets/images/set14/items/TFT14_MordekaiserCyberneticItem.webp",
+      "description": "Chủ sở hữu được tăng <span class='tftbonus'>15%</span> hiệu lực Lá Chắn trên bản thân. Sau mỗi 7 giây, rút <span class='healing'>10%</span> Máu tối đa của chủ sở hữu từ mục tiêu hiện tại và chuyển nó thành một Lá Chắn trong 5 giây.<br><br><span class='tftpassive'>Lá Chắn Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Mordekaiser, Jax và Sejuani</span>",
+      "composition": [],
+      "rules": ["Recommended users: Mordekaiser, Jax, and Sejuani"],
+      "stats": {
+        "hp": 200
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_JaxCyberneticItem_Radiant",
+      "name": "Lồng Đèn Khắc Chế",
+      "id": "e8xei48xm90wrw1",
+      "icon": "/assets/images/set14/items/TFT14_JaxCyberneticItem_Radiant.webp",
+      "description": "Nhận <span class='tftradiantitembonus'>50%</span> Máu. Sau mỗi <span class='tftradiantitembonus'>1</span> giây, gây <span class='tftradiantitembonus'>10%</span> máu tối đa của chủ sở hữu thành <span class='magicdamage'>sát thương phép</span> lên tất cả kẻ địch trong phạm vi 1 ô.<br><br><span class='tftpassive'>Tổng Sát Thương Gây Ra Trong Vòng Này:</span> <span class='magicdamage'>0</span><br><br><span class='rules'>Tướng khuyên dùng: Jax, Mordekaiser và Sejuani</span>",
+      "composition": [],
+      "rules": ["Recommended users: Jax, Mordekaiser, and Sejuani"],
+      "stats": {
+        "hp": 777
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_JaxCyberneticItem",
+      "name": "Lồng Đèn Phản Lực",
+      "id": "a9d8hjeqoib8vfh",
+      "icon": "/assets/images/set14/items/TFT14_JaxCyberneticItem.webp",
+      "description": "Nhận thêm 5% Máu. Sau mỗi 3 giây, gây <span class='tftbonus'>6%</span> máu tối đa của chủ sở hữu thành <span class='magicdamage'>sát thương phép</span> lên tất cả kẻ địch trong phạm vi 1 ô.<br><br><span class='tftpassive'>Tổng Sát Thương Gây Ra Trong Vòng Này:</span> <span class='magicdamage'>0</span><br><br><span class='rules'>Tướng khuyên dùng: Jax, Mordekaiser và Sejuani</span>",
+      "composition": [],
+      "rules": ["Recommended users: Jax, Mordekaiser, and Sejuani"],
+      "stats": {
+        "hp": 444
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_JhinCyberneticItem",
+      "name": "Máy Ổn Định Xung Nhịp",
+      "id": "4xpi1idhsdnxstu",
+      "icon": "/assets/images/set14/items/TFT14_JhinCyberneticItem.webp",
+      "description": "Hành quyết những kẻ địch còn dưới <span class='tftbonus'>12%</span> Máu. Kỹ năng có thể gây chí mạng. Nếu kỹ năng của chủ sở hữu đã có thể chí mạng, nhận thêm 10% Sát Thương Chí Mạng.<br><br><span class='tftpassive'>Số Lần Hành Quyết Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Jhin và Zeri</span>",
+      "composition": [],
+      "rules": ["Recommended users: Jhin and Zeri"],
+      "stats": {
+        "ad": 30,
+        "crit": 30
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_NaafiriCyberneticItem_Radiant",
+      "name": "Nanh Thú Tối Thượng",
+      "id": "irqh79n27tuoy1z",
+      "icon": "/assets/images/set14/items/TFT14_NaafiriCyberneticItem_Radiant.webp",
+      "description": "Khi bạn gây sát thương lên kẻ địch, gây <span class='tftradiantitembonus'>100%</span> lượng sát thương đó lên kẻ địch gần nhất dưới dạng sát thương vật lý sau thoáng chốc.<br><br><span class='tftpassive'>Tổng Sát Thương Sóng Xung Kích Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Naafiri, Jhin và Varus</span>",
+      "composition": [],
+      "rules": ["Recommended users: Naafiri, Jhin, and Varus"],
+      "stats": {
+        "ad": 40,
+        "ap": 40,
+        "ov": 30
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_NaafiriCyberneticItem",
+      "name": "Nanh Vuốt Phấn Khích",
+      "id": "1cx3hjtnl8qpc0g",
+      "icon": "/assets/images/set14/items/TFT14_NaafiriCyberneticItem.webp",
+      "description": "Khi bạn gây sát thương lên kẻ địch, tích trữ 30% sát thương đã gây ra lên chúng. Sau 4 giây, gây lượng sát thương đã tích trữ lên mục tiêu và kẻ địch gần nhất dưới dạng sát thương vật lý.<br><br><span class='tftpassive'>Tổng Sát Thương Sóng Xung Kích Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Naafiri, Jhin và Varus</span>",
+      "composition": [],
+      "rules": ["Recommended users: Naafiri, Jhin, and Varus"],
+      "stats": {
+        "ad": 30,
+        "ap": 30,
+        "ov": 15
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_ZeriCyberneticItem",
+      "name": "Tụ Điện Bất Ổn",
+      "id": "lweohg01wkg1ddh",
+      "icon": "/assets/images/set14/items/TFT14_ZeriCyberneticItem.webp",
+      "description": "Đòn đánh sẽ tích trữ cộng dồn. Ở <span class='tftbonus'>4</span> tích trữ, đòn đánh kế tiếp sẽ tiêu thụ số cộng dồn để gây <span class='physicaldamage'>8%</span> máu tối đa của mục tiêu thành sát thương vật lý và giảm Giáp của chúng đi <span class='tftbonus'>10</span>.<br><br><span class='tftpassive'>Tổng Sát Thương Phóng Điện Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Zeri và Naafiri</span>",
+      "composition": [],
+      "rules": ["Recommended users: Zeri and Naafiri"],
+      "stats": {
+        "ad": 25,
+        "as": 25
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_ZeriCyberneticItem_Radiant",
+      "name": "Tụ Điện Sạc Đầy",
+      "id": "7bzjuccht0vi21z",
+      "icon": "/assets/images/set14/items/TFT14_ZeriCyberneticItem_Radiant.webp",
+      "description": "<span class='tftradiantitembonus'>Mỗi đòn đánh thứ hai sẽ phóng điện</span>, gây <span class='tftradiantitembonus'>20%</span> máu tối đa của mục tiêu thành sát thương vật lý và giảm Giáp của chúng đi <span class='tftradiantitembonus'>15</span>.<br><br><span class='tftpassive'>Tổng Sát Thương Phóng Điện Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Zeri và Naafiri</span>",
+      "composition": [],
+      "rules": ["Recommended users: Zeri and Naafiri"],
+      "stats": {
+        "ad": 30,
+        "as": 50
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT14_JhinCyberneticItem_Radiant",
+      "name": "Xung Nhịp Giảm Thanh",
+      "id": "quajjacyp9dieoo",
+      "icon": "/assets/images/set14/items/TFT14_JhinCyberneticItem_Radiant.webp",
+      "description": "Hành quyết những kẻ địch còn dưới <span class='tftradiantitembonus'>44%</span> Máu. Kỹ năng có thể gây chí mạng. <span class='tftradiantitembonus'>Nhận 44% Sát Thương Chí Mạng.</span><br><br><span class='tftpassive'>Tổng Số Lần Hành Quyết Trong Vòng Này: 0</span><br><br><span class='rules'>Tướng khuyên dùng: Jhin và Zeri</span>",
+      "composition": [],
+      "rules": ["Recommended users: Jhin and Zeri"],
+      "stats": {
+        "ad": 44,
+        "crit": 44
+      },
+      "trait": "",
+      "type": "set_items",
+      "unique": true,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Flex",
+      "name": "+1 Flex Item",
+      "id": "n8tz2sxi9mnj32m",
+      "icon": "/assets/images/set14/items/TFT_Flex.webp",
+      "description": "This Item is a Placeholder for any Additional Item that the champion might need. ",
+      "composition": [],
+      "rules": [],
+      "stats": {},
+      "trait": "",
+      "type": "customs",
+      "unique": false,
+      "tier": ""
+    },
+    {
+      "apiName": "TFT_Flex_2",
+      "name": "+2 Flex Item",
+      "id": "lt4vit5dgkza1su",
+      "icon": "/assets/images/set14/items/TFT_Flex_2.webp",
+      "description": "This Item is a Placeholder for any 2 Additional Item that the champion might need. ",
+      "composition": [],
+      "rules": [],
+      "stats": {},
+      "trait": "",
+      "type": "customs",
+      "unique": false,
+      "tier": ""
+    }
+  ]
+}

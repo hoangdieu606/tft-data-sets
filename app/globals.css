@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b141e;
+  --foreground: #fff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer utilities {
+  .champ-cost-1 {
+    --champion-border-color: var(--color-gray-400);
+    --champion-cost-background: linear-gradient(162.51deg, #6b7280 23.73%, #d1d5db 61.57%, #9ca3af 99.42%);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .champ-cost-2 {
+    --champion-border-color: var(--color-lime-400);
+    --champion-cost-background: linear-gradient(162.51deg, #14cf11 23.73%, #93f592 61.57%, #03b900 99.42%);
+  }
+
+  .champ-cost-3 {
+    --champion-border-color: var(--color-sky-400);
+    --champion-cost-background: linear-gradient(162.51deg, #1e40af 23.73%, #93c5fd 61.57%, #3b82f6 99.42%);
+  }
+
+  .champ-cost-4 {
+    --champion-border-color: #E537A2;
+    --champion-cost-background: linear-gradient(162.51deg, #6b21a8 23.73%, #d8b4fe 61.57%, #a855f7 99.42%);
+  }
+
+  .champ-cost-5 {
+    --champion-border-color: var(--color-orange-400);
+    --champion-cost-background: linear-gradient(162.51deg, #ea610c 23.73%, #ffc195 61.57%, #bf6423 99.42%);
+  }
+
+  .champ-cost-6 {
+    --champion-border-color: var(--color-indigo-400);
+    --champion-cost-background: linear-gradient(162.51deg, #4c55db 23.73%, #43a5d7 61.57%, #a761df 99.42%);
+  }
+
+  .tier-S {
+    --tier-color: var(--color-red-500)
+  }
+
+  .tier-A {
+    --tier-color: var(--color-orange-500)
+  }
+
+  .tier-B {
+    --tier-color: var(--color-yellow-300)
+  }
+
+  .tier-C {
+    --tier-color: var(--color-lime-500)
+  }
+
+  .tier-color {
+    color: var(--tier-color);
+  }
+
+  .champ-bg {
+    background: var(--champion-cost-background, linear-gradient(162.51deg, #6b7280 23.73%, #d1d5db 61.57%, #9ca3af 99.42%));
+  }
+
+  .champ-border {
+    border: 2px solid var(--champion-border-color, var(--color-gray-300));
+  }
+
+  .icon-stat {
+    width: 18px;
+    height: 18px;
+    display: inline;
+  }
+
+  .magicdamage {
+    color: #00d8b0;
+  }
+
+  .tftbonus,
+  .scalelevel {
+    color: #f0c000;
+  }
+
+  .spellpassive,
+  .spellactive {
+    color: var(--color-amber-500);
+  }
+
+  span.tftitemrules,
+  span.rules {
+    opacity: 0.5;
+  }
+
+  .scalehealth {
+    color: #00ad0a;
+  }
+
+  .physicaldamage {
+    color: #dd7828;
+  }
+
+  .omnivamp,
+  .truedamage,
+  .tftkeyword {
+    color: #ff6369;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 64rem;
+  font-family: var(--font-nunito-sans), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-nunito), sans-serif;
+  font-weight: 700;
 }

@@ -1,0 +1,87 @@
+name: Update TFT Data
+
+on:
+  schedule:
+    - cron: '30 0 * * *'  # 00:30 UTC mỗi ngày
+    - cron: '30 12 * * *' # 12:30 UTC mỗi ngày
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Fetch Data from Worker
+        run: |
+          mkdir -p public/data/auto
+          
+          DATA_FILES=("champions.json" "traits.json" "augments.json" "items.json" "guides.json" "guides-revival.json" "champions-revival.json" "traits-revival.json" "augments-revival.json" "items-revival.json")
+
+          # Tải file từ Worker (tftdata)
+          for filename in "${DATA_FILES[@]}"; do
+            echo "Attempting to download $filename from tftdata..."
+            curl -X GET "https://tftdata.hoquocdieu.workers.dev/?file=$filename" -o "public/data/auto/$filename" || echo "File $filename not found in tftdata, skipping..."
+          done
+
+      - name: Validate JSON Files
+        run: |
+          for file in public/data/auto/*.json; do
+            if [ -f "$file" ]; then
+              if [ ! -s "$file" ]; then
+                echo "File $file is empty, removing..."
+                rm "$file"
+                continue
+              fi
+              jq . "$file" > /dev/null || { echo "Invalid JSON in $file, removing..."; rm "$file"; continue; }
+              if jq -e '.error' "$file" > /dev/null; then
+                echo "File $file contains an error, removing..."
+                rm "$file"
+              else
+                echo "Validated $file"
+              fi
+            fi
+          done
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Unstaged changes detected, stashing them..."
+            git add .
+            git stash
+          fi
+
+          git pull origin main --rebase || { echo "Pull failed"; exit 1; }
+
+          if git stash list | grep -q "stash"; then
+            echo "Applying stashed changes..."
+            git stash pop || { echo "Stash pop failed, resolving conflicts may be needed"; exit 1; }
+          fi
+
+          echo "Git status before staging:"
+          git status
+
+          echo "Staging all changes, including deletions..."
+          git add -A
+
+          echo "Git status after staging:"
+          git status
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          echo "Committing changes..."
+          git commit -m "Update TFT data on $(date +'%Y-%m-%d')"
+          git push
+
+          echo "Files in public/data/auto after commit:"
+          ls -l public/data/auto/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
