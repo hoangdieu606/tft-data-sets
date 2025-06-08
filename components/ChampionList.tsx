@@ -1,27 +1,10 @@
 import Image from "next/image";
+import { Champion, Trait } from "@/lib/types";
 import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
 } from "@/lib/dataFilter";
-
-interface Champion {
-  name: string;
-  icon: string;
-  abilityIcon: string;
-  cost: number;
-  traits: string[];
-  ability: string;
-  abilityName: string;
-  apiName: string;
-  stats: { initialMana: number; mana: number };
-}
-
-interface Trait {
-  id: string;
-  name: string;
-  icon: string;
-}
 
 interface ChampionCardProps {
   champion: Champion;

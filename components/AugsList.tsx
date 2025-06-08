@@ -1,20 +1,11 @@
 import Image from "next/image";
+import { Augment } from "@/lib/types";
 import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
 } from "@/lib/dataFilter";
 
-interface Augment {
-  apiName: string;
-  id: string;
-  name: string;
-  icon: string;
-  description: string;
-  rules: string[];
-  tier: string;
-  tier2: string;
-}
 interface AugmentCardProps {
   augment: Augment;
 }

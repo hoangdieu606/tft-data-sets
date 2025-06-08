@@ -1,50 +1,12 @@
 import Image from "next/image";
 import clsx from "clsx";
+import { Champion, Trait } from "@/lib/types";
+
 import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
 } from "@/lib/dataFilter";
-
-interface Champion {
-  apiName: string;
-  name: string;
-  id: string;
-  icon: string;
-  abilityIcon: string;
-  ability: string;
-  abilityName: string;
-  cost: number;
-  hexIndex: string;
-  traits: string[];
-  stats: ChampionStats;
-}
-interface ChampionStats {
-  ap: number;
-  ar: number;
-  as: number;
-  crit: number;
-  ad: number;
-  hp: number;
-  initialMana: number;
-  mr: number;
-  mana: number;
-  range: number;
-}
-
-
-interface Trait {
-  apiName: string;
-  name: string;
-  id: string;
-  icon: string;
-  description: string;
-  effects: Record<string, string | number>;
-  breakpoints: number[];
-  colors: number[];
-  rules: string[];
-  type: string;
-}
 
 interface TraitCardProps {
   trait: Trait;

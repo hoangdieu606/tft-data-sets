@@ -1,25 +1,13 @@
 import Image from "next/image";
 import clsx from "clsx";
+import { Item } from "@/lib/types";
 import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
 } from "@/lib/dataFilter";
 
-interface Item {
-  apiName: string;
-  name: string;
-  id: string;
-  icon: string;
-  description: string;
-  composition: string[];
-  rules: string[];
-  stats: Record<string, string | number>;
-  trait: string;
-  type: string;
-  unique: boolean;
-  tier: string;
-}
+
 interface ItemCardProps {
   item: Item;
   items: Item[];

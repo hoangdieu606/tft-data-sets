@@ -5,11 +5,11 @@ const dataLinks = [
   { text: "Trang Bị", href: "/items" },
 ];
 
-const guideLinks = [
+/* const guideLinks = [
   { text: "Tierlist", href: "/tierlist" },
   { text: "Nâng Cấp", href: "/tierlist-augments" },
   { text: "Trang Bị", href: "/tierlist-items" },
-];
+]; */
 
 const dataPage = {
   champions: {
