@@ -28,7 +28,6 @@ export function DropdownMenu({
   id,
 }: DropdownMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
 
   const toggleOpen = () => setIsOpen(!isOpen);
   const handleSelect = (option: Option) => {

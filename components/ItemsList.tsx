@@ -1,6 +1,5 @@
 import Image from "next/image";
 import clsx from "clsx";
-import { TFTKeyword } from "@/ui/TFTKeyword";
 import {
   dataMapping,
   DataMappingKeys,
@@ -27,7 +26,7 @@ interface ItemCardProps {
 }
 
 function ItemCard({ item, items }: ItemCardProps) {
-  const { name, icon, type, stats, description, tier, composition } = item;
+  const { name, icon, type, description, tier, composition } = item;
 
   const itemComps = composition?.length
     ? composition

@@ -20,7 +20,7 @@ interface AugmentCardProps {
 }
 
 function AugmentCard({augment}: AugmentCardProps) {
-  const { icon, name, description, tier, tier2 } = augment;
+  const { icon, name, description, tier2 } = augment;
 
   return (
     <div

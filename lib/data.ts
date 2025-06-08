@@ -1,13 +1,13 @@
-import { cache } from 'react';
+import { cache } from "react";
 
 interface GenericDataResponse {
   set: string | number;
   version: string;
-  data: any[];
+  data: Record<string, unknown>[];
 }
 
 interface GuidesDataResponse {
-  guides: any[];
+  guides: Record<string, unknown>[];
   status: string;
   totalGuides: number;
   updated: string;
@@ -53,34 +53,37 @@ function isGenericDataResponse<T extends DataType>(
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
-export const DataFetcher = cache(async <T extends DataType>(
-  type: T
-): Promise<FetchDataReturn<T>> => {
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 5000);
-  const url = `${BASE_URL}/data/auto/${type}.json`;
+export const DataFetcher = cache(
+  async <T extends DataType>(type: T): Promise<FetchDataReturn<T>> => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    const url = `${BASE_URL}/data/auto/${type}.json`;
 
-  try {
-    const response = await fetch(url, {
-      signal: controller.signal,
-      cache: 'no-store',
-    });
+    try {
+      const response = await fetch(url, {
+        signal: controller.signal,
+        cache: "no-store",
+      });
 
-    clearTimeout(timeoutId);
+      clearTimeout(timeoutId);
 
-    if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
+      if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (isGuidesDataResponse(data, type) || isGenericDataResponse(data, type)) {
-      return data as FetchDataReturn<T>;
+      if (
+        isGuidesDataResponse(data, type) ||
+        isGenericDataResponse(data, type)
+      ) {
+        return data as FetchDataReturn<T>;
+      }
+
+      console.error(`Invalid ${type} data structure`);
+      return null;
+    } catch (error) {
+      clearTimeout(timeoutId);
+      console.error(`Error fetching ${type}:`, error);
+      return null;
     }
-
-    console.error(`Invalid ${type} data structure`);
-    return null;
-  } catch (error) {
-    clearTimeout(timeoutId);
-    console.error(`Error fetching ${type}:`, error);
-    return null;
   }
-});
+);

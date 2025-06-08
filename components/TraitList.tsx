@@ -7,23 +7,42 @@ import {
 } from "@/lib/dataFilter";
 
 interface Champion {
+  apiName: string;
   name: string;
+  id: string;
   icon: string;
   abilityIcon: string;
-  cost: number;
-  traits: string[];
   ability: string;
   abilityName: string;
-  apiName: string;
-  stats: { initialMana: number; mana: number };
+  cost: number;
+  hexIndex: string;
+  traits: string[];
+  stats: ChampionStats;
+}
+interface ChampionStats {
+  ap: number;
+  ar: number;
+  as: number;
+  crit: number;
+  ad: number;
+  hp: number;
+  initialMana: number;
+  mr: number;
+  mana: number;
+  range: number;
 }
 
+
 interface Trait {
-  id: string;
+  apiName: string;
   name: string;
+  id: string;
   icon: string;
   description: string;
   effects: Record<string, string | number>;
+  breakpoints: number[];
+  colors: number[];
+  rules: string[];
   type: string;
 }
 
