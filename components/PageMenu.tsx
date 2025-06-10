@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
-import { capitalize } from 'lodash';
+import { capitalize } from "lodash";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from "next/navigation";
 import { dataFilter, DataPageKeys } from "@/lib/dataFilter";
 
 interface Props {
@@ -13,8 +13,8 @@ interface Props {
   filterType?: string;
 }
 
-export default function PageMenu( { page, filterType = "Show All" }: Props) {
-  const {linkList, filterList } = dataFilter(page);
+export default function PageMenu({ page, filterType = "Show All" }: Props) {
+  const { linkList, filterList } = dataFilter(page);
   const [isLinkOpen, setIsLinkOpen] = useState(false);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
@@ -26,29 +26,29 @@ export default function PageMenu( { page, filterType = "Show All" }: Props) {
 
   const handleFilterClick = (type: string) => {
     const newParams = new URLSearchParams(params);
-    if (type === 'Show All') {
-      newParams.delete('type');
+    if (type === "Show All") {
+      newParams.delete("type");
     } else {
-      newParams.set('type', type);
+      newParams.set("type", type);
     }
     router.push(`?${newParams.toString()}`);
-    setIsFilterOpen(false)
+    setIsFilterOpen(false);
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:justify-between gap-4 w-full">
+    <div className="flex justify-between gap-4 w-full">
       <div className="relative min-w-[160px]">
         <button
-          className="w-full flex justify-between items-center px-5 py-3 border-2 border-[#184925] rounded-[20px] bg-[#0f1510] text-white text-base cursor-pointer hover:border-[#16dc4c] transition-all duration-300"
+          className="w-full flex justify-between items-center px-5 py-3 border-2 border-[#184925] rounded-[20px] bg-[#0f1510] cursor-pointer hover:border-[#16dc4c] transition-all duration-300"
           onClick={toggleLink}
           aria-expanded={isLinkOpen}
-          aria-controls="filter-menu"
+          aria-controls="menu-link"
         >
           {capitalize(page)}
           <ChevronDownIcon className="w-5 h-5" />
         </button>
         <div
-          id="filter-menu"
+          id="menu-link"
           className={clsx(
             "absolute top-[calc(100%+5px)] left-0 w-full bg-[#0f1510] border-2 border-[#184925] rounded-[10px] overflow-hidden z-[100] transition-all duration-300",
             isLinkOpen
@@ -74,16 +74,16 @@ export default function PageMenu( { page, filterType = "Show All" }: Props) {
 
       <div className="relative min-w-[160px]">
         <button
-          className="w-full flex justify-between items-center px-5 py-3 border-2 border-[#184925] rounded-[20px] bg-[#0f1510] text-white text-base cursor-pointer hover:border-[#16dc4c] transition-all duration-300"
+          className="w-full flex justify-between items-center px-5 py-3 border-2 border-[#184925] rounded-[20px] bg-[#0f1510] cursor-pointer hover:border-[#16dc4c] transition-all duration-300"
           onClick={toggleFilter}
           aria-expanded={isFilterOpen}
-          aria-controls="cost-menu"
+          aria-controls="menu-filter"
         >
           {filterType}
           <ChevronDownIcon className="w-5 h-5" />
         </button>
         <div
-          id="cost-menu"
+          id="menu-filter"
           className={clsx(
             "absolute top-[calc(100%+5px)] left-0 w-full bg-[#0f1510] border-2 border-[#184925] rounded-[10px] overflow-hidden z-[100] transition-all duration-300",
             isFilterOpen

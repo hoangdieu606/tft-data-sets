@@ -1,6 +1,4 @@
-// app/champions/ChampionsDisplay.tsx
-
-"use client"; // <-- Rất quan trọng!
+"use client";
 
 import { useSearchParams } from "next/navigation";
 import PageMenu from "@/components/PageMenu";
@@ -21,11 +19,9 @@ export default function ChampionsDisplay({
   champions,
   traits,
 }: ChampionsDisplayProps) {
-  // Dùng hook của client để đọc search params
   const searchParams = useSearchParams();
   const filterType = searchParams.get("type") ?? "Show All";
 
-  // Logic lọc giờ nằm ở đây
   const typeFilter: DataMappingValue | string =
     filterType in dataMapping
       ? dataMapping[filterType as DataMappingKeys]
@@ -39,7 +35,6 @@ export default function ChampionsDisplay({
   return (
     <>
       <PageMenu page="champions" filterType={filterType} />
-      {/* Truyền danh sách đã lọc vào ChampionList */}
       <ChampionList champions={filteredChampions} traits={traits} />
     </>
   );
