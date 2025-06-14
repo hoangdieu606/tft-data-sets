@@ -1,9 +1,9 @@
 name: Update TFT Data
 
 on:
-  schedule:
-    - cron: '30 0 * * *'  # 00:30 UTC mỗi ngày
-    - cron: '30 12 * * *' # 12:30 UTC mỗi ngày
+  # schedule:
+    # - cron: '30 0 * * *'  # 00:30 UTC mỗi ngày
+    # - cron: '30 12 * * *' # 12:30 UTC mỗi ngày
   workflow_dispatch:
 
 permissions:
