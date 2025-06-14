@@ -6,6 +6,9 @@ on:
     - cron: '30 12 * * *' # 12:30 UTC mỗi ngày
   workflow_dispatch:
 
+permissions:
+  contents: write # Quyền đọc và ghi nội dung repository
+  
 jobs:
   update-data:
     runs-on: ubuntu-latest
