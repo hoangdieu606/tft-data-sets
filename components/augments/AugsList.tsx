@@ -2,8 +2,6 @@ import { Augment } from "@/lib/types";
 import AugmentCard from "./AugmentCard";
 import { augmentCardListStyles } from "@/lib/allCardStyles";
 
-
-
 interface AugsListProps {
   augments: Augment[]; 
 }

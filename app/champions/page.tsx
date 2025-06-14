@@ -4,8 +4,10 @@ import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import ChampionsDisplay from "@/components/ChampionsDisplay";
+import ChampionsDisplay from "@/components/champions/ChampionsDisplay";
 import { Suspense } from "react";
+import keyBy from "lodash/keyBy";
+
 
 export async function generateMetadata(): Promise<Metadata> {
   const data = await DataFetcher("champions");
@@ -47,16 +49,17 @@ export default async function ChampionsPage() {
 
   const champions = dataChampions.data || [];
   const traits = dataTraits.data || [];
+  const traitsMap = keyBy(traits, "apiName")
 
   return (
-    <div className="container mt-8 px-4 py-8">
+    <div className="container px-4 py-8">
       <Title
         page="champions"
         set={dataChampions.set}
         patch={dataChampions.version}
       />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <ChampionsDisplay champions={champions} traits={traits} />
+        <ChampionsDisplay champions={champions} traitsMap={traitsMap} />
       </Suspense>
     </div>
   );

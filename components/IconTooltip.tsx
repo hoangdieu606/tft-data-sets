@@ -33,8 +33,8 @@ export default function IconTooltip({
         onClose={handleTooltipClose}
         onOpen={handleTooltipOpen}
         disableFocusListener
-        disableHoverListener={false}
         disableTouchListener
+        disableInteractive
         slotProps={{
           popper: {
             modifiers: [
@@ -53,7 +53,7 @@ export default function IconTooltip({
           onClick={handleTooltipOpen}
           className={className}
           role="button"
-          aria-label="View champion details"
+          aria-label="View details"
         >
           {children}
         </div>

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import AugmentsDisplay from "@/components/AugmentsDisplay";
+import AugmentsDisplay from "@/components/augments/AugmentsDisplay";
 import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {

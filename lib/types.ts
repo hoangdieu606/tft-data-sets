@@ -1,3 +1,17 @@
+// lib/types.ts
+export interface GenericDataResponse<T> {
+  set: string | number;
+  version: string;
+  data: T[];
+}
+
+export interface GuidesDataResponse<T> {
+  guides: T[];
+  status: string;
+  totalGuides: number;
+  updated: string;
+}
+
 export interface Champion {
   apiName: string;
   name: string;
@@ -35,6 +49,7 @@ export interface Trait {
   breakpoints: number[];
   colors: number[];
   rules: string[];
+  champions: string[];
   type: string;
 }
 
@@ -63,7 +78,62 @@ export interface Item {
   unique: boolean;
   tier: string;
 }
+interface AltBuild {
+  apiName: string;
+  items: string[];
+  stars: number;
+}
+interface EarlyComp {
+  apiName: string;
+  items: string[];
+  stars: number;
+}
+interface Carousel {
+  apiName: string;
+  id: string;
+}
+export interface FinalComp {
+  apiName: string;
+  boardIndex: number;
+  items: string[];
+  stars: number;
+}
 
 export interface Guide {
-  [key: string]: unknown;
+  altBuilds: AltBuild[]; 
+  anomaliedChampions: string[];
+  anomaliesOverride: Record<string, string | number>;
+  augmentTypes: string[]; 
+  augments: Carousel[];
+  augmentsTip: string;
+  carousel: Carousel[]; 
+  collectionId: string;
+  collectionName: string;
+  compSlug: string;
+  created: string;
+  difficulty: "EASY" | "MEDIUM" | "HARD";
+  displayIndex: number;
+  earlyComp: EarlyComp[]; 
+  finalComp: FinalComp[]; 
+  id: string;
+  isPublic: boolean;
+  mainAugment: Record<string, string | number>;
+  mainChampion: Record<string, string | number>;
+  mainItem: Record<string, string | number>;
+  metaTitle: string;
+  rank: string;
+  set: number;
+  sticker: number;
+  style: string;
+  tier: 'S' | 'A' | 'B' | 'C' | 'X';
+  tips: { stage: string; tip: string }[];
+  title: string;
+  updated: string; // ISO date string
+}
+export interface TierGroup {
+  S: Guide[];
+  A: Guide[];
+  B: Guide[];
+  C: Guide[];
+  X: Guide[];
 }

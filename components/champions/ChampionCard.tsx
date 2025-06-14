@@ -1,33 +1,31 @@
 import Image from "next/image";
 import { Champion, Trait } from "@/lib/types";
-import { ChampionCardStyles } from "@/lib/allCardStyles";
+import { ChampionCardStyles, championCardTooltipStyles } from "@/lib/allCardStyles";
 
 interface ChampionCardProps {
   champion: Champion;
-  traits: Trait[];
+  traitsMap: Record<string, Trait>;
   styles?: ChampionCardStyles;
 }
 
 export function ChampionCard({
   champion,
-  traits,
-  styles = {},
+  traitsMap,
+  styles = championCardTooltipStyles,
 }: ChampionCardProps) {
   const {
     name,
     icon,
     abilityIcon,
     cost,
-    traits: championTraitIds,
+    traits,
     ability,
     abilityName,
     apiName,
     stats,
   } = champion;
   const mana = `${stats.initialMana} / ${stats.mana}`;
-  const champTraits = championTraitIds.map(
-    (id) => traits.find((trait) => trait.id === id) || { name: "", icon: "" }
-  );
+  const champTraits = traits.map((apiName) => traitsMap[apiName]);
 
   return (
     <div
@@ -61,8 +59,8 @@ export function ChampionCard({
             className={`champ-border rounded-lg ${styles.championIcon}`}
           />
           <div className="flex flex-col gap-1">
-            {champTraits.map((trait) => (
-              <span key={trait.name} className={`flex items-center gap-1`}>
+            {champTraits.map((trait, index) => (
+              <span key={index} className={`flex items-center gap-1`}>
                 {trait.icon && (
                   <Image
                     src={trait.icon}

@@ -2,44 +2,38 @@ import Image from "next/image";
 import clsx from "clsx";
 import { Item } from "@/lib/types";
 import StatsDisplay from "./StatsDisplay";
-import { ItemCardStyles } from "@/lib/allCardStyles";
-import IconTooltip from "./IconTooltip";
-import { itemCardTooltipStyles } from "@/lib/allCardStyles";
+import { ItemCardStyles, itemCardTooltipStyles } from "@/lib/allCardStyles";
 
 interface ItemCardProps {
   item: Item;
-  items: Item[];
-  styles: ItemCardStyles;
+  itemsMap: Record<string, Item>;
+  styles?: ItemCardStyles;
 }
 
-export default function ItemCard({ item, items, styles = {} }: ItemCardProps) {
-  const { name, icon, type, description, tier, composition, stats } = item;
+export default function ItemCard({
+  item,
+  itemsMap,
+  styles = itemCardTooltipStyles,
+}: ItemCardProps) {
+  const { name, icon, type, description, tier, composition, stats } = item ?? {};
 
   const itemComps = composition?.length
-    ? composition
-        .map((compoApi) => items.find((i) => i.apiName === compoApi))
-        .filter((comp): comp is Item => !!comp)
+    ? composition.map((compoApi) => itemsMap[compoApi])
     : [];
 
   return (
     <div className={`tier-${tier} flex rounded-lg ${styles.container}`}>
       <div className="flex flex-col items-center gap-2 justify-around">
-        <IconTooltip
-          tooltipContent={
-            <ItemCard item={item} items={items} styles={itemCardTooltipStyles} />
-          }
-        >
-          <Image
-            src={icon}
-            alt={name}
-            width={styles.IconSize}
-            height={styles.IconSize}
-            className={clsx(
-              "rounded-lg max-w-none",
-              type === "craftables" && "border border-[var(--tier-color)]"
-            )}
-          />
-        </IconTooltip>
+        <Image
+          src={icon}
+          alt={name}
+          width={styles.IconSize}
+          height={styles.IconSize}
+          className={clsx(
+            "rounded-lg max-w-none",
+            type === "craftables" && "border border-[var(--tier-color)]"
+          )}
+        />
 
         <span className="tier-color">{tier}</span>
         {itemComps.length > 0 && (

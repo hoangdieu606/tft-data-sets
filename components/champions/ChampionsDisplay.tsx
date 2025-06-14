@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import PageMenu from "@/components/PageMenu";
-import ChampionList from "@/components/ChampionList";
+import ChampionList from "./ChampionList";
 import { Champion, Trait } from "@/lib/types";
 import {
   dataMapping,
@@ -12,12 +12,12 @@ import {
 
 interface ChampionsDisplayProps {
   champions: Champion[];
-  traits: Trait[];
+  traitsMap: Record<string, Trait>;
 }
 
 export default function ChampionsDisplay({
   champions,
-  traits,
+  traitsMap,
 }: ChampionsDisplayProps) {
   const searchParams = useSearchParams();
   const filterType = searchParams.get("type") ?? "Show All";
@@ -35,7 +35,7 @@ export default function ChampionsDisplay({
   return (
     <>
       <PageMenu page="champions" filterType={filterType} />
-      <ChampionList champions={filteredChampions} traits={traits} />
+      <ChampionList champions={filteredChampions} traitsMap={traitsMap} />
     </>
   );
 }

@@ -4,8 +4,10 @@ import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import TraitsDisplay from "@/components/TraitsDisplay";
+import TraitsDisplay from "@/components/traits/TraitsDisplay";
 import { Suspense } from "react";
+import keyBy from "lodash/keyBy";
+
 
 export async function generateMetadata(): Promise<Metadata> {
   const data = await DataFetcher("traits");
@@ -39,20 +41,23 @@ export default async function TraitsPage() {
     !("data" in dataChampions)
   ) {
     return (
-      <div className="container mt-8 px-4 py-8 text-center text-red-500">
+      <div className="px-4 py-8 text-center text-red-500">
         <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
       </div>
     );
   }
 
   const traits = mainData.data || [];
-  const champions = dataChampions.data || [];
+  const traitsMap = keyBy(traits, "apiName");
+  const championsMap = keyBy(dataChampions.data, "apiName");
+
+  
 
   return (
-    <div className="container mt-8 px-4 py-8">
+    <div className="px-4 py-8">
       <Title page="traits" set={mainData.set} patch={mainData.version} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <TraitsDisplay traits={traits} champions={champions} />
+        <TraitsDisplay traits={traits} championsMap={championsMap} traitsMap={traitsMap} />
       </Suspense>
     </div>
   );

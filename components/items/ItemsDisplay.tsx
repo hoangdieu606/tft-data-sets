@@ -4,9 +4,11 @@
 
 import { useSearchParams } from "next/navigation";
 import PageMenu from "@/components/PageMenu";
-import ItemsList from "@/components/ItemsList";
+import ItemsList from "@/components/items/ItemsList";
 import { Item } from "@/lib/types";
 import { dataMapping, DataMappingKeys, DataMappingValue } from "@/lib/dataFilter";
+import keyBy from "lodash/keyBy";
+
 
 interface ItemsDisplayProps {
   items: Item[];
@@ -25,12 +27,14 @@ export default function ItemsDisplay({ items }: ItemsDisplayProps) {
     filterType === "Show All"
       ? items
       : items.filter((item) => item.type === typeFilter);
+    const itemsMap = keyBy(items, "apiName");
+  
 
   return (
     <>
       <PageMenu page="items" filterType={filterType} />
       {/* Truyền cả danh sách đã lọc và danh sách đầy đủ */}
-      <ItemsList items={filteredItems} allItems={items} />
+      <ItemsList items={filteredItems} itemsMap={itemsMap} />
     </>
   );
 }

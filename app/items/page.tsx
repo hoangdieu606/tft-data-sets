@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import ItemsDisplay from "@/components/ItemsDisplay";
+import ItemsDisplay from "@/components/items/ItemsDisplay";
 import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -33,7 +33,7 @@ export default async function ItemsPage() {
 
   if (!mainData || !("data" in mainData)) {
     return (
-      <div className="container mt-8 px-4 py-8 text-center text-red-500">
+      <div className="container px-4 py-8 text-center text-red-500">
         <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
       </div>
     );
@@ -42,7 +42,7 @@ export default async function ItemsPage() {
   const items = mainData.data || [];
 
   return (
-    <div className="container mt-8 px-4 py-8">
+    <div className="container px-4 py-8">
       <Title page="items" set={mainData.set} patch={mainData.version} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
         <ItemsDisplay items={items} />

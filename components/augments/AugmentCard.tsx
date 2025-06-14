@@ -1,17 +1,15 @@
 import Image from "next/image";
 import { Augment } from "@/lib/types";
-import { AugmentCardStyles } from "@/lib/allCardStyles";
-import IconTooltip from "./IconTooltip";
-import { augmentCardTooltipStyles } from "@/lib/allCardStyles";
+import { AugmentCardStyles, augmentCardTooltipStyles } from "@/lib/allCardStyles";
 
 interface AugmentCardProps {
   augment: Augment;
-  styles: AugmentCardStyles;
+  styles?: AugmentCardStyles;
 }
 
 export default function AugmentCard({
   augment,
-  styles = {},
+  styles = augmentCardTooltipStyles,
 }: AugmentCardProps) {
   const { icon, name, description, tier2 } = augment;
 
@@ -20,11 +18,6 @@ export default function AugmentCard({
       className={` tier-${tier2} flex rounded-lg p-4 gap-4 ${styles.container}`}
     >
       <div className="flex items-center justify-center flex-col gap-2">
-        <IconTooltip
-          tooltipContent={
-            <AugmentCard augment={augment} styles={augmentCardTooltipStyles} />
-          }
-        >
           <Image
             src={icon}
             alt={name}
@@ -32,8 +25,6 @@ export default function AugmentCard({
             height={styles.iconSize}
             className="max-w-none"
           />
-        </IconTooltip>
-
         <span className="tier-color">{tier2}</span>
       </div>
       <div className="flex flex-col gap-2">

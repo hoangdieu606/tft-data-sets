@@ -17,26 +17,25 @@ export interface TraitCardStyles {
   traitIconSize?: number;
   champIconSize?: number;
 }
-//  w-90 text-sm bg-gray-900
 export interface AugmentCardStyles {
   container?: string;
   iconSize?: number;
 }
-//  flex w-full md:max-w-xs p-4 gap-4 bg-gray-900 rounded-lg text-sm
 export interface ItemCardStyles {
   container?: string;
   IconSize?: number;
   compIconSize?: number;
 }
-//
+/* Augment */
 export const augmentCardListStyles: AugmentCardStyles = {
   container: "w-full md:w-90 text-sm bg-gray-900",
   iconSize: 64,
 };
 export const augmentCardTooltipStyles: AugmentCardStyles = {
-  container: "w-2xs bg-zinc-950 text-xs border border-(--tier-color)",
+  container: "w-2xs bg-zinc-950 text-sm border border-(--tier-color)",
   iconSize: 52,
 };
+/* Item */
 export const itemCardListStyles: ItemCardStyles = {
   container: "w-full md:max-w-xs p-4 gap-4 bg-gray-900 text-sm",
   IconSize: 44,
@@ -47,7 +46,7 @@ export const itemCardTooltipStyles: ItemCardStyles = {
   IconSize: 36,
   compIconSize: 16,
 };
-
+/* Trait */
 export const traitCardListStyles: TraitCardStyles = {
   container: "text-sm bg-stone-900 rounded-lg w-full sm:w-72 min-h-[440px]",
   padding: "p-4",
@@ -57,13 +56,14 @@ export const traitCardListStyles: TraitCardStyles = {
 };
 
 export const traitCardTooltipStyles: TraitCardStyles = {
-  container: "text-xs bg-slate-900 rounded-lg w-[250px] min-h-[390px]",
+  container: "text-xs md:text-sm bg-slate-900 rounded-lg w-[250px] min-h-[390px]",
   padding: "p-3",
   nameText: "text-sm",
   traitIconSize: 24,
   champIconSize: 30,
 };
 
+/* Champion */
 export const championCardListStyles: ChampionCardStyles = {
   container: "text-sm bg-[#1e1e1e] w-full sm:w-[288px] min-h-110",
   padding: "p-4",
@@ -77,7 +77,7 @@ export const championCardListStyles: ChampionCardStyles = {
 };
 
 export const championCardTooltipStyles: ChampionCardStyles = {
-  container: "text-xs bg-[#333] w-[247px] min-h-90",
+  container: "text-xs md:text-sm bg-[#333] w-[247px] min-h-90",
   padding: "p-3",
   nameText: "text-sm",
   goldManaIcon: "w-[18px] h-[18px]",

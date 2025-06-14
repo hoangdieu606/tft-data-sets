@@ -1,20 +1,9 @@
+// lib/data.ts
 import { cache } from 'react';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { Champion, Trait, Augment, Item, Guide } from './types';
+import { Champion, Trait, Augment, Item, Guide, GenericDataResponse, GuidesDataResponse } from './types';
 
-interface GenericDataResponse<T> {
-  set: string | number;
-  version: string;
-  data: T[];
-}
-
-interface GuidesDataResponse {
-  guides: Guide[];
-  status: string;
-  totalGuides: number;
-  updated: string;
-}
 
 type DataType =
   | 'champions'
@@ -42,13 +31,13 @@ type DataTypeMap = {
 };
 
 type FetchDataReturn<T extends DataType> = T extends 'guides' | 'guides-revival'
-  ? GuidesDataResponse | null
+  ? GuidesDataResponse<DataTypeMap[T]> | null
   : GenericDataResponse<DataTypeMap[T]> | null;
 
 function isGuidesDataResponse<T extends DataType>(
   data: unknown,
   type: T
-): data is GuidesDataResponse {
+): data is GuidesDataResponse<DataTypeMap[T]> {
   return (
     (type === 'guides' || type === 'guides-revival') &&
     !!data &&
