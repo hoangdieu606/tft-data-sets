@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import Image from "next/image";
 
 interface HexagonProps {
@@ -6,6 +7,7 @@ interface HexagonProps {
   name: string;
   className?: string;
   classNameImage?: string;
+  vMin?: string;
 }
 
 export default function Hexagon({
@@ -14,15 +16,20 @@ export default function Hexagon({
   name,
   className,
   classNameImage,
+  vMin,
 }: HexagonProps) {
   const imageDimension = iconSize * 0.8;
+  const vMinDimension = `calc(${vMin} * 0.8)`;
+
   return (
     <div
-      className={`flex justify-center items-center ${className}`}
+      className={clsx(
+        "flex justify-center items-center [clip-path:polygon(50%_0%,_95%_25%,_95%_75%,_50%_100%,_5%_75%,_5%_25%)]",
+        className
+      )}
       style={{
-        width: `${iconSize}px`,
-        height: `${iconSize}px`,
-        clipPath: "polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)",
+        width: vMin ? vMin : iconSize,
+        height: vMin ? vMin : iconSize,
         background: "var(--border-color-cost, var(--color-green-900))",
       }}
     >
@@ -31,7 +38,15 @@ export default function Hexagon({
         alt={name}
         width={imageDimension}
         height={imageDimension}
-        className={`[clip-path:polygon(50%_0%,_95%_25%,_95%_75%,_50%_100%,_5%_75%,_5%_25%)] ${classNameImage}`}
+        style={
+          vMin
+            ? { width: vMinDimension, height: vMinDimension }
+            : { width: imageDimension, height: imageDimension }
+        }
+        className={clsx(
+          "[clip-path:polygon(50%_0%,_95%_25%,_95%_75%,_50%_100%,_5%_75%,_5%_25%)]",
+          classNameImage
+        )}
       />
     </div>
   );

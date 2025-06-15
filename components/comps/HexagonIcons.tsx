@@ -1,10 +1,10 @@
-import Hexagon from "./Hexagon";
-import { StarIcon } from "@heroicons/react/16/solid";
 import clsx from "clsx";
+import { StarIcon } from "@heroicons/react/16/solid";
 import { Champion, Item, Trait } from "@/lib/types";
 import IconTooltip from "../IconTooltip";
 import { ChampionCard } from "../champions/ChampionCard";
 import ItemCard from "../items/ItemCard";
+import Hexagon from "./Hexagon";
 
 interface HexagonIconsProps {
   championSize: number;
@@ -14,9 +14,10 @@ interface HexagonIconsProps {
   items: string[];
   itemsMap: Record<string, Item>;
   traitsMap: Record<string, Trait>;
-
   stars?: number;
+  vMin?: string;
 }
+
 function HexagonIcons({
   championSize,
   itemSize,
@@ -26,6 +27,7 @@ function HexagonIcons({
   itemsMap,
   traitsMap,
   stars,
+  vMin,
 }: HexagonIconsProps) {
   const champ = championsMap[apiName] ?? {};
   const itemLength = items.length;
@@ -39,9 +41,24 @@ function HexagonIcons({
             stars === 4 && "bg-[#00ff90] [box-shadow:0_0_10px_2px_#28cd5766]"
           )}
         >
-          <StarIcon className="h-4 w-4 text-black" />
-          <StarIcon className="h-4 w-4 text-black" />
-          <StarIcon className="h-4 w-4 text-black" />
+          <StarIcon
+            className={clsx("text-black", {
+              "h-[2vmin] w-[2vmin]": vMin,
+              "h-4 w-4": !vMin,
+            })}
+          />
+          <StarIcon
+            className={clsx("text-black", {
+              "h-[2vmin] w-[2vmin]": vMin,
+              "h-4 w-4": !vMin,
+            })}
+          />
+          <StarIcon
+            className={clsx("text-black", {
+              "h-[2vmin] w-[2vmin]": vMin,
+              "h-4 w-4": !vMin,
+            })}
+          />
         </div>
       )}
       <IconTooltip
@@ -51,6 +68,7 @@ function HexagonIcons({
           iconSize={championSize}
           imageSrc={champ.icon}
           name={champ.name}
+          vMin={vMin}
         />
       </IconTooltip>
 
@@ -71,12 +89,21 @@ function HexagonIcons({
                   itemLength === 3 && index === 0 && "absolute left-1 bottom-2",
                   itemLength === 3 && index === 2 && "absolute right-1 bottom-2"
                 )}
+                vMin={vMin && `calc(${vMin} * 0.3)`}
               />
             </IconTooltip>
           ))}
         </div>
       )}
-      <div className="absolute top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 text-xs whitespace-nowrap z-10 [text-shadow:0px_0px_10px_black,0px_0px_10px_black,0px_0px_10px_black] pointer-events-none">
+      <div
+        className={clsx(
+          "absolute left-2/4 -translate-x-1/2 whitespace-nowrap z-10 [text-shadow:0px_0px_10px_black,0px_0px_10px_black,0px_0px_10px_black] pointer-events-none",
+          {
+            "-bottom-4 md:-bottom-6 text-[8px] md:text-xs": vMin,
+            "-bottom-6 text-xs": !vMin,
+          }
+        )}
+      >
         {champ.name}
       </div>
     </div>

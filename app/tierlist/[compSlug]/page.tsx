@@ -18,6 +18,7 @@ import HexagonIcons from "@/components/comps/HexagonIcons";
 import Hexagon from "@/components/comps/Hexagon";
 import IconTooltip from "@/components/IconTooltip";
 import ItemCard from "@/components/items/ItemCard";
+import ChessBoard from "@/components/comps/ChessBoard";
 import clsx from "clsx";
 import keyBy from "lodash/keyBy";
 
@@ -106,7 +107,7 @@ function TierSection({
           />
           <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
             <h2 className="uppercase text-center">Đội hình hoàn thiện</h2>
-            <div className="flex flex-wrap justify-center items-center gap-4">
+            <div className="flex flex-wrap justify-center items-center gap-6">
               {finalComp.map((obj) => (
                 <HexagonIcons
                   key={obj.boardIndex}
@@ -165,24 +166,39 @@ function TierSection({
             </div>
           </div>
           {/* 4 */}
-          <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
-            <h2 className="uppercase text-center">Tạo tác nếu có</h2>
-            <div className="flex flex-wrap justify-center items-center gap-4">
-              {altBuilds.map((obj, index) => (
-                <HexagonIcons
-                  key={index}
-                  championSize={100}
-                  itemSize={30}
-                  apiName={obj.apiName}
-                  championsMap={championsMap}
-                  items={obj.items}
-                  itemsMap={itemsMap}
-                  traitsMap={traitsMap}
-                  stars={obj.stars}
-                />
-              ))}
+          {altBuilds?.length > 0 && (
+            <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
+              <h2 className="uppercase text-center">Tạo tác nếu có</h2>
+              <div className="flex flex-wrap justify-center items-center gap-4">
+                {altBuilds.map((obj, index) => (
+                  <HexagonIcons
+                    key={index}
+                    championSize={100}
+                    itemSize={30}
+                    apiName={obj.apiName}
+                    championsMap={championsMap}
+                    items={obj.items}
+                    itemsMap={itemsMap}
+                    traitsMap={traitsMap}
+                    stars={obj.stars}
+                  />
+                ))}
+              </div>
             </div>
+          )}
+          {/* Đặt component HexagonIcons vào Chess Board ở đây*/}
+          <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
+            <h2 className="uppercase text-center">
+              Bàn cờ đội hình hoàn thiện
+            </h2>
+            <ChessBoard
+              finalComp={finalComp}
+              championsMap={championsMap}
+              itemsMap={itemsMap}
+              traitsMap={traitsMap}
+            />
           </div>
+
           {/* 6 */}
           <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
             <h2 className="uppercase text-center">Tips các giai đoạn</h2>

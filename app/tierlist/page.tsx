@@ -80,8 +80,6 @@ export async function generateMetadata() {
   };
 }
 
-export const revalidate = 43200; // Revalidate sau 12 giờ
-
 export default async function TierListPage() {
   const [guidesData, dataChampions, dataItems, dataAugments] =
     await Promise.all([
@@ -109,25 +107,6 @@ export default async function TierListPage() {
   const championsMap = keyBy(champions, "apiName");
   const itemsMap = keyBy(items, "apiName");
   const augmentsMap = keyBy(augments, "apiName");
-
-  /* guides.forEach((guide) => {
-    if (
-      guide.mainChampion?.apiName &&
-      !championsMap[guide.mainChampion.apiName]
-    ) {
-      console.warn(
-        `Champion ${guide.mainChampion.apiName} not found in championsMap`
-      );
-    }
-    if (guide.mainItem?.apiName && !itemsMap[guide.mainItem.apiName]) {
-      console.warn(`Item ${guide.mainItem.apiName} not found in itemsMap`);
-    }
-    if (guide.mainAugment?.apiName && !augmentsMap[guide.mainAugment.apiName]) {
-      console.warn(
-        `Augment ${guide.mainAugment.apiName} not found in augmentsMap`
-      );
-    }
-  }); */
 
   const tierGroups = guides.reduce(
     (acc: TierGroup, guide: Guide) => {
