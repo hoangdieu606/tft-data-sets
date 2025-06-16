@@ -137,3 +137,16 @@ export interface TierGroup {
   C: Guide[];
   X: Guide[];
 }
+export interface TierAugmentsGroup {
+  S: Augment[];
+  A: Augment[];
+  B: Augment[];
+  C: Augment[];
+}
+export interface TierItemsGroup {
+  S: Item[];
+  A: Item[];
+  B: Item[];
+  C: Item[];
+  X: Item[];
+}

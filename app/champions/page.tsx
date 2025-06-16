@@ -8,7 +8,6 @@ import ChampionsDisplay from "@/components/champions/ChampionsDisplay";
 import { Suspense } from "react";
 import keyBy from "lodash/keyBy";
 
-
 export async function generateMetadata(): Promise<Metadata> {
   const data = await DataFetcher("champions");
 
@@ -41,18 +40,16 @@ export default async function ChampionsPage() {
     !("data" in dataTraits)
   ) {
     return (
-      <div className="container mt-8 px-4 py-8 text-center text-red-500">
-        <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
-      </div>
+      <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
     );
   }
 
   const champions = dataChampions.data || [];
   const traits = dataTraits.data || [];
-  const traitsMap = keyBy(traits, "apiName")
+  const traitsMap = keyBy(traits, "apiName");
 
   return (
-    <div className="container px-4 py-8">
+    <>
       <Title
         page="champions"
         set={dataChampions.set}
@@ -61,6 +58,6 @@ export default async function ChampionsPage() {
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
         <ChampionsDisplay champions={champions} traitsMap={traitsMap} />
       </Suspense>
-    </div>
+    </>
   );
 }

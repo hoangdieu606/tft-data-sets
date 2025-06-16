@@ -13,15 +13,18 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Link from "next/link";
 
+interface CompHeadCoppyProps {
+  finalComp: FinalComp[];
+  championsMap: Record<string, Champion>;
+  setNumber: number;
+  filterType: string;
+}
 export default function CompHeadCoppy({
   finalComp,
   championsMap,
   setNumber,
-}: {
-  finalComp: FinalComp[];
-  championsMap: Record<string, Champion>;
-  setNumber: number;
-}) {
+  filterType,
+}: CompHeadCoppyProps) {
   const router = useRouter();
 
   // handleCopyToClipboard
@@ -61,6 +64,13 @@ export default function CompHeadCoppy({
   // handleDirect
   const handleDirect = () => {
     router.push("/builder");
+  };
+  const createHref = () => {
+    const baseUrl = `/tierlist`;
+    if (filterType && filterType !== "Show All") {
+      return `${baseUrl}?type=${encodeURIComponent(filterType)}`;
+    }
+    return baseUrl;
   };
 
   return (
@@ -114,7 +124,7 @@ export default function CompHeadCoppy({
         </MenuItems>
       </Menu>
       <Link
-        href="/tierlist"
+        href={createHref()}
         className="bg-green-500 w-full px-4 py-[2px] rounded-full hover:bg-green-700 data-focus:bg-green-700"
       >
         <XMarkIcon className="size-4 fill-black" />

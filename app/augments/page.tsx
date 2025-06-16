@@ -33,19 +33,17 @@ export default async function AugsPage() {
 
   if (!mainData || !("data" in mainData)) {
     return (
-      <div className="container mt-8 px-4 py-8 text-center text-red-500">
-        <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
-      </div>
+      <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
     );
   }
 
   const augments = mainData.data || [];
   return (
-    <div className="container mt-8 px-4 py-8">
+    <>
       <Title page="augments" set={mainData.set} patch={mainData.version} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
         <AugmentsDisplay augments={augments} />
       </Suspense>
-    </div>
+    </>
   );
 }

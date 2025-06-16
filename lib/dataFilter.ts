@@ -5,11 +5,11 @@ const dataLinks = [
   { text: "Trang Bị", href: "/items" },
 ];
 
-/* const guideLinks = [
+const guideLinks = [
   { text: "Tierlist", href: "/tierlist" },
   { text: "Nâng Cấp", href: "/tierlist-augments" },
   { text: "Trang Bị", href: "/tierlist-items" },
-]; */
+];
 
 const dataPage = {
   champions: {
@@ -33,6 +33,35 @@ const dataPage = {
   },
   items: {
     linkList: dataLinks,
+    filterList: [
+      "Show All",
+      "Thường",
+      "Ánh Sáng",
+      "Tạo Tác",
+      "Hỗ Trợ",
+      "Ấn",
+      "Set Items",
+      "Components",
+    ],
+  },
+  tierlist: {
+    linkList:guideLinks,
+    filterList: [
+      "Show All",
+      "1-Cost Reroll",
+      "2-Cost Reroll",
+      "3-Cost Reroll",
+      "4-Cost Fast 8",
+      "Fast 9",
+      "Lose Streak"
+    ]
+  },
+   "tierlist-augments": {
+    linkList: guideLinks,
+    filterList: ["Show All", "Kim Cương", "Vàng", "Bạc"],
+  },
+  "tierlist-items": {
+    linkList: guideLinks,
     filterList: [
       "Show All",
       "Thường",

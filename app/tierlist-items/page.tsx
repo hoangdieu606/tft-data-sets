@@ -1,10 +1,12 @@
 import { DataFetcher } from "@/lib/data";
+import { Item } from "@/lib/types";
+import keyBy from "lodash/keyBy";
+import TierItemsDisplay from "@/components/tier-items/TierItemsDisplay";
 import Title from "@/components/Title";
 import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import ItemsDisplay from "@/components/items/ItemsDisplay";
 import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const set = data.set;
   const patch = data.version;
   const { title, desc } = getMetadataContent(
-    "items" as DataPageKeys,
+    "tierlist-items" as DataPageKeys,
     set,
     patch
   );
@@ -28,22 +30,24 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ItemsPage() {
-  const mainData = await DataFetcher("items");
-
-  if (!mainData || !("data" in mainData)) {
-    return (
-      <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
-    );
+export default async function TierItems() {
+  const dataItems = await DataFetcher("items");
+  if (!dataItems) {
+    throw new Error("Không thể tải dữ liệu tier list");
   }
 
-  const items = mainData.data || [];
+  const items: Item[] = dataItems.data || [];
+
+  const itemsMap = keyBy(items, "apiName");
+
+  const set = dataItems.set;
+  const patch = dataItems.version;
 
   return (
     <>
-      <Title page="items" set={mainData.set} patch={mainData.version} />
+      <Title page="tierlist-items" set={set} patch={patch} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <ItemsDisplay items={items} />
+        <TierItemsDisplay items={items} itemsMap={itemsMap} />
       </Suspense>
     </>
   );

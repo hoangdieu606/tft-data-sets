@@ -1,14 +1,15 @@
 import { DataFetcher } from "@/lib/data";
+import { Augment } from "@/lib/types";
+import TierAugmentsDisplay from "@/components/tier-augments/TierAugmentsDisplay";
 import Title from "@/components/Title";
 import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import ItemsDisplay from "@/components/items/ItemsDisplay";
 import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await DataFetcher("items");
+  const data = await DataFetcher("augments");
 
   if (!data || !("set" in data) || !("version" in data)) {
     return metadata;
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const set = data.set;
   const patch = data.version;
   const { title, desc } = getMetadataContent(
-    "items" as DataPageKeys,
+    "tierlist-augments" as DataPageKeys,
     set,
     patch
   );
@@ -28,22 +29,22 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ItemsPage() {
-  const mainData = await DataFetcher("items");
-
-  if (!mainData || !("data" in mainData)) {
-    return (
-      <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
-    );
+export default async function TierAugments() {
+  const dataAugments = await DataFetcher("augments");
+  if (!dataAugments) {
+    throw new Error("Không thể tải dữ liệu tier list");
   }
 
-  const items = mainData.data || [];
+  const augments: Augment[] = dataAugments.data || [];
+
+  const set = dataAugments.set;
+  const patch = dataAugments.version;
 
   return (
     <>
-      <Title page="items" set={mainData.set} patch={mainData.version} />
+      <Title page="tierlist-augments" set={set} patch={patch} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <ItemsDisplay items={items} />
+        <TierAugmentsDisplay augments={augments} />
       </Suspense>
     </>
   );

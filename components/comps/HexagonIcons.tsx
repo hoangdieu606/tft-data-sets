@@ -76,7 +76,7 @@ function HexagonIcons({
         <div className="absolute -bottom-2 left-2/4 -translate-x-1/2 flex gap-1 z-10 w-full justify-center">
           {items.map((item, index) => (
             <IconTooltip
-              key={item}
+              key={index}
               tooltipContent={
                 <ItemCard item={itemsMap[item]} itemsMap={itemsMap} />
               }

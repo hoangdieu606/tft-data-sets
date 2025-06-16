@@ -6,49 +6,50 @@ import { Guide, Champion, Item, Augment } from "@/lib/types";
 import Hexagon from "@/components/comps/Hexagon";
 import clsx from "clsx";
 
+interface TierItemProps {
+  guide: Guide;
+  championsMap: Record<string, Champion>;
+  itemsMap: Record<string, Item>;
+  augmentsMap: Record<string, Augment>;
+  filterType: string;
+}
 export default function TierItem({
   guide,
   championsMap,
   itemsMap,
   augmentsMap,
-}: {
-  guide: Guide;
-  championsMap: Record<string, Champion>;
-  itemsMap: Record<string, Item>;
-  augmentsMap: Record<string, Augment>;
-}) {
+  filterType,
+}: TierItemProps) {
   const { mainChampion, mainItem, mainAugment, tier, title, compSlug } = guide;
   const router = useRouter();
   const pathname = usePathname();
 
-  const iconChamp = mainChampion?.apiName && championsMap[mainChampion.apiName]?.icon
-    ? championsMap[mainChampion.apiName].icon
-    : "/assets/images/placeholder.webp";
-  const costChamp = mainChampion?.apiName && championsMap[mainChampion.apiName]?.cost
-    ? championsMap[mainChampion.apiName].cost
-    : 0;
-  const iconItem = mainItem?.apiName && itemsMap[mainItem.apiName]?.icon
-    ? itemsMap[mainItem.apiName].icon
-    : null;
-  const nameItem = mainItem?.apiName && itemsMap[mainItem.apiName]?.name
-    ? itemsMap[mainItem.apiName].name
-    : null;
-  const iconAugment = mainAugment?.apiName && augmentsMap[mainAugment.apiName]?.icon
-    ? augmentsMap[mainAugment.apiName].icon
-    : null;
-  const tierAugment = mainAugment?.apiName && augmentsMap[mainAugment.apiName]?.tier2
-    ? augmentsMap[mainAugment.apiName].tier2
-    : null;
-  const nameAugment = mainAugment?.apiName && augmentsMap[mainAugment.apiName]?.name
-    ? augmentsMap[mainAugment.apiName].name
-    : null;
+  const iconChamp = championsMap[mainChampion?.apiName]?.icon;
+  const costChamp = championsMap[mainChampion?.apiName]?.cost;
+  const iconItem = itemsMap[mainItem?.apiName]?.icon;
+  const nameItem = itemsMap[mainItem?.apiName]?.name;
+  const iconAugment = augmentsMap[mainAugment?.apiName]?.icon;
+  const tierAugment = augmentsMap[mainAugment?.apiName]?.tier2;
+  const nameAugment = augmentsMap[mainAugment?.apiName]?.name;
 
   const isDetailPage = pathname === `/tierlist/${compSlug}`;
-  
+  // Tạo URL với query parameter type
+  const createHref = () => {
+    const baseUrl = `/tierlist/${compSlug}`;
+    if (filterType && filterType !== "Show All") {
+      return `${baseUrl}?type=${encodeURIComponent(filterType)}`;
+    }
+    return baseUrl;
+  };
   const handleClick = (e: React.MouseEvent) => {
     if (isDetailPage) {
       e.preventDefault();
-      router.push("/tierlist"); // Quay về trang tier list
+      const baseUrl = "/tierlist";
+      const targetUrl =
+        filterType && filterType !== "Show All"
+          ? `${baseUrl}?type=${encodeURIComponent(filterType)}`
+          : baseUrl;
+      router.push(targetUrl); // Quay về trang tier list với query parameter
     }
     // Nếu không phải trang chi tiết, <Link> sẽ xử lý điều hướng bình thường
   };
@@ -56,7 +57,7 @@ export default function TierItem({
   return (
     <div
       className={clsx(
-        "tier-list w-[90px] transition-transform duration-300 hover:-translate-y-2",
+        "w-[90px] transition-transform duration-300 hover:-translate-y-2",
         `champ-cost-${costChamp}`,
         "relative",
         isDetailPage &&
@@ -73,15 +74,11 @@ export default function TierItem({
       <div className={`flex relative w-[90px]`}>
         <div>
           <Link
-            href={`/tierlist/${compSlug}`}
+            href={createHref()}
             aria-label={`View details for ${title}`}
             onClick={handleClick}
           >
-            <Hexagon
-              iconSize={90}
-              imageSrc={iconChamp}
-              name={title}
-            />
+            <Hexagon iconSize={90} imageSrc={iconChamp} name={title} />
           </Link>
         </div>
         {iconAugment && nameAugment && (
@@ -96,11 +93,7 @@ export default function TierItem({
         )}
         {iconItem && nameItem && (
           <div className="flex absolute top-[70px] left-2/4 -translate-x-1/2 m-auto">
-            <Hexagon
-              iconSize={27}
-              imageSrc={iconItem}
-              name={nameItem}
-            />
+            <Hexagon iconSize={27} imageSrc={iconItem} name={nameItem} />
           </div>
         )}
       </div>

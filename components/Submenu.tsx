@@ -23,17 +23,6 @@ const submenuLinks = [
       { href: "/augments", text: "Lõi" },
     ],
   },
-  {
-    group: "Giải đấu",
-    items: [
-      { href: "/tournaments", text: "GIẢI ĐẤU" },
-      { href: "/tournaments/rank-vn", text: "Snapshot Ladder" },
-      { href: "/tournaments/apac", text: "Cup Point" },
-      { href: "/tournaments/major", text: "5 Giải Đấu Lớn" },
-      { href: "/tournaments/docs", text: "Tài liệu" },
-      { href: "/tournaments/schedule", text: "Lịch thi đấu" },
-    ],
-  },
 ];
 
 const Submenu = () => {

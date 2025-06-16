@@ -5,7 +5,17 @@ import CompHeadCoppy from "./CompHeadCoppy";
 import CompHeadTraits from "./CompHeadTraits";
 import IconTooltip from "../IconTooltip";
 import AugmentCard from "../augments/AugmentCard";
+import ItemCard from "../items/ItemCard";
 
+interface CompHeadProps {
+  guide: Guide;
+  championsMap: Record<string, Champion>;
+  traitsMap: Record<string, Trait>;
+  itemsMap: Record<string, Item>;
+  augmentsMap: Record<string, Augment>;
+  setNumber: number;
+  filterType: string;
+}
 export default function CompHead({
   guide,
   championsMap,
@@ -13,14 +23,8 @@ export default function CompHead({
   itemsMap,
   augmentsMap,
   setNumber,
-}: {
-  guide: Guide;
-  championsMap: Record<string, Champion>;
-  traitsMap: Record<string, Trait>;
-  itemsMap: Record<string, Item>;
-  augmentsMap: Record<string, Augment>;
-  setNumber: number;
-}) {
+  filterType,
+}: CompHeadProps) {
   const {
     mainChampion,
     mainItem,
@@ -41,7 +45,7 @@ export default function CompHead({
   const nameAugment = augmentsMap[mainAugment?.apiName]?.name;
 
   return (
-    <div className="flex flex-col gap-8 sm:flex-row border-2 border-green-900 py-6 px-8 relative">
+    <div className="flex flex-col gap-8 sm:flex-row md:border-2 md:border-green-900 md:px-8 py-8 md:py-6 relative">
       <div className="flex flex-col gap-3 justify-center items-center font-semibold sm:w-1/2">
         <div className="absolute w-[400px] h-[450px] bg-[image:radial-gradient(ellipse_at_top_left,var(--tier-gradient)_400px)] pointer-events-none z-0 top-0 left-0" />
         <div className="w-[150px] h-[150px] relative flex [filter:drop-shadow(var(--tier-bg)_0px_0px_10px)]">
@@ -58,19 +62,32 @@ export default function CompHead({
             />
           </div>
           {iconAugment && nameAugment && (
-            <div className="flex justify-center items-center absolute w-[40px] h-[40px] rounded-[50%] bottom-[20px] right-[0] border-4 border-[var(--tier-bg)] bg-[#1e1e1e] [filter:drop-shadow(var(--tier-bg)_0px_0px_10px)] overflow-hidden">
+            <IconTooltip
+              tooltipContent={
+                <AugmentCard augment={augmentsMap[mainAugment.apiName]} />
+              }
+              className="flex justify-center items-center absolute w-[40px] h-[40px] rounded-[50%] bottom-[20px] right-[0] border-4 border-[var(--tier-bg)] bg-[#1e1e1e] [filter:drop-shadow(var(--tier-bg)_0px_0px_10px)] overflow-hidden"
+            >
               <Image
                 src={iconAugment}
                 width={32}
                 height={32}
                 alt={nameAugment}
               />
-            </div>
+            </IconTooltip>
           )}
           {iconItem && nameItem && (
-            <div className="flex justify-center items-center absolute w-[40px] h-[40px] rounded-[50%] bottom-[20px] right-[0] border-4 border-[var(--tier-bg)] bg-[#1e1e1e] [filter:drop-shadow(var(--tier-bg)_0px_0px_10px)] overflow-hidden">
+            <IconTooltip
+              tooltipContent={
+                <ItemCard
+                  item={itemsMap[mainItem.apiName]}
+                  itemsMap={itemsMap}
+                />
+              }
+              className="flex justify-center items-center absolute w-[40px] h-[40px] rounded-[50%] bottom-[20px] right-[0] border-4 border-[var(--tier-bg)] bg-[#1e1e1e] [filter:drop-shadow(var(--tier-bg)_0px_0px_10px)] overflow-hidden"
+            >
               <Image src={iconItem} width={32} height={32} alt={nameItem} />
-            </div>
+            </IconTooltip>
           )}
         </div>
         <h1 className="uppercase">{title}</h1>
@@ -92,11 +109,7 @@ export default function CompHead({
             {augments.map(({ apiName }) => (
               <IconTooltip
                 key={apiName}
-                tooltipContent={
-                  <AugmentCard
-                    augment={augmentsMap[apiName]}
-                  />
-                }
+                tooltipContent={<AugmentCard augment={augmentsMap[apiName]} />}
               >
                 <Image
                   src={augmentsMap[apiName].icon}
@@ -155,6 +168,7 @@ export default function CompHead({
           finalComp={finalComp}
           championsMap={championsMap}
           setNumber={setNumber}
+          filterType={filterType}
         />
       </div>
     </div>

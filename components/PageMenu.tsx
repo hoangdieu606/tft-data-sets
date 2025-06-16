@@ -7,7 +7,7 @@ import { dataFilter, DataPageKeys } from "@/lib/dataFilter";
 
 interface Props {
   page: DataPageKeys;
-  filterType?: string;
+  filterType: string;
 }
 
 export default function PageMenu({ page, filterType = "Show All" }: Props) {
@@ -33,6 +33,9 @@ export default function PageMenu({ page, filterType = "Show All" }: Props) {
     traits: "Tộc Hệ",
     augments: "Nâng Cấp",
     items: "Trang Bị",
+    "tierlist": "Đội Hình",
+    "tierlist-augments": "Nâng Cấp",
+    "tierlist-items": "Trang Bị",
   };
 
   return (
