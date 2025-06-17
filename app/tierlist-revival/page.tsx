@@ -10,7 +10,7 @@ import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await DataFetcher("champions");
+  const data = await DataFetcher("champions-revival");
 
   if (!data || !("set" in data) || !("version" in data)) {
     return metadata;
@@ -30,15 +30,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function TierListPage() {
+export default async function TierListRevivalPage() {
   const [guidesData, dataChampions, dataItems, dataAugments] =
     await Promise.all([
-      DataFetcher("guides") as Promise<{ guides: Guide[] } | undefined>,
-      DataFetcher("champions") as Promise<
+      DataFetcher("guides-revival") as Promise<{ guides: Guide[] } | undefined>,
+      DataFetcher("champions-revival") as Promise<
         { data: Champion[]; set: string | number; version: string } | undefined
       >,
-      DataFetcher("items") as Promise<{ data: Item[] } | undefined>,
-      DataFetcher("augments") as Promise<{ data: Augment[] } | undefined>,
+      DataFetcher("items-revival") as Promise<{ data: Item[] } | undefined>,
+      DataFetcher("augments-revival") as Promise<{ data: Augment[] } | undefined>,
     ]);
 
   if (
@@ -72,7 +72,7 @@ export default async function TierListPage() {
           championsMap={championsMap}
           itemsMap={itemsMap}
           augmentsMap={augmentsMap}
-          page="tierlist"
+          page="tierlist-revival"
         />
       </Suspense>
     </>

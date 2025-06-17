@@ -10,68 +10,95 @@ const guideLinks = [
   { text: "Nâng Cấp", href: "/tierlist-augments" },
   { text: "Trang Bị", href: "/tierlist-items" },
 ];
+const dataRevivalLinks = [
+  { text: "Tướng", href: "/champions-revival" },
+  { text: "Tộc Hệ", href: "/traits-revival" },
+  { text: "Nâng Cấp", href: "/augments-revival" },
+  { text: "Trang Bị", href: "/items-revival" },
+];
+const guideRevivalLinks = [
+  { text: "Tierlist", href: "/tierlist-revival" },
+  { text: "Nâng Cấp", href: "/tierlist-augments" },
+  { text: "Trang Bị", href: "/tierlist-items" },
+];
+const championsFilter = [
+  "Show All",
+  "1 Cost",
+  "2 Costs",
+  "3 Costs",
+  "4 Costs",
+  "5 Costs",
+];
+const traitsFilter = ["Show All", "Tộc", "Hệ"];
+const augmentsFilter = ["Show All", "Kim Cương", "Vàng", "Bạc"];
+const itemsFilter = [
+  "Show All",
+  "Thường",
+  "Ánh Sáng",
+  "Tạo Tác",
+  "Hỗ Trợ",
+  "Ấn",
+  "Set Items",
+  "Components",
+];
+const tierlistFilter = [
+  "Show All",
+  "1-Cost Reroll",
+  "2-Cost Reroll",
+  "3-Cost Reroll",
+  "4-Cost Fast 8",
+  "Fast 9",
+  "Lose Streak",
+];
 
 const dataPage = {
   champions: {
     linkList: dataLinks,
-    filterList: [
-      "Show All",
-      "1 Cost",
-      "2 Costs",
-      "3 Costs",
-      "4 Costs",
-      "5 Costs",
-    ],
+    filterList: championsFilter,
+  },
+  "champions-revival": {
+    linkList: dataRevivalLinks,
+    filterList: championsFilter,
   },
   traits: {
     linkList: dataLinks,
-    filterList: ["Show All", "Tộc", "Hệ"],
+    filterList: traitsFilter,
+  },
+  "traits-revival": {
+    linkList: dataRevivalLinks,
+    filterList: traitsFilter,
   },
   augments: {
     linkList: dataLinks,
-    filterList: ["Show All", "Kim Cương", "Vàng", "Bạc"],
+    filterList: augmentsFilter,
+  },
+  "augments-revival": {
+    linkList: dataRevivalLinks,
+    filterList: augmentsFilter,
   },
   items: {
     linkList: dataLinks,
-    filterList: [
-      "Show All",
-      "Thường",
-      "Ánh Sáng",
-      "Tạo Tác",
-      "Hỗ Trợ",
-      "Ấn",
-      "Set Items",
-      "Components",
-    ],
+    filterList: itemsFilter,
+  },
+  "items-revival": {
+    linkList: dataRevivalLinks,
+    filterList: itemsFilter,
   },
   tierlist: {
-    linkList:guideLinks,
-    filterList: [
-      "Show All",
-      "1-Cost Reroll",
-      "2-Cost Reroll",
-      "3-Cost Reroll",
-      "4-Cost Fast 8",
-      "Fast 9",
-      "Lose Streak"
-    ]
-  },
-   "tierlist-augments": {
     linkList: guideLinks,
-    filterList: ["Show All", "Kim Cương", "Vàng", "Bạc"],
+    filterList: tierlistFilter,
+  },
+  "tierlist-revival": {
+    linkList: guideRevivalLinks,
+    filterList: tierlistFilter,
+  },
+  "tierlist-augments": {
+    linkList: guideLinks,
+    filterList: augmentsFilter,
   },
   "tierlist-items": {
     linkList: guideLinks,
-    filterList: [
-      "Show All",
-      "Thường",
-      "Ánh Sáng",
-      "Tạo Tác",
-      "Hỗ Trợ",
-      "Ấn",
-      "Set Items",
-      "Components",
-    ],
+    filterList: itemsFilter,
   },
 };
 

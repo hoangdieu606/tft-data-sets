@@ -45,7 +45,7 @@ export interface Trait {
   id: string;
   icon: string;
   description: string;
-  effects: Record<string, string | number>;
+  effects: Record<string, string>;
   breakpoints: number[];
   colors: number[];
   rules: string[];

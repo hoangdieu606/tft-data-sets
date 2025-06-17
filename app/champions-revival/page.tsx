@@ -4,11 +4,12 @@ import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import ItemsDisplay from "@/components/items/ItemsDisplay";
+import ChampionsDisplay from "@/components/champions/ChampionsDisplay";
 import { Suspense } from "react";
+import keyBy from "lodash/keyBy";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await DataFetcher("items");
+  const data = await DataFetcher("champions-revival");
 
   if (!data || !("set" in data) || !("version" in data)) {
     return metadata;
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const set = data.set;
   const patch = data.version;
   const { title, desc } = getMetadataContent(
-    "items" as DataPageKeys,
+    "champions" as DataPageKeys,
     set,
     patch
   );
@@ -28,22 +29,34 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ItemsPage() {
-  const mainData = await DataFetcher("items");
+export default async function ChampionsRevivalPage() {
+  const dataChampions = await DataFetcher("champions-revival");
+  const dataTraits = await DataFetcher("traits-revival");
 
-  if (!mainData || !("data" in mainData)) {
+  if (
+    !dataChampions ||
+    !dataTraits ||
+    !("data" in dataChampions) ||
+    !("data" in dataTraits)
+  ) {
     return (
       <p>Không thể tải dữ liệu tướng hoặc tộc hệ. Vui lòng thử lại sau!</p>
     );
   }
 
-  const items = mainData.data || [];
+  const champions = dataChampions.data || [];
+  const traits = dataTraits.data || [];
+  const traitsMap = keyBy(traits, "apiName");
 
   return (
     <>
-      <Title page="items" set={mainData.set} patch={mainData.version} />
+      <Title
+        page="champions"
+        set={dataChampions.set}
+        patch={dataChampions.version}
+      />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <ItemsDisplay items={items} page="items" />
+        <ChampionsDisplay page="champions-revival" champions={champions} traitsMap={traitsMap} />
       </Suspense>
     </>
   );

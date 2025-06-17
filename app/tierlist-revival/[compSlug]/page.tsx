@@ -18,7 +18,7 @@ import { Suspense } from "react";
 export async function generateMetadata({ params }: TierDetailPageProps) {
   const { compSlug } = await params;
   const guidesData = (await DataFetcher(
-    "guides"
+    "guides-revival"
   )) as GuidesDataResponse<Guide> | null;
   const guide = guidesData?.guides.find((g) => g.compSlug === compSlug);
 
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: TierDetailPageProps) {
 
 export async function generateStaticParams() {
   const guidesData = (await DataFetcher(
-    "guides"
+    "guides-revival"
   )) as GuidesDataResponse<Guide> | null;
   return (
     guidesData?.guides.map((guide) => ({
@@ -43,16 +43,24 @@ interface TierDetailPageProps {
   params: Promise<{ compSlug: string }>;
 }
 
-export default async function TierDetailPage({ params }: TierDetailPageProps) {
+export default async function TierDetailRevivalPage({ params }: TierDetailPageProps) {
   const { compSlug } = await params;
 
   const [guidesData, dataChampions, dataTraits, dataItems, dataAugments] =
     await Promise.all([
-      DataFetcher("guides") as Promise<GuidesDataResponse<Guide> | null>,
-      DataFetcher("champions") as Promise<GenericDataResponse<Champion> | null>,
-      DataFetcher("traits") as Promise<GenericDataResponse<Trait> | null>,
-      DataFetcher("items") as Promise<GenericDataResponse<Item> | null>,
-      DataFetcher("augments") as Promise<GenericDataResponse<Augment> | null>,
+      DataFetcher(
+        "guides-revival"
+      ) as Promise<GuidesDataResponse<Guide> | null>,
+      DataFetcher(
+        "champions-revival"
+      ) as Promise<GenericDataResponse<Champion> | null>,
+      DataFetcher(
+        "traits-revival"
+      ) as Promise<GenericDataResponse<Trait> | null>,
+      DataFetcher("items-revival") as Promise<GenericDataResponse<Item> | null>,
+      DataFetcher(
+        "augments-revival"
+      ) as Promise<GenericDataResponse<Augment> | null>,
     ]);
 
   if (
@@ -68,6 +76,7 @@ export default async function TierDetailPage({ params }: TierDetailPageProps) {
 
   const guide = guidesData.guides.find((g) => g.compSlug === compSlug);
   if (!guide) {
+    console.log(guide)
     return notFound();
   }
 
@@ -86,7 +95,7 @@ export default async function TierDetailPage({ params }: TierDetailPageProps) {
 
   return (
     <>
-      <Title page="tierlist" set={setNumber} patch={patch} />
+      <Title page="tierlist-revival" set={setNumber} patch={patch} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
         <TierListDisplay
           guides={guides}
@@ -96,7 +105,7 @@ export default async function TierDetailPage({ params }: TierDetailPageProps) {
           traitsMap={traitsMap}
           setNumber={setNumber}
           selectedGuide={guide}
-          page="tierlist"
+          page="tierlist-revival"
         />
       </Suspense>
     </>

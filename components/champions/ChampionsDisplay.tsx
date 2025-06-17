@@ -8,16 +8,19 @@ import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
+  DataPageKeys
 } from "@/lib/dataFilter";
 
 interface ChampionsDisplayProps {
   champions: Champion[];
   traitsMap: Record<string, Trait>;
+  page: DataPageKeys;
 }
 
 export default function ChampionsDisplay({
   champions,
   traitsMap,
+  page,
 }: ChampionsDisplayProps) {
   const searchParams = useSearchParams();
   const filterType = searchParams.get("type") ?? "Show All";
@@ -34,7 +37,7 @@ export default function ChampionsDisplay({
 
   return (
     <>
-      <PageMenu page="champions" filterType={filterType} />
+      <PageMenu page={page} filterType={filterType} />
       <ChampionList champions={filteredChampions} traitsMap={traitsMap} />
     </>
   );

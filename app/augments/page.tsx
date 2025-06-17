@@ -42,7 +42,7 @@ export default async function AugsPage() {
     <>
       <Title page="augments" set={mainData.set} patch={mainData.version} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <AugmentsDisplay augments={augments} />
+        <AugmentsDisplay augments={augments} page="augments" />
       </Suspense>
     </>
   );

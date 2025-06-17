@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="en"
       className={`${nunitoSans.variable} ${nunito.variable} antialiased`}
     >
-      <body className="leading-normal min-h-screen text-base max-w-screen-lg w-full m-auto flex flex-col justify-between">
+      <body className="flex flex-col justify-between text-base max-w-screen-lg m-auto min-h-screen">
         <Nav />
         <main className="mt-15 p-2 md:p-4">{children}</main>
         <footer className="mt-5 p-4 text-sm text-gray-400 text-justify">

@@ -5,7 +5,11 @@ interface MetadataContent {
   desc: string;
 }
 
-export function getMetadataContent(page: DataPageKeys, set: string | number, patch: string): MetadataContent {
+export function getMetadataContent(
+  page: DataPageKeys,
+  set: string | number,
+  patch: string
+): MetadataContent {
   const content: Record<string, MetadataContent> = {
     champions: {
       title: `Danh Sách Tướng ĐTCL - Chỉ Số & Kỹ Năng Mới Nhất ĐTCL Mùa ${set} - PATCH ${patch}`,
@@ -27,6 +31,10 @@ export function getMetadataContent(page: DataPageKeys, set: string | number, pat
       title: `Bảng xếp hạng đội hình meta mạnh nhất ĐTCL Mùa ${set} - PATCH ${patch}`,
       desc: `Giới thiệu bảng xếp hạng đội hình meta mạnh nhất ĐTCL Mùa ${set}, được tuyển chọn kỹ lưỡng bởi các chuyên gia Đấu Trường Chân Lý: Dishsoap, nhà vô địch thế giới 2 lần và Frodan, caster kiêm HLV Thách Đấu!`,
     },
+    "tierlist-revival": {
+      title: `Bảng xếp hạng đội hình meta mạnh nhất ĐTCL Mùa ${set} - PATCH ${patch}`,
+      desc: `Giới thiệu bảng xếp hạng đội hình meta mạnh nhất ĐTCL Mùa ${set}, được tuyển chọn kỹ lưỡng bởi các chuyên gia Đấu Trường Chân Lý: Dishsoap, nhà vô địch thế giới 2 lần và Frodan, caster kiêm HLV Thách Đấu!`,
+    },
     "tierlist-augments": {
       title: `Bảng xếp hạng Nâng Cấp meta mạnh nhất ĐTCL Mùa ${set} - PATCH ${patch}`,
       desc: `Giới thiệu bảng xếp hạng Nâng Cấp meta mạnh nhất ĐTCL Mùa ${set}, được tuyển chọn kỹ lưỡng bởi các chuyên gia Đấu Trường Chân Lý: Dishsoap, nhà vô địch thế giới 2 lần và Frodan, caster kiêm HLV Thách Đấu!`,
@@ -37,8 +45,10 @@ export function getMetadataContent(page: DataPageKeys, set: string | number, pat
     },
   };
 
-  return content[page] || {
-    title: `TFT Mùa ${set} - Hướng dẫn xây dựng đội hình`,
-    desc: `Hướng dẫn xây dựng đội hình, mẹo chơi và thông tin chi tiết về Tướng, Tộc Hệ, Nâng Cấp và Trang Bị trong TFT Mùa ${set}.`,
-  };
+  return (
+    content[page] || {
+      title: `TFT Mùa ${set} - Hướng dẫn xây dựng đội hình`,
+      desc: `Hướng dẫn xây dựng đội hình, mẹo chơi và thông tin chi tiết về Tướng, Tộc Hệ, Nâng Cấp và Trang Bị trong TFT Mùa ${set}.`,
+    }
+  );
 }

@@ -56,6 +56,7 @@ export default async function TraitsPage() {
           traits={traits}
           championsMap={championsMap}
           traitsMap={traitsMap}
+          page="traits"
         />
       </Suspense>
     </>

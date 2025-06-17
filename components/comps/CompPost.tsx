@@ -5,6 +5,7 @@ import Hexagon from "@/components/comps/Hexagon";
 import IconTooltip from "@/components/IconTooltip";
 import ItemCard from "@/components/items/ItemCard";
 import ChessBoard from "@/components/comps/ChessBoard";
+import parse from "html-react-parser";
 
 interface CompPostProps {
   selectedGuide: Guide;
@@ -22,7 +23,7 @@ export default function CompPost({
   itemsMap,
   augmentsMap,
   setNumber,
-  filterType
+  filterType,
 }: CompPostProps) {
   const { finalComp, earlyComp, altBuilds, carousel, tips } = selectedGuide;
   return (
@@ -36,7 +37,7 @@ export default function CompPost({
         setNumber={setNumber}
         filterType={filterType}
       />
-      <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
+      <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 pt-8 pb-10 gap-8 -mt-[2px]">
         <h2 className="uppercase text-center">Đội hình hoàn thiện</h2>
         <div className="flex flex-wrap justify-center items-center gap-6">
           {finalComp.map((obj) => (
@@ -55,7 +56,7 @@ export default function CompPost({
         </div>
       </div>
       {/* 2 */}
-      <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
+      <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 pt-8 pb-10 gap-8 -mt-[2px]">
         <h2 className="uppercase text-center">Đội hình đầu trận</h2>
         <div className="flex flex-wrap justify-center items-center gap-4">
           {earlyComp.map((obj) => (
@@ -95,7 +96,7 @@ export default function CompPost({
       </div>
       {/* 4 */}
       {altBuilds?.length > 0 && (
-        <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
+        <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 pt-8 pb-10 gap-8 -mt-[2px]">
           <h2 className="uppercase text-center">Tạo tác nếu có</h2>
           <div className="flex flex-wrap justify-center items-center gap-4">
             {altBuilds.map((obj, index) => (
@@ -116,7 +117,7 @@ export default function CompPost({
       )}
       {/* Đặt component HexagonIcons vào Chess Board ở đây*/}
       <div className="flex flex-col border-t-2 border-t-green-900 md:border-2 md:border-green-900 py-8 gap-8 -mt-[2px]">
-        <h2 className="uppercase text-center">Bàn cờ đội hình hoàn thiện</h2>
+        <h2 className="uppercase text-center">Ví dụ về xếp đội hình</h2>
         <ChessBoard
           finalComp={finalComp}
           championsMap={championsMap}
@@ -135,7 +136,7 @@ export default function CompPost({
               className="flex flex-col px-6 py-4 border-2 border-green-900 rounded-4xl items-center gap-3 text-justify flex-[1]"
             >
               <h3>{obj.stage}</h3>
-              <p>{obj.tip}</p>
+              <p>{parse(obj.tip)}</p>
             </div>
           ))}
         </div>

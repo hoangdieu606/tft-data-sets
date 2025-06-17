@@ -23,11 +23,11 @@ export default function Dropdown({
   type,
 }: DropdownProps) {
   return (
-    <Menu as="div" className="relative min-w-[160px] text-left text-sm">
+    <Menu as="div" className="relative min-w-[144px] md:min-w-[160px] text-left text-sm">
       {({ open }) => (
         <>
           <div>
-            <MenuButton className="inline-flex w-full justify-between items-center px-5 py-3 border-2 border-green-900 rounded-3xl bg-slate-950 cursor-pointer hover:border-green-500 data-open:border-green-500 transition-colors duration-300">
+            <MenuButton className="inline-flex w-full justify-between items-center px-5 py-3 border-2 border-green-900 rounded-3xl bg-slate-950 cursor-pointer hover:border-green-500 data-open:border-green-500 transition-colors duration-300 whitespace-nowrap">
               {label}
               <ChevronDownIcon
                 className={clsx(

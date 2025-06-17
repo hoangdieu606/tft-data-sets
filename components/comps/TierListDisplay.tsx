@@ -7,6 +7,7 @@ import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
+  DataPageKeys,
 } from "@/lib/dataFilter";
 
 import { Guide, Champion, Trait, Augment, Item, TierGroup } from "@/lib/types";
@@ -20,6 +21,7 @@ interface TierListDisplayProps {
   traitsMap?: Record<string, Trait>;
   setNumber?: number;
   selectedGuide?: Guide;
+  page: DataPageKeys;
 }
 export default function TierListDisplay({
   guides,
@@ -29,6 +31,7 @@ export default function TierListDisplay({
   traitsMap,
   setNumber,
   selectedGuide,
+  page,
 }: TierListDisplayProps) {
   const searchParams = useSearchParams();
   const filterType = searchParams.get("type") ?? "Show All";
@@ -57,20 +60,17 @@ export default function TierListDisplay({
       const tierElement = document.getElementById(`tier-${selectedGuide.tier}`);
       if (tierElement) {
         tierElement.scrollIntoView({
-          behavior: "smooth", // Cuộn mượt mà
-          block: "start", // Cuộn sao cho phần tử ở đầu viewport
+          behavior: "smooth",
+          block: "start",
         });
       }
     }
-  }, [selectedGuide]); // Chạy lại khi selectedGuide thay đổi
+  }, [selectedGuide]);
 
   return (
     <>
-      <PageMenu page="tierlist" filterType={filterType} />
-      <div
-        className="flex flex-col gap-5"
-        role="navigation"
-      >
+      <PageMenu page={page} filterType={filterType} />
+      <div className="flex flex-col gap-5" role="navigation">
         {(["S", "A", "B", "C", "X"] as const).map(
           (tier) =>
             tierGroups[tier].length > 0 && (
@@ -85,6 +85,7 @@ export default function TierListDisplay({
                 setNumber={setNumber}
                 selectedGuide={selectedGuide}
                 filterType={filterType}
+                page={page}
               />
             )
         )}

@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { Champion, Trait } from "@/lib/types";
-import { ChampionCardStyles, championCardTooltipStyles } from "@/lib/allCardStyles";
+import {
+  ChampionCardStyles,
+  championCardTooltipStyles,
+} from "@/lib/allCardStyles";
+import parse from "html-react-parser";
 
 interface ChampionCardProps {
   champion: Champion;
@@ -23,7 +27,10 @@ export function ChampionCard({
     abilityName,
     apiName,
     stats,
-  } = champion;
+  } = champion ?? {};
+  if (!name) {
+    return "champion undefined";
+  }
   const mana = `${stats.initialMana} / ${stats.mana}`;
   const champTraits = traits.map((apiName) => traitsMap[apiName]);
 
@@ -100,7 +107,7 @@ export function ChampionCard({
               </p>
             </div>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: ability }} />
+          <div>{parse(ability)}</div>
         </div>
       </div>
     </div>

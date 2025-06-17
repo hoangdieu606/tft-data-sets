@@ -6,8 +6,9 @@ import { ChampionCard } from "../champions/ChampionCard";
 import {
   championCardTooltipStyles,
   TraitCardStyles,
-  traitCardTooltipStyles
+  traitCardTooltipStyles,
 } from "@/lib/allCardStyles";
+import parse from "html-react-parser";
 
 interface TraitCardProps {
   trait: Trait;
@@ -22,8 +23,10 @@ export default function TraitCard({
   traitsMap,
   styles = traitCardTooltipStyles,
 }: TraitCardProps) {
-  const { icon, name, description, effects, champions, type } = trait;
-  
+  const { icon, name, description, effects, champions, type } = trait ?? {};
+  if (!name) {
+    return "trait undefined";
+  }
   return (
     <div className={`trait-${type} overflow-hidden ${styles.container}`}>
       <div
@@ -45,52 +48,54 @@ export default function TraitCard({
         <div className="min-h-[60px]">
           <div className="flex flex-wrap gap-2">
             {champions.length > 0
-              ? champions.map(champApi =>
-                  (traitsMap) ? (
-                    <IconTooltip
-                      key={champApi}
-                      tooltipContent={
-                        <ChampionCard
-                          champion={championsMap[champApi]}
-                          traitsMap={traitsMap}
-                          styles={championCardTooltipStyles}
+              ? champions.map(
+                  (champApi) =>
+                    championsMap[champApi] &&
+                    (traitsMap ? (
+                      <IconTooltip
+                        key={champApi}
+                        tooltipContent={
+                          <ChampionCard
+                            champion={championsMap[champApi]}
+                            traitsMap={traitsMap}
+                            styles={championCardTooltipStyles}
+                          />
+                        }
+                        className={`champ-cost-${championsMap[champApi].cost}`}
+                      >
+                        <Image
+                          src={championsMap[champApi].icon}
+                          alt={championsMap[champApi].name}
+                          width={styles.champIconSize}
+                          height={styles.champIconSize}
+                          className="champ-border rounded-lg"
                         />
-                      }
-                      className={`champ-cost-${championsMap[champApi].cost}`}
-                    >
-                      <Image
-                        src={championsMap[champApi].icon}
-                        alt={championsMap[champApi].name}
-                        width={styles.champIconSize}
-                        height={styles.champIconSize}
-                        className="champ-border rounded-lg"
-                      />
-                    </IconTooltip>
-                  ) : (
-                    <div key={championsMap[champApi].id} className={`champ-cost-${championsMap[champApi].cost}`}>
-                      <Image
-                        src={championsMap[champApi].icon}
-                        alt={championsMap[champApi].name}
-                        width={styles.champIconSize}
-                        height={styles.champIconSize}
-                        className="champ-border rounded-lg"
-                      />
-                    </div>
-                  )
+                      </IconTooltip>
+                    ) : (
+                      <div
+                        key={championsMap[champApi].id}
+                        className={`champ-cost-${championsMap[champApi].cost}`}
+                      >
+                        <Image
+                          src={championsMap[champApi].icon}
+                          alt={championsMap[champApi].name}
+                          width={styles.champIconSize}
+                          height={styles.champIconSize}
+                          className="champ-border rounded-lg"
+                        />
+                      </div>
+                    ))
                 )
               : null}
           </div>
         </div>
         <div>
-          <p
-            className="my-5"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
+          <p className="my-5">{parse(description)}</p>
           <ul className="flex flex-col">
             {Object.entries(effects).length > 0
               ? Object.entries(effects).map(([key, value]) => (
                   <li key={key}>
-                    {key}: <span dangerouslySetInnerHTML={{ __html: value }} />
+                    {key}: {parse(value)}
                   </li>
                 ))
               : null}

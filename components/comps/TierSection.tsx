@@ -3,6 +3,7 @@ import { Champion, Item, Augment, Trait, Guide } from "@/lib/types";
 import TierItem from "@/components/comps/TierItem";
 import CompPost from "./CompPost";
 import clsx from "clsx";
+import { DataPageKeys } from "@/lib/dataFilter";
 
 // Component cho mỗi tier
 interface TierSectionProps {
@@ -15,6 +16,7 @@ interface TierSectionProps {
   setNumber?: number;
   selectedGuide?: Guide;
   filterType: string;
+  page: DataPageKeys;
 }
 export default function TierSection({
   tier,
@@ -26,11 +28,12 @@ export default function TierSection({
   setNumber,
   selectedGuide,
   filterType,
+  page
 }: TierSectionProps) {
   return (
     <div
       id={`tier-${tier}`}
-      className={`tier-${tier} flex flex-col gap-2.5 mt-10`}
+      className={`tier-${tier} flex flex-col gap-2.5 mt-10 scroll-mt-15`}
     >
       <div className="flex flex-col items-center gap-3 lg:flex-row">
         <div className="w-full h-14 flex relative bg-[image:var(--tier-image)] lg:w-[130px] lg:h-[130px]">
@@ -59,8 +62,8 @@ export default function TierSection({
         </div>
         <div
           className={clsx(
-            `flex-1 bg-[#0f1510] relative shadow-[15px_12px_20px_#061b1266] w-full min-h-[132px] grid grid-cols-[repeat(auto-fill,minmax(90px,1fr))] justify-items-center rounded-3xl p-4 gap-2.5 before:content-[''] before:absolute before:-top-[1.5px] before:-left-[1.5px] before:-right-[1.5px] before:bottom-[2px] before:-z-[5] before:pointer-events-none before:[border-radius:inherit] before:bg-[linear-gradient(to_bottom,var(--tier-bg),transparent)]`,
-            tier === "X" && "pt-8 mt-4 lg:mt-0"
+            `flex-1 bg-[#0f1510] relative shadow-[15px_12px_20px_#061b1266] w-full min-h-[132px] rounded-3xl before:content-[''] before:absolute before:-top-[1.5px] before:-left-[1.5px] before:-right-[1.5px] before:bottom-[2px] before:-z-[5] before:pointer-events-none before:[border-radius:inherit] before:bg-[linear-gradient(to_bottom,var(--tier-bg),transparent)]`,
+            tier === "X" && "mt-4 lg:mt-0"
           )}
         >
           {tier === "X" && (
@@ -68,16 +71,27 @@ export default function TierSection({
               Hero Tier
             </div>
           )}
-          {guides.map((guide, id) => (
-            <TierItem
-              key={id}
-              guide={guide}
-              championsMap={championsMap}
-              itemsMap={itemsMap}
-              augmentsMap={augmentsMap}
-              filterType={filterType}
-            />
-          ))}
+          <div
+            className={clsx(
+              "p-4 gap-2.5 justify-items-center",
+              selectedGuide && selectedGuide.tier === tier
+                ? "flex flex-nowrap overflow-x-auto md:grid md:grid-cols-[repeat(auto-fill,minmax(90px,1fr))]"
+                : "grid grid-cols-[repeat(auto-fill,minmax(90px,1fr))]",
+                tier === "X" && "pt-8"
+            )}
+          >
+            {guides.map((guide, id) => (
+              <TierItem
+                key={id}
+                guide={guide}
+                championsMap={championsMap}
+                itemsMap={itemsMap}
+                augmentsMap={augmentsMap}
+                filterType={filterType}
+                page={page}
+              />
+            ))}
+          </div>
         </div>
       </div>
       {selectedGuide &&

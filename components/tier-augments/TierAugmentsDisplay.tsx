@@ -6,6 +6,7 @@ import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
+  DataPageKeys
 } from "@/lib/dataFilter";
 
 import { Augment, TierAugmentsGroup } from "@/lib/types";
@@ -13,9 +14,10 @@ import TierAugmentsSection from "./TierAugmentsSection";
 
 interface TierAugmentsDisplayProps {
   augments: Augment[];
+  page: DataPageKeys;
 }
 export default function TierAugmentsDisplay({
-  augments,
+  augments, page
 }: TierAugmentsDisplayProps) {
   const searchParams = useSearchParams();
   const filterType = searchParams.get("type") ?? "Show All";
@@ -42,7 +44,7 @@ export default function TierAugmentsDisplay({
 
   return (
     <>
-      <PageMenu page="tierlist-augments" filterType={filterType} />
+      <PageMenu page={page} filterType={filterType} />
       <div
         className="tier-comp-container flex flex-col gap-5"
         role="navigation"

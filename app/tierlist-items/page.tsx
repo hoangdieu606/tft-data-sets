@@ -47,7 +47,11 @@ export default async function TierItems() {
     <>
       <Title page="tierlist-items" set={set} patch={patch} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <TierItemsDisplay items={items} itemsMap={itemsMap} />
+        <TierItemsDisplay
+          items={items}
+          itemsMap={itemsMap}
+          page="tierlist-items"
+        />
       </Suspense>
     </>
   );

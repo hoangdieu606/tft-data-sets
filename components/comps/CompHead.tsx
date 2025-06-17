@@ -6,6 +6,7 @@ import CompHeadTraits from "./CompHeadTraits";
 import IconTooltip from "../IconTooltip";
 import AugmentCard from "../augments/AugmentCard";
 import ItemCard from "../items/ItemCard";
+import parse from "html-react-parser";
 
 interface CompHeadProps {
   guide: Guide;
@@ -162,7 +163,7 @@ export default function CompHead({
           <span className="absolute px-4 bg-green-500 -top-4 left-2/4 -translate-x-1/2 rounded-full text-black">
             Mẹo
           </span>
-          <p>{augmentsTip}</p>
+          <p>{parse(augmentsTip)}</p>
         </div>
         <CompHeadCoppy
           finalComp={finalComp}

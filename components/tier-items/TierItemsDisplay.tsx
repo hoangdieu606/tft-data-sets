@@ -6,6 +6,7 @@ import {
   dataMapping,
   DataMappingKeys,
   DataMappingValue,
+  DataPageKeys,
 } from "@/lib/dataFilter";
 
 import { Item, TierItemsGroup } from "@/lib/types";
@@ -14,10 +15,12 @@ import TierItemsSection from "./TierItemsSection";
 interface TierItemsDisplayProps {
   items: Item[];
   itemsMap: Record<string, Item>;
+  page: DataPageKeys;
 }
 export default function TierItemsDisplay({
   items,
   itemsMap,
+  page,
 }: TierItemsDisplayProps) {
   const searchParams = useSearchParams();
   const filterType = searchParams.get("type") ?? "Show All";
@@ -37,7 +40,7 @@ export default function TierItemsDisplay({
       if (item.tier) {
         acc[item.tier as keyof TierItemsGroup].push(item);
       } else {
-        acc.X.push(item)
+        acc.X.push(item);
       }
       return acc;
     },
@@ -46,7 +49,7 @@ export default function TierItemsDisplay({
 
   return (
     <>
-      <PageMenu page="tierlist-items" filterType={filterType} />
+      <PageMenu page={page} filterType={filterType} />
       <div
         className="tier-comp-container flex flex-col gap-5"
         role="navigation"

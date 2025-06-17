@@ -4,11 +4,11 @@ import type { Metadata } from "next";
 import { metadata } from "../layout";
 import { getMetadataContent } from "@/lib/metadataContent";
 import { DataPageKeys } from "@/lib/dataFilter";
-import ItemsDisplay from "@/components/items/ItemsDisplay";
+import AugmentsDisplay from "@/components/augments/AugmentsDisplay";
 import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await DataFetcher("items");
+  const data = await DataFetcher("augments-revival");
 
   if (!data || !("set" in data) || !("version" in data)) {
     return metadata;
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const set = data.set;
   const patch = data.version;
   const { title, desc } = getMetadataContent(
-    "items" as DataPageKeys,
+    "augments" as DataPageKeys,
     set,
     patch
   );
@@ -28,8 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ItemsPage() {
-  const mainData = await DataFetcher("items");
+export default async function AugsRevivalPage() {
+  const mainData = await DataFetcher("augments-revival");
 
   if (!mainData || !("data" in mainData)) {
     return (
@@ -37,13 +37,12 @@ export default async function ItemsPage() {
     );
   }
 
-  const items = mainData.data || [];
-
+  const augments = mainData.data || [];
   return (
     <>
-      <Title page="items" set={mainData.set} patch={mainData.version} />
+      <Title page="augments" set={mainData.set} patch={mainData.version} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <ItemsDisplay items={items} page="items" />
+        <AugmentsDisplay augments={augments} page="augments-revival" />
       </Suspense>
     </>
   );

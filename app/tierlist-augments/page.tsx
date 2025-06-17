@@ -44,7 +44,7 @@ export default async function TierAugments() {
     <>
       <Title page="tierlist-augments" set={set} patch={patch} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <TierAugmentsDisplay augments={augments} />
+        <TierAugmentsDisplay augments={augments} page="tierlist-augments" />
       </Suspense>
     </>
   );

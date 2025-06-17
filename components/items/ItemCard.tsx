@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Item } from "@/lib/types";
 import StatsDisplay from "./StatsDisplay";
 import { ItemCardStyles, itemCardTooltipStyles } from "@/lib/allCardStyles";
+import parse from "html-react-parser";
 
 interface ItemCardProps {
   item: Item;
@@ -15,8 +16,11 @@ export default function ItemCard({
   itemsMap,
   styles = itemCardTooltipStyles,
 }: ItemCardProps) {
-  const { name, icon, type, description, tier, composition, stats } = item ?? {};
-
+  const { name, icon, type, description, tier, composition, stats } =
+    item ?? {};
+  if (!name || !icon) {
+    return "item undefined";
+  }
   const itemComps = composition?.length
     ? composition.map((compoApi) => itemsMap[compoApi])
     : [];
@@ -66,7 +70,7 @@ export default function ItemCard({
           </div>
           <StatsDisplay stats={stats} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
+        <div>{parse(description)}</div>
       </div>
     </div>
   );

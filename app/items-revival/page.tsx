@@ -8,7 +8,7 @@ import ItemsDisplay from "@/components/items/ItemsDisplay";
 import { Suspense } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const data = await DataFetcher("items");
+  const data = await DataFetcher("items-revival");
 
   if (!data || !("set" in data) || !("version" in data)) {
     return metadata;
@@ -28,8 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ItemsPage() {
-  const mainData = await DataFetcher("items");
+export default async function ItemsRevivalPage() {
+  const mainData = await DataFetcher("items-revival");
 
   if (!mainData || !("data" in mainData)) {
     return (
@@ -43,7 +43,7 @@ export default async function ItemsPage() {
     <>
       <Title page="items" set={mainData.set} patch={mainData.version} />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <ItemsDisplay items={items} page="items" />
+        <ItemsDisplay items={items} page="items-revival" />
       </Suspense>
     </>
   );

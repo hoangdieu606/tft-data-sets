@@ -56,7 +56,7 @@ export default async function ChampionsPage() {
         patch={dataChampions.version}
       />
       <Suspense fallback={<div>Đang tải dữ liệu...</div>}>
-        <ChampionsDisplay champions={champions} traitsMap={traitsMap} />
+        <ChampionsDisplay page="champions" champions={champions} traitsMap={traitsMap} />
       </Suspense>
     </>
   );

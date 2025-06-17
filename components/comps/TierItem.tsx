@@ -5,6 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Guide, Champion, Item, Augment } from "@/lib/types";
 import Hexagon from "@/components/comps/Hexagon";
 import clsx from "clsx";
+import { DataPageKeys } from "@/lib/dataFilter";
 
 interface TierItemProps {
   guide: Guide;
@@ -12,6 +13,7 @@ interface TierItemProps {
   itemsMap: Record<string, Item>;
   augmentsMap: Record<string, Augment>;
   filterType: string;
+  page: DataPageKeys;
 }
 export default function TierItem({
   guide,
@@ -19,6 +21,7 @@ export default function TierItem({
   itemsMap,
   augmentsMap,
   filterType,
+  page,
 }: TierItemProps) {
   const { mainChampion, mainItem, mainAugment, tier, title, compSlug } = guide;
   const router = useRouter();
@@ -32,10 +35,10 @@ export default function TierItem({
   const tierAugment = augmentsMap[mainAugment?.apiName]?.tier2;
   const nameAugment = augmentsMap[mainAugment?.apiName]?.name;
 
-  const isDetailPage = pathname === `/tierlist/${compSlug}`;
+  const isDetailPage = pathname === `/${page}/${compSlug}`;
   // Tạo URL với query parameter type
   const createHref = () => {
-    const baseUrl = `/tierlist/${compSlug}`;
+    const baseUrl = `/${page}/${compSlug}`;
     if (filterType && filterType !== "Show All") {
       return `${baseUrl}?type=${encodeURIComponent(filterType)}`;
     }
@@ -44,7 +47,7 @@ export default function TierItem({
   const handleClick = (e: React.MouseEvent) => {
     if (isDetailPage) {
       e.preventDefault();
-      const baseUrl = "/tierlist";
+      const baseUrl = `/${page}`;
       const targetUrl =
         filterType && filterType !== "Show All"
           ? `${baseUrl}?type=${encodeURIComponent(filterType)}`
@@ -61,7 +64,7 @@ export default function TierItem({
         `champ-cost-${costChamp}`,
         "relative",
         isDetailPage &&
-          "[filter:drop-shadow(0_0_10px_var(--border-color-cost))_drop-shadow(0_0_20px_var(--border-color-cost))]"
+          "[filter:drop-shadow(0_0_10px_var(--border-color-cost))_drop-shadow(0_0_20px_var(--border-color-cost))] order-first"
       )}
     >
       {tier === "X" && tierAugment && (
